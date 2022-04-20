@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -41,12 +42,18 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.17.0",
     "@typescript-eslint/parser": "5.17.0",
+    "cypress": "~9.5.4",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.0",
     "jest": "~27.5.1",
+    "lint-staged": "^12.3.8",
     "prettier": "^2.6.2",
-    "typescript": "~4.6.2",
-    "cypress": "latest"
+    "typescript": "~4.6.2"
+  },
+  "lint-staged": {
+    "*.{ts,js}": "eslint --cache --fix",
+    "*": "prettier --ignore-unknown --write"
   }
 }
