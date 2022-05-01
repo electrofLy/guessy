@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RoomsHttpService } from './api/rooms.http.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  title = 'guessy';
+  rooms$ = this.roomsHttpService.get();
+  constructor(private roomsHttpService: RoomsHttpService) {}
 }

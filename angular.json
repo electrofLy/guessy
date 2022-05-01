@@ -10,7 +10,11 @@
           "style": "scss",
           "changeDetection": "OnPush",
           "inlineStyle": true,
-          "inlineTemplate": true
+          "inlineTemplate": true,
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         },
         "@schematics/angular:application": {
           "strict": true
@@ -71,6 +75,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "guessy:build:production"
