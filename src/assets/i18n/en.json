@@ -1,1 +1,12 @@
-{}
+{
+  "guessy": "guessy",
+  "play": "play",
+  "rooms": "rooms",
+  "info": "info",
+  "settings": "settings",
+  "language": "language",
+  "theme": "theme",
+  "dark": "dark",
+  "light": "light",
+  "back": "back"
+}

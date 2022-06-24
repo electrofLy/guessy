@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import {
-  TRANSLOCO_LOADER,
   Translation,
-  TranslocoLoader,
   TRANSLOCO_CONFIG,
+  TRANSLOCO_LOADER,
   translocoConfig,
+  TranslocoLoader,
   TranslocoModule
 } from '@ngneat/transloco';
 import { Injectable, NgModule } from '@angular/core';
@@ -25,8 +25,11 @@ export class TranslocoHttpLoader implements TranslocoLoader {
     {
       provide: TRANSLOCO_CONFIG,
       useValue: translocoConfig({
-        availableLangs: ['en', 'bg'],
-        defaultLang: 'en',
+        availableLangs: [
+          { id: 'en', label: 'english' },
+          { id: 'bg', label: 'български' }
+        ],
+        defaultLang: 'bg',
         // Remove this option if your application doesn't support changing language in runtime.
         reRenderOnLangChange: true,
         prodMode: environment.production
