@@ -56,14 +56,12 @@ const DIRECTION_MAT_ICONS = {
         alt="country-flag-am"
       />
 
-      <mat-list>
+      <mat-list class="w-full">
         <mat-list-item *ngFor="let guess of view.guesses; let i = index">
-          <div class="!flex items-center">
-            {{ i + 1 }}. {{ guess.name }} (<mat-icon class="mr-2" [inline]="true" color="primary">{{
-              guess.icon
-            }}</mat-icon>
-            {{ guess.distance }} KM)
-          </div>
+          {{ i + 1 }}. {{ guess.name }} (<mat-icon class="mr-2 align-bottom" [inline]="true" color="primary">{{
+            guess.icon
+          }}</mat-icon>
+          {{ guess.distance }} KM)
         </mat-list-item>
       </mat-list>
       <mat-form-field>

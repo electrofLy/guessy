@@ -4,8 +4,10 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   template: `
-    <div class="h-full w-full flex justify-center items-center">
-      <router-outlet></router-outlet>
+    <div class="h-full w-full flex justify-center">
+      <div class="m-auto">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   `,
   styleUrls: [],

@@ -19,7 +19,7 @@ import { EndComponent } from './end/end.component';
   template: ` <mat-card *ngIf="view$ | async as view">
     <mat-card-title class="text-center">{{ 'guessy' | transloco }}</mat-card-title>
     <mat-card-subtitle class="text-center">{{ 'play' | transloco }}</mat-card-subtitle>
-    <mat-card-content class="!flex flex-col justify-center max-w-s text-justify">
+    <mat-card-content class="!flex flex-col justify-center max-w-xs text-justify">
       <ng-container *ngIf="view.isEnded === false; else end">
         <app-country-form />
       </ng-container>
