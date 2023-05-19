@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   template: ` <mat-card>
     <mat-card-title class="text-center">{{ 'guessy' | transloco }}</mat-card-title>
     <mat-card-subtitle class="text-center">{{ 'info' | transloco }}</mat-card-subtitle>
-    <mat-card-content class="!flex flex-col justify-center max-w-xs">
+    <mat-card-content class="!flex flex-col justify-center max-w-s">
       <p class="whitespace-pre-wrap">{{ 'infoDetails' | transloco }}</p>
     </mat-card-content>
     <mat-card-actions [align]="'end'">
