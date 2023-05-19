@@ -1,12 +1,6 @@
 # Guessy
 
-![GitHub stars](https://img.shields.io/github/stars/electrofly/guessy)
-![GitHub forks](https://img.shields.io/github/forks/electrofly/guessy)
-![GitHub issues](https://img.shields.io/github/issues/electrofly/guessy)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/electrofly/guessy)
-![GitHub license](https://img.shields.io/github/license/electrofly/guessy)
-![Build status](https://github.com/electrofly/guessy/actions/workflows/ci.yml/badge.svg)
-![Code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
+![Build status](https://github.com/electrofLy/guessy/actions/workflows/ci.yml/badge.svg)
 
 ![Guessy](./src/assets/icons/icon-48x48.png)
 
@@ -34,7 +28,7 @@ Guessy is an Angular-based game where players are given the task of guessing a c
 To get the project up and running on your own machine:
 
 ```bash
-git clone https://github.com/electrofly/guessy.git
+git clone https://github.com/electrofLy/guessy.git
 cd guessy
 npm install
 ng serve
