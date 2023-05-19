@@ -27,7 +27,11 @@ export class CountriesService {
     switchMap((lang) => {
       return this.http.get<CountryJson[]>('/assets/countries.json').pipe(
         map((countries) => {
-          return countries.map<Country>((country) => ({ name: country.names[lang], ...country }));
+          return countries.map<Country>((val) => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            const { names, ...countryFields } = val;
+            return { name: val.names[lang], ...countryFields };
+          });
         })
       );
     }),
