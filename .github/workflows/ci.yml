@@ -9,7 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 18.10.0
@@ -27,10 +26,6 @@ jobs:
         run: npm run cypress:run:component
       - name: Build
         run: npm run build -- --configuration production
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
         with:
