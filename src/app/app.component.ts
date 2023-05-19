@@ -3,7 +3,11 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: `
+    <div class="h-full w-full flex justify-center items-center">
+      <router-outlet></router-outlet>
+    </div>
+  `,
   styleUrls: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
