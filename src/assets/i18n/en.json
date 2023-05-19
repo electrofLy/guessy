@@ -1,0 +1,21 @@
+{
+  "guessy": "guessy",
+  "play": "play",
+  "flag": "flag",
+  "shape": "shape",
+  "info": "info",
+  "infoDetails": "Cool game which you can use daily to boost your geography knowledge.\n\nYou can use \"Add to Home Screen\" to add a it to your applications.",
+  "settings": "settings",
+  "language": "language",
+  "theme": "theme",
+  "dark": "dark",
+  "light": "light",
+  "back": "back",
+  "guessCountry": "guess the country",
+  "required": "required field",
+  "end": "end",
+  "endSuccess": "You guessed {{0}}.",
+  "endFailed": "You couldn't guess {{0}}.",
+  "endDetails": "This was the end. Come back after {{0}} hours to guess again?",
+  "invalidCountry": "invalid country"
+}
