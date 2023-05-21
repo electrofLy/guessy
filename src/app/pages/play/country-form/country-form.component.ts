@@ -35,6 +35,46 @@ const DIRECTION_MAT_ICONS = {
   N: 'north'
 };
 
+export function getCountryName(country: string | Country) {
+  const val = country;
+  return typeof val === 'string' ? val : val.name;
+}
+
+export function countryExists(country: string | Country, countryNames: string[]) {
+  const val = getCountryName(country);
+  return countryNames.includes(val) ? {} : { invalidCountry: val };
+}
+
+export function filterCountries(countries: Country[], country: string | Country) {
+  const val = getCountryName(country);
+
+  return countries.filter((option) => option.name.toLowerCase().includes(val));
+}
+
+export interface Guess {
+  name: string;
+  icon: string;
+  distance: number;
+}
+
+export function createGuesses(guesses: Country[], country: Country): Guess[] {
+  return guesses.map((guess) => {
+    const origin = {
+      latitude: guess.coordinates.lat,
+      longitude: guess.coordinates.lng
+    };
+    const dest = {
+      latitude: country.coordinates.lat,
+      longitude: country.coordinates.lng
+    };
+    return {
+      name: guess.name,
+      icon: DIRECTION_MAT_ICONS[getCompassDirection(origin, dest)],
+      distance: Math.floor(convertDistance(getDistance(origin, dest), 'km'))
+    };
+  });
+}
+
 @Component({
   selector: 'app-country-form',
   template: `
@@ -58,9 +98,8 @@ const DIRECTION_MAT_ICONS = {
 
       <mat-list class="w-full">
         <mat-list-item *ngFor="let guess of view.guesses; let i = index">
-          {{ i + 1 }}. {{ guess.name }} (<mat-icon class="mr-2 align-bottom" [inline]="true" color="primary">{{
-            guess.icon
-          }}</mat-icon>
+          {{ i + 1 }}. {{ guess.name }} (
+          <mat-icon class="mr-2 align-bottom" [inline]="true" color="primary">{{ guess.icon }}</mat-icon>
           {{ guess.distance }} KM)
         </mat-list-item>
       </mat-list>
@@ -131,10 +170,7 @@ export class CountryFormComponent {
       asyncValidators: [
         (control) =>
           this.countriesService.countryNames$.pipe(
-            map((val) => {
-              const controlValue = this.getControlValue(control.value);
-              return val.includes(controlValue) ? {} : { invalidCountry: control.value };
-            }),
+            map((val) => countryExists(control.value, val)),
             take(1)
           )
       ]
@@ -143,30 +179,10 @@ export class CountryFormComponent {
   filteredCountries$ = combineLatest([
     this.countriesService.countries$,
     this.form.controls.country.valueChanges.pipe(startWith(''))
-  ]).pipe(
-    map((val) => {
-      const filterValue = this.getControlValue(val[1]).toLowerCase();
-
-      return val[0].filter((option) => option.name.toLowerCase().includes(filterValue));
-    })
-  );
+  ]).pipe(map((val) => filterCountries(val[0], val[1])));
   guessesWithDistance$ = combineLatest([this.playService.guesses$, this.playService.country$]).pipe(
     map(([guesses, country]) => {
-      return guesses.map((guess) => {
-        const origin = {
-          latitude: guess.coordinates.lat,
-          longitude: guess.coordinates.lng
-        };
-        const dest = {
-          latitude: country.coordinates.lat,
-          longitude: country.coordinates.lng
-        };
-        return {
-          name: guess.name,
-          icon: DIRECTION_MAT_ICONS[getCompassDirection(origin, dest)],
-          distance: Math.floor(convertDistance(getDistance(origin, dest), 'km'))
-        };
-      });
+      return createGuesses(guesses, country);
     })
   );
   view$ = combineLatest({
@@ -176,11 +192,6 @@ export class CountryFormComponent {
     type: this.playService.type$,
     theme: this.settings.theme$
   });
-
-  getControlValue(country: Country | string) {
-    const input = country;
-    return typeof input === 'string' ? input : input.name;
-  }
 
   displayFn(country: Country) {
     return country?.name ?? '';
