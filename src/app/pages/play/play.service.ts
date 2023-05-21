@@ -7,9 +7,9 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { CountriesService, Country } from '../../core/services/countries.service';
 
-const KEY_INTERPOLATION = '{{0}}';
-const GAME_GUESSES_START_STORAGE_KEY = 'GAME::';
-const GAME_GUESSES_STORAGE_KEY = GAME_GUESSES_START_STORAGE_KEY + KEY_INTERPOLATION + '::guesses';
+export const KEY_INTERPOLATION = '{{0}}';
+export const GAME_GUESSES_START_STORAGE_KEY = 'GAME::';
+export const GAME_GUESSES_STORAGE_KEY = GAME_GUESSES_START_STORAGE_KEY + KEY_INTERPOLATION + '::guesses';
 
 export type PlayType = 'FLAG' | 'SHAPE';
 
