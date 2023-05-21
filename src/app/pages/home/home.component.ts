@@ -12,17 +12,23 @@ import { MatDividerModule } from '@angular/material/divider';
     <mat-card-title class="text-center p-2">{{ 'guessy' | transloco }}</mat-card-title>
     <mat-card-content class="!flex flex-col justify-center">
       <div class="flex flex-col gap-2">
-        <button [routerLink]="['/flag']" mat-button mat-raised-button color="primary">
+        <button [routerLink]="['/flag']" data-test="go-to-flag" mat-button mat-raised-button color="primary">
           {{ 'flag' | transloco }}
         </button>
-        <button [routerLink]="['/shape']" mat-button mat-raised-button color="primary">
+        <button [routerLink]="['/shape']" data-test="go-to-shape" mat-button mat-raised-button color="primary">
           {{ 'shape' | transloco }}
         </button>
         <mat-divider />
-        <button [routerLink]="['/settings']" mat-button mat-raised-button color="primary">
+        <button [routerLink]="['/settings']" data-test="go-to-settings" mat-button mat-raised-button color="primary">
           {{ 'settings' | transloco }}
         </button>
-        <button [routerLink]="['/information']" mat-button mat-raised-button color="primary">
+        <button
+          [routerLink]="['/information']"
+          data-test="go-to-information"
+          mat-button
+          mat-raised-button
+          color="primary"
+        >
           {{ 'info' | transloco }}
         </button>
       </div>
