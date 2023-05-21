@@ -10,7 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 @Component({
   selector: 'app-language-selection',
   template: `
-    <mat-form-field>
+    <mat-form-field data-test="language-selection">
       <mat-label>{{ 'language' | transloco }}</mat-label>
       <mat-select [value]="lang$ | async" (valueChange)="lang$.next($event)">
         <mat-option *ngFor="let lang of langs" [value]="lang.id">{{ lang.label }}</mat-option>
