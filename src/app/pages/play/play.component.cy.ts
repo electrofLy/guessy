@@ -4,6 +4,23 @@ import { PlayComponent } from './play.component';
 import { HttpClientModule } from '@angular/common/http';
 import countries from '../../../assets/countries.json';
 import { createTranslocoTestingModule } from '../../transloco-testing.module';
+import { MountConfig } from 'cypress/angular';
+import { PlayType } from './play.service';
+
+function generateConfig(type: PlayType): MountConfig<PlayComponent> {
+  return {
+    imports: [
+      PlayComponent,
+      HttpClientModule,
+      RouterTestingModule,
+      createTranslocoTestingModule(),
+      NoopAnimationsModule
+    ],
+    componentProperties: {
+      type
+    }
+  };
+}
 
 describe('PlayComponent', () => {
   beforeEach(() => {
@@ -13,22 +30,19 @@ describe('PlayComponent', () => {
       body: [...countries],
       headers: { 'content-type': 'application/json' }
     });
-    cy.mount(PlayComponent, {
-      imports: [
-        PlayComponent,
-        HttpClientModule,
-        RouterTestingModule,
-        createTranslocoTestingModule(),
-        NoopAnimationsModule
-      ],
-      componentProperties: {
-        type: 'FLAG'
-      }
-    });
   });
-  it('should be able to guess correctly', () => {
+  it('should be able to guess correctly a flag', () => {
+    cy.mount(PlayComponent, generateConfig('FLAG'));
     cy.get(`[data-test="country-input"]`).click();
     cy.get(`[data-test="country-input"] input`).type('Dominican Republic');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="success-guess"]`).should('exist');
+  });
+  it('should be able to guess correctly a shape', () => {
+    cy.mount(PlayComponent, generateConfig('SHAPE'));
+    cy.get(`[data-test="country-input"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Suriname');
     cy.get(`[data-test="country-input"] input`).blur();
     cy.get(`[data-test="submit-guess"]`).click();
     cy.get(`[data-test="success-guess"]`).should('exist');
