@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { map, shareReplay, switchMap } from 'rxjs';
+import { distinctUntilChanged, map, shareReplay, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { TranslocoService } from '@ngneat/transloco';
 
@@ -29,7 +29,7 @@ export function extractCountryName(countries: CountryJson[], lang: string) {
 @Injectable({ providedIn: 'root' })
 export class CountriesService {
   http = inject(HttpClient);
-  activeLang$ = inject(TranslocoService).langChanges$;
+  activeLang$ = inject(TranslocoService).langChanges$.pipe(distinctUntilChanged());
 
   countries$ = this.activeLang$.pipe(
     switchMap((lang) => {

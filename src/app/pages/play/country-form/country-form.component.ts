@@ -48,7 +48,7 @@ export function countryExists(country: string | Country, countryNames: string[])
 export function filterCountries(countries: Country[], country: string | Country) {
   const val = getCountryName(country);
 
-  return countries.filter((option) => option.name.toLowerCase().includes(val));
+  return countries.filter((option) => option.name.toLowerCase().includes(val.toLowerCase()));
 }
 
 export interface Guess {
@@ -88,8 +88,9 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
       spellcheck="false"
     >
       <img
+        *ngFor="let country of [view.country]"
         [ngClass]="{ invert: view.theme === 'dark' && view.type === 'SHAPE' }"
-        [ngSrc]="view.type === 'SHAPE' ? view.country.shapeUrl : view.country.flagUrl"
+        [ngSrc]="view.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
         [height]="view.type === 'SHAPE' ? 200 : 150"
         priority="true"
         width="200"
@@ -103,7 +104,7 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
           {{ guess.distance }} KM)
         </mat-list-item>
       </mat-list>
-      <mat-form-field>
+      <mat-form-field data-test="country-input">
         <mat-label>{{ 'guessCountry' | transloco }}</mat-label>
         <!-- hack using search in the name field so autofill is not displayed in Safari-->
         <input
@@ -125,6 +126,7 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
         <button
           [disabled]="!form.valid"
           (click)="onSubmit($event, form.value.country!)"
+          data-test="submit-guess"
           color="primary"
           mat-icon-button
           matSuffix

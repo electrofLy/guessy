@@ -5,7 +5,6 @@ import { AppComponent } from './app/app.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { bootstrapApplication, BrowserModule } from '@angular/platform-browser';
-import { DatePipe } from '@angular/common';
 import { getAllLanguageLoads$, TranslocoRootModule } from './app/transloco-root.module';
 import { combineLatest, take } from 'rxjs';
 import { SettingsService } from './app/core/services/settings.service';
@@ -76,7 +75,6 @@ bootstrapApplication(AppComponent, {
       useFactory: initializeApp,
       deps: [TranslocoService, SettingsService]
     },
-    DatePipe,
     provideAnimations(),
     provideHttpClient(withInterceptorsFromDi()),
     provideServiceWorker('ngsw-worker.js', {

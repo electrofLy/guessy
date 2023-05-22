@@ -5,7 +5,7 @@ import { TranslocoModule } from '@ngneat/transloco';
 import { MatButtonModule } from '@angular/material/button';
 import { CountryFormComponent } from './country-form/country-form.component';
 import { MatCardModule } from '@angular/material/card';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { CommonModule, DatePipe, NgOptimizedImage } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -16,14 +16,16 @@ import { EndComponent } from './end/end.component';
 
 @Component({
   selector: 'app-play',
-  template: ` <mat-card *ngIf="view$ | async as view">
+  template: ` <mat-card class="max-w-xs" *ngIf="view$ | async as view">
     <mat-card-title class="text-center">{{ 'guessy' | transloco }}</mat-card-title>
     <mat-card-subtitle class="text-center">{{ 'play' | transloco }}</mat-card-subtitle>
-    <mat-card-content class="!flex flex-col justify-center max-w-xs text-justify">
+    <mat-card-content class="!flex flex-col justify-center text-justify">
       <ng-container *ngIf="view.isEnded === false; else end">
         <app-country-form />
       </ng-container>
-      <ng-template #end> <app-end class="!flex flex-col justify-center" /> </ng-template>
+      <ng-template #end>
+        <app-end class="!flex flex-col justify-center" />
+      </ng-template>
     </mat-card-content>
     <mat-card-actions [align]="'end'">
       <button [routerLink]="['/home']" mat-button mat-raised-button>
@@ -54,7 +56,7 @@ import { EndComponent } from './end/end.component';
     CountryFormComponent,
     EndComponent
   ],
-  providers: [PlayService]
+  providers: [PlayService, DatePipe]
 })
 export class PlayComponent {
   playService = inject(PlayService);

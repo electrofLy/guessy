@@ -9,8 +9,8 @@ import { CountriesService, Country } from '../../core/services/countries.service
 import { TestBed } from '@angular/core/testing';
 import { DatePipe } from '@angular/common';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { TranslocoTestingModule } from '@ngneat/transloco';
 import { combineLatest, of } from 'rxjs';
+import { createTranslocoTestingModule } from '../../transloco-testing.module';
 
 describe('PlayService', () => {
   describe('utils', () => {
@@ -61,7 +61,7 @@ describe('PlayService', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule, TranslocoTestingModule],
+        imports: [HttpClientTestingModule, createTranslocoTestingModule()],
         providers: [
           PlayService,
           DatePipe,

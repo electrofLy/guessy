@@ -1,26 +1,12 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { SettingsComponent } from './settings.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { TranslocoTestingModule } from '@ngneat/transloco';
+import { createTranslocoTestingModule } from '../../transloco-testing.module';
 
 describe('SettingsComponent', () => {
   beforeEach(() => {
     cy.mount(SettingsComponent, {
-      imports: [
-        SettingsComponent,
-        RouterTestingModule,
-        TranslocoTestingModule.forRoot({
-          translocoConfig: {
-            availableLangs: [
-              { id: 'en', label: 'english' },
-              { id: 'bg', label: 'български' }
-            ],
-            reRenderOnLangChange: true
-          },
-          langs: { en: { settings: 'test1' }, bg: { settings: 'test2' } }
-        }),
-        NoopAnimationsModule
-      ]
+      imports: [SettingsComponent, RouterTestingModule, createTranslocoTestingModule(), NoopAnimationsModule]
     });
   });
   it('should be able to change language', () => {
