@@ -125,7 +125,7 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
         </mat-autocomplete>
         <button
           [disabled]="!form.valid"
-          (click)="onSubmit($event, form.value.country!)"
+          (click)="onSubmit($event, form.value.country!, view.countries)"
           data-test="submit-guess"
           color="primary"
           mat-icon-button
@@ -199,11 +199,15 @@ export class CountryFormComponent {
     return country?.name ?? '';
   }
 
-  onSubmit(event: Event, country: Country | string) {
+  onSubmit(event: Event, country: Country | string, countries: Country[]) {
     event.stopPropagation();
     if (typeof country !== 'string') {
       this.playService.guess$.next(country);
-      this.form.controls.country.setValue('');
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      this.playService.guess$.next(countries.find((val) => val.name === country)!);
     }
+
+    this.form.controls.country.setValue('');
   }
 }
