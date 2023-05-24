@@ -353,6 +353,7 @@
   {
     "flagUrl": "assets/flags/bg.svg",
     "shapeUrl": "assets/shapes/bg.svg",
+    "isoCode": "bg",
     "names": {
       "bg": "България",
       "en": "Bulgaria"

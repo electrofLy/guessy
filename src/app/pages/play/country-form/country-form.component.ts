@@ -98,7 +98,7 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
       />
 
       <mat-list class="w-full">
-        <mat-list-item *ngFor="let guess of view.guesses; let i = index">
+        <mat-list-item *ngFor="let guess of view.guesses; let i = index" data-test="guess-list-item">
           {{ i + 1 }}. {{ guess.name }} (
           <mat-icon class="mr-2 align-bottom" [inline]="true" color="primary">{{ guess.icon }}</mat-icon>
           {{ guess.distance }} KM)
