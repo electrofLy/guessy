@@ -10,12 +10,12 @@ describe('SettingsComponent', () => {
     });
   });
   it('should be able to change language', () => {
-    cy.get(`[data-test="settings-subtitle"]`).should('contain.text', 'test1');
+    cy.get(`[data-test="settings-subtitle"]`).should('contain.text', 'settings');
     cy.get(`[data-test="language-selection"]`).click();
     cy.get(`mat-option`).should('contain.text', 'en');
     cy.get(`mat-option`).should('contain.text', 'bg');
     cy.contains(`mat-option`, 'bg').click();
-    cy.get(`[data-test="settings-subtitle"]`).should('contain.text', 'test2');
+    cy.get(`[data-test="settings-subtitle"]`).should('contain.text', 'настройки');
   });
   it('should be able to change theme', () => {
     cy.get(`[data-test="theme-selection"]`).click();
