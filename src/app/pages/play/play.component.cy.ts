@@ -31,6 +31,9 @@ describe('PlayComponent', () => {
       headers: { 'content-type': 'application/json' }
     });
   });
+  it('should mount', () => {
+    cy.mount(PlayComponent, generateConfig('FLAG'));
+  });
   it('should be able to guess correctly a flag', () => {
     cy.mount(PlayComponent, generateConfig('FLAG'));
     cy.get(`[data-test="country-input"]`).click();
@@ -39,6 +42,21 @@ describe('PlayComponent', () => {
     cy.get(`[data-test="submit-guess"]`).click();
     cy.get(`[data-test="success-guess"]`).should('exist');
   });
+  it('should be able to not guess correctly a flag', () => {
+    cy.mount(PlayComponent, generateConfig('FLAG'));
+    cy.get(`[data-test="country-input"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Bulgaria');
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Turkey');
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Germany');
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Austria');
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Australia');
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="fail-guess"]`).should('exist');
+  });
   it('should be able to guess correctly a shape', () => {
     cy.mount(PlayComponent, generateConfig('SHAPE'));
     cy.get(`[data-test="country-input"]`).click();
@@ -46,5 +64,25 @@ describe('PlayComponent', () => {
     cy.get(`[data-test="country-input"] input`).blur();
     cy.get(`[data-test="submit-guess"]`).click();
     cy.get(`[data-test="success-guess"]`).should('exist');
+  });
+  it('should be able to not guess correctly a shape', () => {
+    cy.mount(PlayComponent, generateConfig('SHAPE'));
+    cy.get(`[data-test="country-input"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Bulgaria');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Turkey');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Germany');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Austria');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Australia');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="fail-guess"]`).should('exist');
   });
 });

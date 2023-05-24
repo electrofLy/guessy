@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { combineLatest, map, startWith, take } from 'rxjs';
@@ -6,7 +6,7 @@ import { TranslocoModule } from '@ngneat/transloco';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatOptionModule } from '@angular/material/core';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatAutocompleteModule, MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
@@ -42,7 +42,7 @@ export function getCountryName(country: string | Country) {
 
 export function countryExists(country: string | Country, countryNames: string[]) {
   const val = getCountryName(country);
-  return countryNames.includes(val) ? {} : { invalidCountry: val };
+  return countryNames.find((name) => name.toLowerCase() === val.toLowerCase()) ? {} : { invalidCountry: val };
 }
 
 export function filterCountries(countries: Country[], country: string | Country) {
@@ -108,6 +108,7 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
         <mat-label>{{ 'guessCountry' | transloco }}</mat-label>
         <!-- hack using search in the name field so autofill is not displayed in Safari-->
         <input
+          #countryInput
           [matAutocomplete]="auto"
           name="notASearchField"
           autocomplete="off"
@@ -195,19 +196,23 @@ export class CountryFormComponent {
     theme: this.settings.theme$
   });
 
+  @ViewChild(MatAutocompleteTrigger) autocompleteTrigger!: MatAutocompleteTrigger;
+
   displayFn(country: Country) {
     return country?.name ?? '';
   }
 
   onSubmit(event: Event, country: Country | string, countries: Country[]) {
-    event.stopPropagation();
     if (typeof country !== 'string') {
       this.playService.guess$.next(country);
     } else {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      this.playService.guess$.next(countries.find((val) => val.name === country)!);
+      this.playService.guess$.next(countries.find((val) => val.name.toLowerCase() === country.toLowerCase())!);
     }
-
     this.form.controls.country.setValue('');
+    setTimeout(() => {
+      // close the autocomplete after submission for better user experience
+      this.autocompleteTrigger.closePanel();
+    });
   }
 }
