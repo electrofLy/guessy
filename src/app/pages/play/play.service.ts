@@ -49,7 +49,7 @@ export class PlayService {
   );
   randomNumber$ = combineLatest([this.countriesService.countries$, this.randomSeedNumber$]).pipe(
     map(([country, randomSeedNumber]) => {
-      return Math.floor(randomSeedNumber() * country.length) + 1;
+      return Math.floor(randomSeedNumber() * country.length);
     }),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
