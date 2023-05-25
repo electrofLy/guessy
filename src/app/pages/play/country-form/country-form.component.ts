@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { combineLatest, map, startWith, take } from 'rxjs';
@@ -6,7 +6,7 @@ import { TranslocoModule } from '@ngneat/transloco';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatOptionModule } from '@angular/material/core';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatAutocompleteModule, MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
@@ -35,6 +35,46 @@ const DIRECTION_MAT_ICONS = {
   N: 'north'
 };
 
+export function getCountryName(country: string | Country) {
+  const val = country;
+  return typeof val === 'string' ? val : val.name;
+}
+
+export function countryExists(country: string | Country, countryNames: string[]) {
+  const val = getCountryName(country);
+  return countryNames.find((name) => name.toLowerCase() === val.toLowerCase()) ? {} : { invalidCountry: val };
+}
+
+export function filterCountries(countries: Country[], country: string | Country) {
+  const val = getCountryName(country);
+
+  return countries.filter((option) => option.name.toLowerCase().includes(val.toLowerCase()));
+}
+
+export interface Guess {
+  name: string;
+  icon: string;
+  distance: number;
+}
+
+export function createGuesses(guesses: Country[], country: Country): Guess[] {
+  return guesses.map((guess) => {
+    const origin = {
+      latitude: guess.coordinates.lat,
+      longitude: guess.coordinates.lng
+    };
+    const dest = {
+      latitude: country.coordinates.lat,
+      longitude: country.coordinates.lng
+    };
+    return {
+      name: guess.name,
+      icon: DIRECTION_MAT_ICONS[getCompassDirection(origin, dest)],
+      distance: Math.floor(convertDistance(getDistance(origin, dest), 'km'))
+    };
+  });
+}
+
 @Component({
   selector: 'app-country-form',
   template: `
@@ -48,28 +88,29 @@ const DIRECTION_MAT_ICONS = {
       spellcheck="false"
     >
       <img
+        *ngFor="let country of [view.country]"
         [ngClass]="{ invert: view.theme === 'dark' && view.type === 'SHAPE' }"
-        [ngSrc]="view.type === 'SHAPE' ? view.country.shapeUrl : view.country.flagUrl"
+        [ngSrc]="view.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
         [height]="view.type === 'SHAPE' ? 200 : 150"
         priority="true"
         width="200"
         alt="country-flag-am"
       />
 
-      <mat-list>
-        <mat-list-item *ngFor="let guess of view.guesses; let i = index">
-          <div class="!flex items-center">
-            {{ i + 1 }}. {{ guess.name }} (<mat-icon class="mr-2" [inline]="true" color="primary">{{
-              guess.icon
-            }}</mat-icon>
-            {{ guess.distance }} KM)
-          </div>
+      <mat-list class="w-full">
+        <mat-list-item *ngFor="let guess of view.guesses; let i = index" data-test="guess-list-item">
+          <mat-icon class="!self-center !mt-0" matListItemIcon>{{ guess.icon }}</mat-icon>
+          <h3 matListItemTitle>{{ guess.name }}</h3>
+          <p matListItemLine>
+            <span>{{ guess.distance }} KM</span>
+          </p>
         </mat-list-item>
       </mat-list>
-      <mat-form-field>
+      <mat-form-field data-test="country-input">
         <mat-label>{{ 'guessCountry' | transloco }}</mat-label>
         <!-- hack using search in the name field so autofill is not displayed in Safari-->
         <input
+          #countryInput
           [matAutocomplete]="auto"
           name="notASearchField"
           autocomplete="off"
@@ -87,7 +128,8 @@ const DIRECTION_MAT_ICONS = {
         </mat-autocomplete>
         <button
           [disabled]="!form.valid"
-          (click)="onSubmit($event, form.value.country!)"
+          (click)="onSubmit($event, form.value.country!, view.countries)"
+          data-test="submit-guess"
           color="primary"
           mat-icon-button
           matSuffix
@@ -133,10 +175,7 @@ export class CountryFormComponent {
       asyncValidators: [
         (control) =>
           this.countriesService.countryNames$.pipe(
-            map((val) => {
-              const controlValue = this.getControlValue(control.value);
-              return val.includes(controlValue) ? {} : { invalidCountry: control.value };
-            }),
+            map((val) => countryExists(control.value, val)),
             take(1)
           )
       ]
@@ -145,30 +184,10 @@ export class CountryFormComponent {
   filteredCountries$ = combineLatest([
     this.countriesService.countries$,
     this.form.controls.country.valueChanges.pipe(startWith(''))
-  ]).pipe(
-    map((val) => {
-      const filterValue = this.getControlValue(val[1]).toLowerCase();
-
-      return val[0].filter((option) => option.name.toLowerCase().includes(filterValue));
-    })
-  );
+  ]).pipe(map((val) => filterCountries(val[0], val[1])));
   guessesWithDistance$ = combineLatest([this.playService.guesses$, this.playService.country$]).pipe(
     map(([guesses, country]) => {
-      return guesses.map((guess) => {
-        const origin = {
-          latitude: guess.coordinates.lat,
-          longitude: guess.coordinates.lng
-        };
-        const dest = {
-          latitude: country.coordinates.lat,
-          longitude: country.coordinates.lng
-        };
-        return {
-          name: guess.name,
-          icon: DIRECTION_MAT_ICONS[getCompassDirection(origin, dest)],
-          distance: Math.floor(convertDistance(getDistance(origin, dest), 'km'))
-        };
-      });
+      return createGuesses(guesses, country);
     })
   );
   view$ = combineLatest({
@@ -179,20 +198,23 @@ export class CountryFormComponent {
     theme: this.settings.theme$
   });
 
-  getControlValue(country: Country | string) {
-    const input = country;
-    return typeof input === 'string' ? input : input.name;
-  }
+  @ViewChild(MatAutocompleteTrigger) autocompleteTrigger!: MatAutocompleteTrigger;
 
   displayFn(country: Country) {
     return country?.name ?? '';
   }
 
-  onSubmit(event: Event, country: Country | string) {
-    event.stopPropagation();
+  onSubmit(event: Event, country: Country | string, countries: Country[]) {
     if (typeof country !== 'string') {
       this.playService.guess$.next(country);
-      this.form.controls.country.setValue('');
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      this.playService.guess$.next(countries.find((val) => val.name.toLowerCase() === country.toLowerCase())!);
     }
+    this.form.controls.country.setValue('');
+    setTimeout(() => {
+      // close the autocomplete after submission for better user experience
+      this.autocompleteTrigger.closePanel();
+    });
   }
 }

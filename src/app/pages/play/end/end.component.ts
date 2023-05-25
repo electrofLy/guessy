@@ -12,8 +12,9 @@ import { SettingsService } from '../../../core/services/settings.service';
   template: ` <ng-container *ngIf="view$ | async as view">
     <img
       class="self-center mb-4"
+      *ngFor="let country of [view.country]"
       [ngClass]="{ invert: view.theme === 'dark' && view.type === 'SHAPE' }"
-      [ngSrc]="view.type === 'SHAPE' ? view.country.shapeUrl : view.country.flagUrl"
+      [ngSrc]="view.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
       [height]="view.type === 'SHAPE' ? 200 : 150"
       priority="true"
       width="200"
@@ -21,10 +22,10 @@ import { SettingsService } from '../../../core/services/settings.service';
     />
     <p class="text-justify">
       <ng-container *ngIf="view.isGuessed === true; else failed">
-        {{ 'endSuccess' | transloco : [view.country.name] }}
+        <span data-test="success-guess">{{ 'endSuccess' | transloco : [view.country.name] }}</span>
       </ng-container>
       <ng-template #failed>
-        {{ 'endFailed' | transloco : [view.country.name] }}
+        <span data-test="fail-guess">{{ 'endFailed' | transloco : [view.country.name] }}</span>
       </ng-template>
     </p>
     <p class="text-justify">

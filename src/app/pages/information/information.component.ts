@@ -7,10 +7,10 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-information',
-  template: ` <mat-card>
+  template: ` <mat-card class="max-w-xs">
     <mat-card-title class="text-center">{{ 'guessy' | transloco }}</mat-card-title>
     <mat-card-subtitle class="text-center">{{ 'info' | transloco }}</mat-card-subtitle>
-    <mat-card-content class="!flex flex-col justify-center max-w-s">
+    <mat-card-content class="!flex flex-col justify-center">
       <p class="whitespace-pre-wrap">{{ 'infoDetails' | transloco }}</p>
     </mat-card-content>
     <mat-card-actions [align]="'end'">

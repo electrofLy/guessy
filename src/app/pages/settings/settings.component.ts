@@ -14,7 +14,9 @@ import { MatSelectModule } from '@angular/material/select';
   template: `
     <mat-card>
       <mat-card-title class="text-center">{{ 'guessy' | transloco }}</mat-card-title>
-      <mat-card-subtitle class="text-center">{{ 'settings' | transloco }}</mat-card-subtitle>
+      <mat-card-subtitle class="text-center" data-test="settings-subtitle">{{
+        'settings' | transloco
+      }}</mat-card-subtitle>
       <mat-card-content class="flex flex-col justify-center">
         <div class="flex flex-col gap-2">
           <app-language-selection></app-language-selection>

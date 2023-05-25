@@ -17,5 +17,7 @@
   "endSuccess": "You guessed {{0}}.",
   "endFailed": "You couldn't guess {{0}}.",
   "endDetails": "This was the end. Come back after {{0}} hours to guess again?",
-  "invalidCountry": "invalid country"
+  "invalidCountry": "invalid country",
+  "checkCode": "check the code",
+  "reportIssue": "report a bug"
 }

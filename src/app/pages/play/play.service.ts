@@ -7,9 +7,9 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { CountriesService, Country } from '../../core/services/countries.service';
 
-const KEY_INTERPOLATION = '{{0}}';
-const GAME_GUESSES_START_STORAGE_KEY = 'GAME::';
-const GAME_GUESSES_STORAGE_KEY = GAME_GUESSES_START_STORAGE_KEY + KEY_INTERPOLATION + '::guesses';
+export const KEY_INTERPOLATION = '{{0}}';
+export const GAME_GUESSES_START_STORAGE_KEY = 'GAME::';
+export const GAME_GUESSES_STORAGE_KEY = GAME_GUESSES_START_STORAGE_KEY + KEY_INTERPOLATION + '::guesses';
 
 export type PlayType = 'FLAG' | 'SHAPE';
 
@@ -36,9 +36,9 @@ export class PlayService {
           (acc, value) => {
             return [...acc, value];
           },
-          [...this.getSavedGuesses(seed, countries)]
+          [...getSavedGuesses(this.getKey(seed), countries)]
         ),
-        startWith([...this.getSavedGuesses(seed, countries)]),
+        startWith([...getSavedGuesses(this.getKey(seed), countries)]),
         shareReplay({ refCount: false, bufferSize: 1 })
       );
     })
@@ -49,7 +49,7 @@ export class PlayService {
   );
   randomNumber$ = combineLatest([this.countriesService.countries$, this.randomSeedNumber$]).pipe(
     map(([country, randomSeedNumber]) => {
-      return Math.floor(randomSeedNumber() * country.length) + 1;
+      return Math.floor(randomSeedNumber() * country.length);
     }),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
@@ -94,18 +94,17 @@ export class PlayService {
         localStorage.setItem(this.getKey(seed), JSON.stringify(guesses.map((guess) => guess.isoCode)));
       });
   }
+}
 
-  private getSavedGuesses(seed: string, countries: Country[]): Country[] {
-    const key = this.getKey(seed);
-    const item = localStorage.getItem(key);
-    if (item) {
-      const countryIds: string[] = JSON.parse(item);
-      return countryIds
-        .map((id) => countries.find((country) => country.isoCode === id))
-        .filter((country: Country | undefined): country is Country => !!country);
-    }
-    return [];
+export function getSavedGuesses(key: string, countries: Country[]): Country[] {
+  const item = localStorage.getItem(key);
+  if (item) {
+    const countryIds: string[] = JSON.parse(item);
+    return countryIds
+      .map((id) => countries.find((country) => country.isoCode === id))
+      .filter((country: Country | undefined): country is Country => !!country);
   }
+  return [];
 }
 
 export function deletePreviousSavedGuesses(seed: string) {
