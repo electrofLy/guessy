@@ -23,9 +23,9 @@ jobs:
       - name: Unit tests
         run: npm run test
       - name: Component tests
-        run: npm run cypress:run:component
+        run: npm run ct:ci
       - name: Build
-        run: npm run build -- --configuration production
+        run: npm run build:prod
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
         with:
