@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "ct": "ng run guessy:ct",
-    "ct:ci": "ng run gussy:ct:ci",
+    "ct:ci": "ng run guessy:ct:ci",
     "prepare": "husky install"
   },
   "private": true,
