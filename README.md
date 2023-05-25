@@ -47,7 +47,7 @@ npm run test
 End-to-end tests are written with Cypress and can be run with:
 
 ```bash
-npm run cypress:run
+npm run ct
 ```
 
 ## Contributing

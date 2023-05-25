@@ -77,7 +77,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "proxyConfig": "src/proxy.conf.json"
+            "proxyConfig": "src/proxy.conf.json",
+            "open": true
           },
           "configurations": {
             "production": {
@@ -85,6 +86,11 @@
             },
             "development": {
               "browserTarget": "guessy:build:development"
+            },
+            "remote": {
+              "browserTarget": "guessy:build:development",
+              "host": "0.0.0.0",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"
@@ -126,16 +132,18 @@
             "headless": false
           }
         },
-        "e2e": {
+        "ct": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "guessy:serve",
             "watch": true,
-            "headless": false
+            "headless": false,
+            "browser": "electron",
+            "component": true
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "guessy:serve:production"
+            "ci": {
+              "watch": false,
+              "headless": true
             }
           }
         }
