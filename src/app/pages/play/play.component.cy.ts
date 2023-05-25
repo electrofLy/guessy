@@ -40,7 +40,7 @@ describe('PlayComponent', () => {
   it('should be able to guess correctly a flag', () => {
     cy.mount(PlayComponent, generateConfig('FLAG'));
     cy.get(`[data-test="country-input"]`).click();
-    cy.get(`[data-test="country-input"] input`).type('Dominican Republic');
+    cy.get(`[data-test="country-input"] input`).type('Dominica');
     cy.get(`[data-test="country-input"] input`).blur();
     cy.get(`[data-test="submit-guess"]`).click();
     cy.get(`[data-test="success-guess"]`).should('exist');
@@ -50,8 +50,8 @@ describe('PlayComponent', () => {
   it('should be able to guess correctly a by clicking mat option', () => {
     cy.mount(PlayComponent, generateConfig('FLAG'));
     cy.get(`[data-test="country-input"]`).click();
-    cy.get(`[data-test="country-input"] input`).type('Dominican Rep');
-    cy.get(`mat-option`).should('contain.text', 'Dominican Republic').click();
+    cy.get(`[data-test="country-input"] input`).type('Domini');
+    cy.get(`mat-option`).should('contain.text', 'Dominica').first().click();
     cy.get(`[data-test="submit-guess"]`).click();
     cy.get(`[data-test="success-guess"]`).should('exist');
   });
@@ -77,7 +77,7 @@ describe('PlayComponent', () => {
   it('should be able to guess correctly a shape', () => {
     cy.mount(PlayComponent, generateConfig('SHAPE'));
     cy.get(`[data-test="country-input"]`).click();
-    cy.get(`[data-test="country-input"] input`).type('Suriname');
+    cy.get(`[data-test="country-input"] input`).type('Sudan');
     cy.get(`[data-test="country-input"] input`).blur();
     cy.get(`[data-test="submit-guess"]`).click();
     cy.get(`[data-test="success-guess"]`).should('exist');
@@ -115,7 +115,7 @@ describe('PlayComponent', () => {
   it('should be able to get a new country after submission and time up', () => {
     cy.mount(PlayComponent, generateConfig('FLAG'));
     cy.get(`[data-test="country-input"]`).click();
-    cy.get(`[data-test="country-input"] input`).type('Dominican Republic');
+    cy.get(`[data-test="country-input"] input`).type('Dominica');
     cy.get(`[data-test="country-input"] input`).blur();
     cy.get(`[data-test="submit-guess"]`).click();
     cy.get(`[data-test="success-guess"]`).should('exist');
@@ -125,7 +125,7 @@ describe('PlayComponent', () => {
     cy.mount(PlayComponent, generateConfig('FLAG'));
 
     cy.get(`[data-test="country-input"]`).click();
-    cy.get(`[data-test="country-input"] input`).type('Dominican Republic');
+    cy.get(`[data-test="country-input"] input`).type('Dominica');
     cy.get(`[data-test="country-input"] input`).blur();
     cy.get(`[data-test="submit-guess"]`).click();
     cy.get(`[data-test="country-input"] input`).should('exist');
