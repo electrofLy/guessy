@@ -26,20 +26,9 @@ export class SettingsService {
   private onThemeChange = effect(() => {
     if (this.theme() === 'light') {
       document.body.classList.remove('dark');
-
-      this.meta.updateTag(
-        {
-          content: '#fafafa'
-        },
-        'name=theme-color'
-      );
+      this.meta.updateTag({ content: '#fafafa' }, 'name=theme-color');
     } else {
-      this.meta.updateTag(
-        {
-          content: '#303030'
-        },
-        'name=theme-color'
-      );
+      this.meta.updateTag({ content: '#303030' }, 'name=theme-color');
       document.body.classList.add('dark');
     }
     localStorage.setItem(THEME_STORAGE_KEY, this.theme());
