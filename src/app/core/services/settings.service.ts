@@ -1,6 +1,7 @@
 import { computed, effect, inject, Injectable, signal } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
 import { Meta } from '@angular/platform-browser';
+import equal from 'fast-deep-equal';
 
 const THEME_STORAGE_KEY = 'THEME::selected';
 const LANGUAGE_STORAGE_KEY = 'LANGUAGE::selected';
@@ -16,8 +17,8 @@ export class SettingsService {
     theme: this.getDefaultTheme(),
     lang: this.getDefaultLang()
   });
-  readonly theme = computed(() => this.state().theme);
-  readonly lang = computed(() => this.state().lang);
+  readonly theme = computed(() => this.state().theme, { equal });
+  readonly lang = computed(() => this.state().lang, { equal });
   private onLangChange = effect(() => {
     this.translocoService.setActiveLang(this.lang());
     localStorage.setItem(LANGUAGE_STORAGE_KEY, this.lang());
