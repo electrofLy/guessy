@@ -195,7 +195,7 @@ export class CountryFormComponent {
     countries: this.filteredCountries$,
     guesses: this.guessesWithDistance$,
     type: this.playService.type$,
-    theme: this.settings.theme$
+    theme: this.settings.theme()
   });
 
   @ViewChild(MatAutocompleteTrigger) autocompleteTrigger!: MatAutocompleteTrigger;

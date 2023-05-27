@@ -50,11 +50,8 @@ const routes: Routes = [
   { path: '**', redirectTo: 'home' }
 ];
 
-export function initializeApp(translocoService: TranslocoService, settingsService: SettingsService) {
-  return () =>
-    combineLatest([...getAllLanguageLoads$(translocoService), settingsService.lang$, settingsService.theme$]).pipe(
-      take(1)
-    );
+export function initializeApp(translocoService: TranslocoService) {
+  return () => combineLatest([...getAllLanguageLoads$(translocoService)]).pipe(take(1));
 }
 
 bootstrapApplication(AppComponent, {

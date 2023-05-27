@@ -96,6 +96,6 @@ export class EndComponent {
     country: this.country$,
     countdown: this.countdown$,
     type: this.playService.type$,
-    theme: this.settingsService.theme$
+    theme: this.settingsService.theme()
   });
 }

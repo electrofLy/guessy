@@ -12,7 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   template: `
     <mat-form-field data-test="language-selection">
       <mat-label>{{ 'language' | transloco }}</mat-label>
-      <mat-select [value]="lang$ | async" (valueChange)="lang$.next($event)">
+      <mat-select [value]="lang" (valueChange)="updateLang($event)">
         <mat-option *ngFor="let lang of langs" [value]="lang.id">{{ lang.label }}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -27,7 +27,11 @@ export class LanguageSelectionComponent {
     id: lang,
     label: lang
   }));
-  lang$ = this.settingsService.lang$;
+  lang = this.settingsService.lang();
 
   constructor(private translocoService: TranslocoService, private settingsService: SettingsService) {}
+
+  updateLang(lang: string) {
+    this.settingsService.updateLang(lang);
+  }
 }
