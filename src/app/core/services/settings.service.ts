@@ -12,17 +12,12 @@ export type Theme = 'dark' | 'light';
 })
 export class SettingsService {
   meta = inject(Meta);
-
   private state = signal({
-    theme:
-      (localStorage.getItem(THEME_STORAGE_KEY) as Theme) ??
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'),
-    lang: localStorage.getItem(LANGUAGE_STORAGE_KEY) ?? this.translocoService.getDefaultLang()
+    theme: this.getDefaultTheme(),
+    lang: this.getDefaultLang()
   });
-
   readonly theme = computed(() => this.state().theme);
   readonly lang = computed(() => this.state().lang);
-
   private onLangChange = effect(() => {
     this.translocoService.setActiveLang(this.lang());
     localStorage.setItem(LANGUAGE_STORAGE_KEY, this.lang());
@@ -63,5 +58,21 @@ export class SettingsService {
       ...state,
       lang
     }));
+  }
+
+  private getDefaultTheme() {
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return (localStorage.getItem(THEME_STORAGE_KEY) as Theme) ?? systemTheme;
+  }
+
+  private getDefaultLang() {
+    let systemLang = this.translocoService.getDefaultLang();
+    if (/^bg\b/.test(navigator.language)) {
+      systemLang = 'bg';
+    }
+    if (/^en\b/.test(navigator.language)) {
+      systemLang = 'en';
+    }
+    return localStorage.getItem(LANGUAGE_STORAGE_KEY) ?? systemLang;
   }
 }
