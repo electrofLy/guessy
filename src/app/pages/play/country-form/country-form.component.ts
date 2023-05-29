@@ -1,7 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { combineLatest, map, startWith, take } from 'rxjs';
 import { TranslocoModule } from '@ngneat/transloco';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,9 +10,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { AsyncPipe, NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { convertDistance, getCompassDirection, getDistance } from 'geolib';
-import { CountriesService, Country } from '../../../core/services/countries.service';
-import { PlayService } from '../play.service';
+import { Country } from '../../../core/services/countries.service';
 import { SettingsService } from '../../../core/services/settings.service';
+import { PlayService } from '../play.service';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 const DIRECTION_MAT_ICONS = {
   S: 'south',
@@ -80,7 +79,6 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
   template: `
     <form
       class="flex flex-col justify-center items-center gap-2"
-      *ngIf="view$ | async as view"
       [formGroup]="form"
       autocomplete="off"
       autocorrect="off"
@@ -88,17 +86,17 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
       spellcheck="false"
     >
       <img
-        *ngFor="let country of [view.country]"
-        [ngClass]="{ invert: view.theme === 'dark' && view.type === 'SHAPE' }"
-        [ngSrc]="view.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
-        [height]="view.type === 'SHAPE' ? 200 : 150"
+        *ngFor="let country of [playService.country()]"
+        [ngClass]="{ invert: settings.theme() === 'dark' && playService.type === 'SHAPE' }"
+        [ngSrc]="playService.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
+        [height]="playService.type === 'SHAPE' ? 200 : 150"
         priority="true"
         width="200"
         alt="country-flag-am"
       />
 
       <mat-list class="w-full">
-        <mat-list-item *ngFor="let guess of view.guesses; let i = index" data-test="guess-list-item">
+        <mat-list-item *ngFor="let guess of guessesWithDistance(); let i = index" data-test="guess-list-item">
           <mat-icon class="!self-center !mt-0" matListItemIcon>{{ guess.icon }}</mat-icon>
           <h3 matListItemTitle>{{ guess.name }}</h3>
           <p matListItemLine>
@@ -124,11 +122,11 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
           formControlName="country"
         />
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-          <mat-option *ngFor="let country of view.countries" [value]="country"> {{ country.name }}</mat-option>
+          <mat-option *ngFor="let country of filteredCountries()" [value]="country"> {{ country.name }}</mat-option>
         </mat-autocomplete>
         <button
           [disabled]="!form.valid"
-          (click)="onSubmit($event, form.value.country!, view.countries)"
+          (click)="onSubmit($event, form.value.country!, filteredCountries())"
           data-test="submit-guess"
           color="primary"
           mat-icon-button
@@ -164,39 +162,23 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
   ]
 })
 export class CountryFormComponent {
-  router = inject(Router);
   playService = inject(PlayService);
-  countriesService = inject(CountriesService);
   settings = inject(SettingsService);
   form = new FormGroup({
     country: new FormControl<Country | string>('', {
       nonNullable: true,
-      validators: [Validators.required],
-      asyncValidators: [
-        (control) =>
-          this.countriesService.countryNames$.pipe(
-            map((val) => countryExists(control.value, val)),
-            take(1)
-          )
+      validators: [
+        Validators.required,
+        (control) => {
+          const countryNames = this.playService.countries().map((country) => country.name);
+          return countryExists(control.value, countryNames);
+        }
       ]
     })
   });
-  filteredCountries$ = combineLatest([
-    this.countriesService.countries$,
-    this.form.controls.country.valueChanges.pipe(startWith(''))
-  ]).pipe(map((val) => filterCountries(val[0], val[1])));
-  guessesWithDistance$ = combineLatest([this.playService.guesses$, this.playService.country$]).pipe(
-    map(([guesses, country]) => {
-      return createGuesses(guesses, country);
-    })
-  );
-  view$ = combineLatest({
-    country: this.playService.country$,
-    countries: this.filteredCountries$,
-    guesses: this.guessesWithDistance$,
-    type: this.playService.type$,
-    theme: this.settings.theme()
-  });
+  guessesWithDistance = computed(() => createGuesses(this.playService.guesses(), this.playService.country()));
+  countryValueChanges = toSignal(this.form.controls.country.valueChanges, { initialValue: '' });
+  filteredCountries = computed(() => filterCountries(this.playService.countries(), this.countryValueChanges()));
 
   @ViewChild(MatAutocompleteTrigger) autocompleteTrigger!: MatAutocompleteTrigger;
 
@@ -206,10 +188,10 @@ export class CountryFormComponent {
 
   onSubmit(event: Event, country: Country | string, countries: Country[]) {
     if (typeof country !== 'string') {
-      this.playService.guess$.next(country);
+      this.playService.guess(country);
     } else {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      this.playService.guess$.next(countries.find((val) => val.name.toLowerCase() === country.toLowerCase())!);
+      this.playService.guess(countries.find((val) => val.name.toLowerCase() === country.toLowerCase())!);
     }
     this.form.controls.country.setValue('');
     setTimeout(() => {

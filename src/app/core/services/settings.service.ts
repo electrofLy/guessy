@@ -17,8 +17,8 @@ export class SettingsService {
     theme: this.getDefaultTheme(),
     lang: this.getDefaultLang()
   });
-  readonly theme = computed(() => this.state().theme, { equal });
-  readonly lang = computed(() => this.state().lang, { equal });
+  theme = computed(() => this.state().theme, { equal });
+  lang = computed(() => this.state().lang, { equal });
   private onLangChange = effect(() => {
     this.translocoService.setActiveLang(this.lang());
     localStorage.setItem(LANGUAGE_STORAGE_KEY, this.lang());

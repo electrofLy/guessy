@@ -1,98 +1,53 @@
-import { DestroyRef, inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import seedrandom from 'seedrandom';
+import { computed, effect, inject, Injectable, InjectionToken, signal } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { combineLatest, map, ReplaySubject, scan, shareReplay, startWith, Subject, switchMap } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Router } from '@angular/router';
-import { CountriesService, Country } from '../../core/services/countries.service';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { Country } from '../../core/services/countries.service';
+import seedrandom from 'seedrandom';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs';
 
 export const KEY_INTERPOLATION = '{{0}}';
 export const GAME_GUESSES_START_STORAGE_KEY = 'GAME::';
 export const GAME_GUESSES_STORAGE_KEY = GAME_GUESSES_START_STORAGE_KEY + KEY_INTERPOLATION + '::guesses';
 
 export type PlayType = 'FLAG' | 'SHAPE';
+export const PLAY_TYPE = new InjectionToken<PlayType>('The play type');
 
-@Injectable({
-  providedIn: 'any'
-})
+@Injectable()
 export class PlayService {
+  activatedRoute = inject(ActivatedRoute);
+  type = inject(PLAY_TYPE);
   datePipe = inject(DatePipe);
-  http = inject(HttpClient);
-  router = inject(Router);
-  countriesService = inject(CountriesService);
-
-  type$ = new ReplaySubject<PlayType>(1);
-  guess$ = new Subject<Country>();
-
-  seed$ = this.type$.pipe(
-    map((type) => this.generateSeed(new Date(), type)),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
-  guesses$ = combineLatest([this.countriesService.countries$, this.seed$]).pipe(
-    switchMap(([countries, seed]) => {
-      return this.guess$.pipe(
-        scan<Country, Country[]>(
-          (acc, value) => {
-            return [...acc, value];
-          },
-          [...getSavedGuesses(this.getKey(seed), countries)]
-        ),
-        startWith([...getSavedGuesses(this.getKey(seed), countries)]),
-        shareReplay({ refCount: false, bufferSize: 1 })
-      );
-    })
-  );
-  randomSeedNumber$ = this.seed$.pipe(
-    map((seed) => seedrandom(seed)),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
-  randomNumber$ = combineLatest([this.countriesService.countries$, this.randomSeedNumber$]).pipe(
-    map(([country, randomSeedNumber]) => {
-      return Math.floor(randomSeedNumber() * country.length);
-    }),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
-  country$ = combineLatest([this.countriesService.countries$, this.randomNumber$]).pipe(
-    map((val) => val[0][val[1]]),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
-  isGuessed$ = combineLatest([
-    this.guesses$.pipe(map((guesses) => guesses.map((guess) => guess.name))),
-    this.country$
-  ]).pipe(
-    map(([guesses, country]) => guesses.includes(country.name)),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
-  isEnded$ = combineLatest([this.isGuessed$, this.guesses$.pipe(map((guesses) => guesses.length >= 5))]).pipe(
-    map(([isGuessed, guesses]) => isGuessed || guesses),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
+  todayTransformed = this.transformDate(new Date());
+  seed = this.todayTransformed + this.type;
+  key = GAME_GUESSES_STORAGE_KEY.toString().replaceAll(KEY_INTERPOLATION, this.seed);
+  countries = toSignal(this.activatedRoute.data.pipe(map((data) => data['countries'] as Country[])), {
+    requireSync: true
+  });
+  guesses = signal(getSavedGuesses(this.key, this.countries()));
+  randomNumberInRange = computed(() => Math.floor(seedrandom(this.seed)() * this.countries().length));
+  country = computed(() => this.countries()[this.randomNumberInRange()]);
+  isGuessed = computed(() => {
+    return this.guesses()
+      .map((guess) => guess.name)
+      .includes(this.country().name);
+  });
+  isEnded = computed(() => this.isGuessed() || this.guesses().length >= 5);
+  onGuesses = effect(() => {
+    localStorage.setItem(this.key, JSON.stringify(this.guesses().map((guess) => guess.isoCode)));
+  });
 
   constructor() {
-    this.onGuessChange();
-    deletePreviousSavedGuesses(this.transformDate(new Date()));
+    deletePreviousSavedGuesses(this.todayTransformed);
   }
 
-  private generateSeed(date: Date, type: PlayType) {
-    return this.transformDate(date) + type;
+  guess(guess: Country) {
+    this.guesses.update((countries) => [...countries, guess]);
   }
 
   private transformDate(date: Date) {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     return this.datePipe.transform(date, 'shortDate')!;
-  }
-
-  private getKey(seed: string) {
-    return GAME_GUESSES_STORAGE_KEY.toString().replaceAll(KEY_INTERPOLATION, seed);
-  }
-
-  private onGuessChange() {
-    combineLatest([this.guesses$, this.seed$])
-      .pipe(takeUntilDestroyed(inject(DestroyRef)))
-      .subscribe(([guesses, seed]) => {
-        localStorage.setItem(this.getKey(seed), JSON.stringify(guesses.map((guess) => guess.isoCode)));
-      });
   }
 }
 

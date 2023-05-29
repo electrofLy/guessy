@@ -4,35 +4,34 @@ import { TranslocoModule } from '@ngneat/transloco';
 import { MatCardModule } from '@angular/material/card';
 import { AsyncPipe, CommonModule, NgIf, NgOptimizedImage } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { PlayService } from '../play.service';
 import { SettingsService } from '../../../core/services/settings.service';
+import { PlayService } from '../play.service';
 
 @Component({
   selector: 'app-end',
   template: ` <ng-container *ngIf="view$ | async as view">
     <img
       class="self-center mb-4"
-      *ngFor="let country of [view.country]"
-      [ngClass]="{ invert: view.theme === 'dark' && view.type === 'SHAPE' }"
-      [ngSrc]="view.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
-      [height]="view.type === 'SHAPE' ? 200 : 150"
+      *ngFor="let country of [playService.country()]"
+      [ngClass]="{ invert: settingsService.theme() === 'dark' && playService.type === 'SHAPE' }"
+      [ngSrc]="playService.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
+      [height]="playService.type === 'SHAPE' ? 200 : 150"
       priority="true"
       width="200"
       alt="country-flag-am"
     />
     <p class="text-justify">
-      <ng-container *ngIf="view.isGuessed === true; else failed">
-        <span data-test="success-guess">{{ 'endSuccess' | transloco : [view.country.name] }}</span>
+      <ng-container *ngIf="playService.isGuessed(); else failed">
+        <span data-test="success-guess">{{ 'endSuccess' | transloco : [playService.country().name] }}</span>
       </ng-container>
       <ng-template #failed>
-        <span data-test="fail-guess">{{ 'endFailed' | transloco : [view.country.name] }}</span>
+        <span data-test="fail-guess">{{ 'endFailed' | transloco : [playService.country().name] }}</span>
       </ng-template>
     </p>
     <p class="text-justify">
       {{ 'endDetails' | transloco : [view.countdown] }}
     </p>
   </ng-container>`,
-  styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
@@ -51,8 +50,6 @@ import { SettingsService } from '../../../core/services/settings.service';
 export class EndComponent {
   playService = inject(PlayService);
   settingsService = inject(SettingsService);
-  isGuessed$ = this.playService.isGuessed$;
-  country$ = this.playService.country$;
   today = new Date();
   countdown$ = interval(1000).pipe(
     startWith(0),
@@ -92,10 +89,6 @@ export class EndComponent {
   );
 
   view$ = combineLatest({
-    isGuessed: this.isGuessed$,
-    country: this.country$,
-    countdown: this.countdown$,
-    type: this.playService.type$,
-    theme: this.settingsService.theme()
+    countdown: this.countdown$
   });
 }

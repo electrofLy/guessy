@@ -2,15 +2,9 @@ import {
   deletePreviousSavedGuesses,
   GAME_GUESSES_STORAGE_KEY,
   getSavedGuesses,
-  KEY_INTERPOLATION,
-  PlayService
+  KEY_INTERPOLATION
 } from './play.service';
-import { CountriesService, Country } from '../../core/services/countries.service';
-import { TestBed } from '@angular/core/testing';
-import { DatePipe } from '@angular/common';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { combineLatest, of } from 'rxjs';
-import { createTranslocoTestingModule } from '../../transloco-testing.module';
+import { Country } from '../../core/services/countries.service';
 
 describe('PlayService', () => {
   describe('utils', () => {
@@ -53,67 +47,6 @@ describe('PlayService', () => {
     it('should be able to get zero saved guesses', () => {
       const savedGuesses = getSavedGuesses('someKey', [{ isoCode: 'boo', name: 'bobo' } as Country]);
       expect(savedGuesses.length).toEqual(0);
-    });
-  });
-
-  describe('service ', () => {
-    let playService: PlayService;
-
-    beforeEach(() => {
-      TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule, createTranslocoTestingModule()],
-        providers: [
-          PlayService,
-          DatePipe,
-          {
-            provide: CountriesService,
-            useValue: {
-              countryNames$: of(['Afghanistan', 'Albania']),
-              countries$: of([
-                {
-                  name: 'Afghanistan',
-                  isoCode: 'af',
-                  flagUrl: 'assets/flags/af.svg',
-                  shapeUrl: 'assets/shapes/af.svg',
-                  coordinates: {
-                    lat: 33.9391,
-                    lng: 67.71
-                  }
-                },
-                {
-                  name: 'Albania',
-                  isoCode: 'al',
-                  flagUrl: 'assets/flags/al.svg',
-                  shapeUrl: 'assets/shapes/al.svg',
-                  coordinates: {
-                    lat: 41.1533,
-                    lng: 20.1683
-                  }
-                }
-              ]),
-              activeLang$: of('en')
-            } as Pick<CountriesService, 'countries$' | 'activeLang$' | 'countryNames$'>
-          }
-        ]
-      });
-
-      playService = TestBed.inject(PlayService);
-      playService.type$.next('FLAG');
-    });
-
-    it('should be able to create an initial state', (done) => {
-      combineLatest([
-        playService.country$,
-        playService.guesses$,
-        playService.isGuessed$,
-        playService.isEnded$
-      ]).subscribe(([country, guesses, isGuessed, isEnded]) => {
-        expect(country).toBeDefined();
-        expect(guesses.length).toEqual(0);
-        expect(isGuessed).toEqual(false);
-        expect(isEnded).toEqual(false);
-        done();
-      });
     });
   });
 });

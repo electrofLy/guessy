@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +16,11 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet]
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor() {
+    if (!environment.production) {
+      console.warn('Local storage cleared on reset. Disable to test local storage.');
+      localStorage.clear();
+    }
+  }
+}

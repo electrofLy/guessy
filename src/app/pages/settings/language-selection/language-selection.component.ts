@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LangDefinition, TranslocoModule, TranslocoService } from '@ngneat/transloco';
 import { getAllLangs } from '../../../transloco-root.module';
 import { SettingsService } from '../../../core/services/settings.service';
@@ -12,7 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   template: `
     <mat-form-field data-test="language-selection">
       <mat-label>{{ 'language' | transloco }}</mat-label>
-      <mat-select [value]="lang" (valueChange)="updateLang($event)">
+      <mat-select [value]="settingsService.lang()" (valueChange)="updateLang($event)">
         <mat-option *ngFor="let lang of langs" [value]="lang.id">{{ lang.label }}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -23,13 +23,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   imports: [MatFormFieldModule, MatSelectModule, NgFor, MatOptionModule, AsyncPipe, TranslocoModule]
 })
 export class LanguageSelectionComponent {
+  settingsService = inject(SettingsService);
+  translocoService = inject(TranslocoService);
   langs: LangDefinition[] = getAllLangs(this.translocoService).map((lang) => ({
     id: lang,
     label: lang
   }));
-  lang = this.settingsService.lang();
-
-  constructor(private translocoService: TranslocoService, private settingsService: SettingsService) {}
 
   updateLang(lang: string) {
     this.settingsService.updateLang(lang);

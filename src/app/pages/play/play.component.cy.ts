@@ -5,9 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import countries from '../../../assets/countries.json';
 import { createTranslocoTestingModule } from '../../transloco-testing.module';
 import { MountConfig } from 'cypress/angular';
-import { PlayType } from './play.service';
+import { PLAY_TYPE, PlayType } from './play.service';
+import { CountriesService, extractCountryName } from '../../core/services/countries.service';
+import { of } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 function generateConfig(type: PlayType): MountConfig<PlayComponent> {
+  const translatedCountries = extractCountryName(countries, 'en');
   return {
     imports: [
       PlayComponent,
@@ -16,9 +20,23 @@ function generateConfig(type: PlayType): MountConfig<PlayComponent> {
       createTranslocoTestingModule(),
       NoopAnimationsModule
     ],
-    componentProperties: {
-      type
-    }
+    providers: [
+      { provide: PLAY_TYPE, useValue: type },
+      {
+        provide: CountriesService,
+        useValue: {
+          countryNames$: of([...translatedCountries.map((country) => country.name)])
+        } as Partial<CountriesService>
+      },
+      {
+        provide: ActivatedRoute,
+        useValue: {
+          data: of({
+            countries: [...translatedCountries]
+          })
+        }
+      }
+    ]
   };
 }
 

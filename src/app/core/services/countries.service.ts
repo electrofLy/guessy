@@ -32,20 +32,14 @@ export class CountriesService {
   activeLang$ = inject(TranslocoService).langChanges$.pipe(distinctUntilChanged());
 
   countries$ = this.activeLang$.pipe(
-    switchMap((lang) => {
-      return this.http.get<CountryJson[]>('/assets/countries.json').pipe(
-        map((countries) => {
-          return extractCountryName(countries, lang);
-        })
-      );
-    }),
+    switchMap((lang) =>
+      this.http
+        .get<CountryJson[]>('/assets/countries.json')
+        .pipe(map((countries) => extractCountryName(countries, lang)))
+    ),
     shareReplay({
       refCount: false,
       bufferSize: 1
     })
-  );
-  countryNames$ = this.countries$.pipe(
-    map((val) => val.map((country) => country.name)),
-    shareReplay({ refCount: false, bufferSize: 1 })
   );
 }
