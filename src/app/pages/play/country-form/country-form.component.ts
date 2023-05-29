@@ -188,10 +188,10 @@ export class CountryFormComponent {
 
   onSubmit(event: Event, country: Country | string, countries: Country[]) {
     if (typeof country !== 'string') {
-      this.playService.guess(country);
+      this.playService.updateGuesses(country);
     } else {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      this.playService.guess(countries.find((val) => val.name.toLowerCase() === country.toLowerCase())!);
+      this.playService.updateGuesses(countries.find((val) => val.name.toLowerCase() === country.toLowerCase())!);
     }
     this.form.controls.country.setValue('');
     setTimeout(() => {

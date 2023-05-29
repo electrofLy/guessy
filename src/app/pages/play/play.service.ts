@@ -18,7 +18,8 @@ export class PlayService {
   activatedRoute = inject(ActivatedRoute);
   type = inject(PLAY_TYPE);
   datePipe = inject(DatePipe);
-  todayTransformed = this.transformDate(new Date());
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  todayTransformed = this.datePipe.transform(new Date(), 'shortDate')!;
   seed = this.todayTransformed + this.type;
   key = GAME_GUESSES_STORAGE_KEY.toString().replaceAll(KEY_INTERPOLATION, this.seed);
   countries = toSignal(this.activatedRoute.data.pipe(map((data) => data['countries'] as Country[])), {
@@ -41,13 +42,8 @@ export class PlayService {
     deletePreviousSavedGuesses(this.todayTransformed);
   }
 
-  guess(guess: Country) {
+  updateGuesses(guess: Country) {
     this.guesses.update((countries) => [...countries, guess]);
-  }
-
-  private transformDate(date: Date) {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    return this.datePipe.transform(date, 'shortDate')!;
   }
 }
 
