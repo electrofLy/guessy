@@ -11,7 +11,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-home',
   template: ` <mat-card>
-      <mat-card-title class="text-center p-2">{{ 'guessy' | transloco }}</mat-card-title>
+      <mat-card-header class="justify-center">
+        <mat-card-title class="text-center p-2">{{ 'guessy' | transloco }}</mat-card-title>
+      </mat-card-header>
       <mat-card-content class="!flex flex-col justify-center">
         <div class="flex flex-col gap-2">
           <button [routerLink]="['/flag']" data-test="go-to-flag" mat-button mat-raised-button color="primary">
