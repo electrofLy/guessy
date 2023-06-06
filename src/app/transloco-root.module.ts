@@ -45,7 +45,8 @@ export class TranslocoHttpLoader implements TranslocoLoader {
       useValue: translocoConfig({
         availableLangs: [
           { id: 'en', label: 'english' },
-          { id: 'bg', label: 'български' }
+          { id: 'bg', label: 'български' },
+          { id: 'nl', label: 'nederlands' }
         ],
         defaultLang: 'en',
         // Remove this option if your application doesn't support changing language in runtime.

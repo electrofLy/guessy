@@ -31,6 +31,9 @@ export class SettingsService {
     if (/^en\b/.test(navigator.language)) {
       systemLang = 'en';
     }
+    if (/^en\b/.test(navigator.language)) {
+      systemLang = 'nl';
+    }
 
     this.lang$.next(localStorage.getItem(LANGUAGE_STORAGE_KEY) ?? systemLang);
     this.lang$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((lang) => {

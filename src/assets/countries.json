@@ -2,7 +2,8 @@
   {
     "names": {
       "bg": "Афганистан",
-      "en": "Afghanistan"
+      "en": "Afghanistan",
+      "nl": "Afghanistan"
     },
     "isoCode": "af",
     "flagUrl": "assets/flags/af.svg",
@@ -15,7 +16,8 @@
   {
     "names": {
       "bg": "Албания",
-      "en": "Albania"
+      "en": "Albania",
+      "nl": "Albanië"
     },
     "isoCode": "al",
     "flagUrl": "assets/flags/al.svg",
@@ -28,7 +30,8 @@
   {
     "names": {
       "bg": "Алжир",
-      "en": "Algeria"
+      "en": "Algeria",
+      "nl": "Algerije"
     },
     "isoCode": "dz",
     "flagUrl": "assets/flags/dz.svg",
@@ -41,7 +44,8 @@
   {
     "names": {
       "bg": "Андора",
-      "en": "Andorra"
+      "en": "Andorra",
+      "nl": "Andorra"
     },
     "isoCode": "ad",
     "flagUrl": "assets/flags/ad.svg",
@@ -54,7 +58,8 @@
   {
     "names": {
       "bg": "Ангола",
-      "en": "Angola"
+      "en": "Angola",
+      "nl": "Angola"
     },
     "isoCode": "ao",
     "flagUrl": "assets/flags/ao.svg",
@@ -67,7 +72,8 @@
   {
     "names": {
       "bg": "Антигуа и Барбуда",
-      "en": "Antigua and Barbuda"
+      "en": "Antigua and Barbuda",
+      "nl": "Antigua en Barbuda"
     },
     "isoCode": "ag",
     "flagUrl": "assets/flags/ag.svg",
@@ -80,7 +86,8 @@
   {
     "names": {
       "bg": "Аржентина",
-      "en": "Argentina"
+      "en": "Argentina",
+      "nl": "Argentinië"
     },
     "isoCode": "ar",
     "flagUrl": "assets/flags/ar.svg",
@@ -93,7 +100,8 @@
   {
     "names": {
       "bg": "Армения",
-      "en": "Armenia"
+      "en": "Armenia",
+      "nl": "Armenië"
     },
     "isoCode": "am",
     "flagUrl": "assets/flags/am.svg",
@@ -106,7 +114,8 @@
   {
     "names": {
       "bg": "Австралия",
-      "en": "Australia"
+      "en": "Australia",
+      "nl": "Australië"
     },
     "isoCode": "au",
     "flagUrl": "assets/flags/au.svg",
@@ -119,7 +128,8 @@
   {
     "names": {
       "bg": "Австрия",
-      "en": "Austria"
+      "en": "Austria",
+      "nl": "Oostenrijk"
     },
     "isoCode": "at",
     "flagUrl": "assets/flags/at.svg",
@@ -132,7 +142,8 @@
   {
     "names": {
       "bg": "Азербайджан",
-      "en": "Azerbaijan"
+      "en": "Azerbaijan",
+      "nl": "Azerbeidzjan"
     },
     "isoCode": "az",
     "flagUrl": "assets/flags/az.svg",
@@ -145,7 +156,8 @@
   {
     "names": {
       "bg": "Бахамски острови",
-      "en": "Bahamas"
+      "en": "Bahamas",
+      "nl": "Bahamas"
     },
     "isoCode": "bs",
     "flagUrl": "assets/flags/bs.svg",
@@ -158,7 +170,8 @@
   {
     "names": {
       "bg": "Бахрейн",
-      "en": "Bahrain"
+      "en": "Bahrain",
+      "nl": "Bahrein"
     },
     "isoCode": "bh",
     "flagUrl": "assets/flags/bh.svg",
@@ -171,7 +184,8 @@
   {
     "names": {
       "bg": "Бангладеш",
-      "en": "Bangladesh"
+      "en": "Bangladesh",
+      "nl": "Bangladesh"
     },
     "isoCode": "bd",
     "flagUrl": "assets/flags/bd.svg",
@@ -184,7 +198,8 @@
   {
     "names": {
       "bg": "Барбадос",
-      "en": "Barbados"
+      "en": "Barbados",
+      "nl": "Barbados"
     },
     "isoCode": "bb",
     "flagUrl": "assets/flags/bb.svg",
@@ -197,7 +212,8 @@
   {
     "names": {
       "bg": "Беларус",
-      "en": "Belarus"
+      "en": "Belarus",
+      "nl": "Wit-Rusland"
     },
     "isoCode": "by",
     "flagUrl": "assets/flags/by.svg",
@@ -210,7 +226,8 @@
   {
     "names": {
       "bg": "Белгия",
-      "en": "Belgium"
+      "en": "Belgium",
+      "nl": "België"
     },
     "isoCode": "be",
     "flagUrl": "assets/flags/be.svg",
@@ -223,7 +240,8 @@
   {
     "names": {
       "bg": "Белиз",
-      "en": "Belize"
+      "en": "Belize",
+      "nl": "Belize"
     },
     "isoCode": "bz",
     "flagUrl": "assets/flags/bz.svg",
@@ -236,7 +254,8 @@
   {
     "names": {
       "bg": "Бенин",
-      "en": "Benin"
+      "en": "Benin",
+      "nl": "Benin"
     },
     "isoCode": "bj",
     "flagUrl": "assets/flags/bj.svg",
@@ -249,7 +268,8 @@
   {
     "names": {
       "bg": "Бутан",
-      "en": "Bhutan"
+      "en": "Bhutan",
+      "nl": "Bhutan"
     },
     "isoCode": "bt",
     "flagUrl": "assets/flags/bt.svg",
@@ -262,7 +282,8 @@
   {
     "names": {
       "bg": "Боливия",
-      "en": "Bolivia"
+      "en": "Bolivia",
+      "nl": "Bolivia"
     },
     "isoCode": "bo",
     "flagUrl": "assets/flags/bo.svg",
@@ -275,7 +296,8 @@
   {
     "names": {
       "bg": "Босна и Херцеговина",
-      "en": "Bosnia and Herzegovina"
+      "en": "Bosnia and Herzegovina",
+      "nl": "Bosnië-Herzegovina"
     },
     "isoCode": "ba",
     "flagUrl": "assets/flags/ba.svg",
@@ -288,7 +310,8 @@
   {
     "names": {
       "bg": "Ботсвана",
-      "en": "Botswana"
+      "en": "Botswana",
+      "nl": "Botswana"
     },
     "isoCode": "bw",
     "flagUrl": "assets/flags/bw.svg",
@@ -301,7 +324,8 @@
   {
     "names": {
       "bg": "Бразилия",
-      "en": "Brazil"
+      "en": "Brazil",
+      "nl": "Brazilië"
     },
     "isoCode": "br",
     "flagUrl": "assets/flags/br.svg",
@@ -314,7 +338,8 @@
   {
     "names": {
       "bg": "Бруней",
-      "en": "Brunei"
+      "en": "Brunei",
+      "nl": "Brunei"
     },
     "isoCode": "bn",
     "flagUrl": "assets/flags/bn.svg",
@@ -327,7 +352,8 @@
   {
     "names": {
       "bg": "Буркина Фасо",
-      "en": "Burkina Faso"
+      "en": "Burkina Faso",
+      "nl": "Burkina Faso"
     },
     "isoCode": "bf",
     "flagUrl": "assets/flags/bf.svg",
@@ -340,7 +366,8 @@
   {
     "names": {
       "bg": "Бурунди",
-      "en": "Burundi"
+      "en": "Burundi",
+      "nl": "Burundi"
     },
     "isoCode": "bi",
     "flagUrl": "assets/flags/bi.svg",
@@ -356,7 +383,8 @@
     "isoCode": "bg",
     "names": {
       "bg": "България",
-      "en": "Bulgaria"
+      "en": "Bulgaria",
+      "nl": "Bulgarije"
     },
     "coordinates": {
       "lat": 42.7339,
@@ -366,7 +394,8 @@
   {
     "names": {
       "bg": "Кабо Верде",
-      "en": "Cabo Verde"
+      "en": "Cabo Verde",
+      "nl": "Cabo Verde"
     },
     "isoCode": "cv",
     "flagUrl": "assets/flags/cv.svg",
@@ -379,7 +408,8 @@
   {
     "names": {
       "bg": "Камбоджа",
-      "en": "Cambodia"
+      "en": "Cambodia",
+      "nl": "Cambodja"
     },
     "isoCode": "kh",
     "flagUrl": "assets/flags/kh.svg",
@@ -392,7 +422,8 @@
   {
     "names": {
       "bg": "Камерун",
-      "en": "Cameroon"
+      "en": "Cameroon",
+      "nl": "Kameroen"
     },
     "isoCode": "cm",
     "flagUrl": "assets/flags/cm.svg",
@@ -405,7 +436,8 @@
   {
     "names": {
       "bg": "Канада",
-      "en": "Canada"
+      "en": "Canada",
+      "nl": "Canada"
     },
     "isoCode": "ca",
     "flagUrl": "assets/flags/ca.svg",
@@ -418,7 +450,8 @@
   {
     "names": {
       "bg": "Централноафриканска Република",
-      "en": "Central African Republic"
+      "en": "Central African Republic",
+      "nl": "Centraal Afrikaanse Republiek"
     },
     "isoCode": "cf",
     "flagUrl": "assets/flags/cf.svg",
@@ -431,7 +464,8 @@
   {
     "names": {
       "bg": "Чад",
-      "en": "Chad"
+      "en": "Chad",
+      "nl": "Tsjaad"
     },
     "isoCode": "td",
     "flagUrl": "assets/flags/td.svg",
@@ -444,7 +478,8 @@
   {
     "names": {
       "bg": "Чили",
-      "en": "Chile"
+      "en": "Chile",
+      "nl": "Chili"
     },
     "isoCode": "cl",
     "flagUrl": "assets/flags/cl.svg",
@@ -457,7 +492,8 @@
   {
     "names": {
       "bg": "Китай",
-      "en": "China"
+      "en": "China",
+      "nl": "China"
     },
     "isoCode": "cn",
     "flagUrl": "assets/flags/cn.svg",
@@ -470,7 +506,8 @@
   {
     "names": {
       "bg": "Колумбия",
-      "en": "Colombia"
+      "en": "Colombia",
+      "nl": "Colombia"
     },
     "isoCode": "co",
     "flagUrl": "assets/flags/co.svg",
@@ -483,7 +520,8 @@
   {
     "names": {
       "bg": "Коморски острови",
-      "en": "Comoros"
+      "en": "Comoros",
+      "nl": "Comoren"
     },
     "isoCode": "km",
     "flagUrl": "assets/flags/km.svg",
@@ -496,7 +534,8 @@
   {
     "names": {
       "bg": "Конго",
-      "en": "Congo"
+      "en": "Congo",
+      "nl": "Congo"
     },
     "isoCode": "cg",
     "flagUrl": "assets/flags/cg.svg",
@@ -509,7 +548,8 @@
   {
     "names": {
       "bg": "Коста Рика",
-      "en": "Costa Rica"
+      "en": "Costa Rica",
+      "nl": "Costa Rica"
     },
     "isoCode": "cr",
     "flagUrl": "assets/flags/cr.svg",
@@ -522,7 +562,8 @@
   {
     "names": {
       "bg": "Хърватия",
-      "en": "Croatia"
+      "en": "Croatia",
+      "nl": "Kroatië"
     },
     "isoCode": "hr",
     "flagUrl": "assets/flags/hr.svg",
@@ -535,7 +576,8 @@
   {
     "names": {
       "bg": "Куба",
-      "en": "Cuba"
+      "en": "Cuba",
+      "nl": "Cuba"
     },
     "isoCode": "cu",
     "flagUrl": "assets/flags/cu.svg",
@@ -548,7 +590,8 @@
   {
     "names": {
       "bg": "Кипър",
-      "en": "Cyprus"
+      "en": "Cyprus",
+      "nl": "Cyprus"
     },
     "isoCode": "cy",
     "flagUrl": "assets/flags/cy.svg",
@@ -561,7 +604,8 @@
   {
     "names": {
       "bg": "Чехия",
-      "en": "Czech Republic"
+      "en": "Czech Republic",
+      "nl": "Tsjechische Republiek"
     },
     "isoCode": "cz",
     "flagUrl": "assets/flags/cz.svg",
@@ -574,7 +618,8 @@
   {
     "names": {
       "bg": "Дания",
-      "en": "Denmark"
+      "en": "Denmark",
+      "nl": "Denemarken"
     },
     "isoCode": "dk",
     "flagUrl": "assets/flags/dk.svg",
@@ -587,7 +632,8 @@
   {
     "names": {
       "bg": "Джибути",
-      "en": "Djibouti"
+      "en": "Djibouti",
+      "nl": "Djibouti"
     },
     "isoCode": "dj",
     "flagUrl": "assets/flags/dj.svg",
@@ -600,7 +646,8 @@
   {
     "names": {
       "bg": "Доминика",
-      "en": "Dominica"
+      "en": "Dominica",
+      "nl": "Dominica"
     },
     "isoCode": "dm",
     "flagUrl": "assets/flags/dm.svg",
@@ -613,7 +660,8 @@
   {
     "names": {
       "bg": "Доминиканска република",
-      "en": "Dominican Republic"
+      "en": "Dominican Republic",
+      "nl": "Dominicaanse Republiek"
     },
     "isoCode": "do",
     "flagUrl": "assets/flags/do.svg",
@@ -626,7 +674,8 @@
   {
     "names": {
       "bg": "Еквадор",
-      "en": "Ecuador"
+      "en": "Ecuador",
+      "nl": "Ecuador"
     },
     "isoCode": "ec",
     "flagUrl": "assets/flags/ec.svg",
@@ -639,7 +688,8 @@
   {
     "names": {
       "bg": "Египет",
-      "en": "Egypt"
+      "en": "Egypt",
+      "nl": "Egypte"
     },
     "isoCode": "eg",
     "flagUrl": "assets/flags/eg.svg",
@@ -652,7 +702,8 @@
   {
     "names": {
       "bg": "Салвадор",
-      "en": "El Salvador"
+      "en": "El Salvador",
+      "nl": "El Salvador"
     },
     "isoCode": "sv",
     "flagUrl": "assets/flags/sv.svg",
@@ -665,7 +716,8 @@
   {
     "names": {
       "bg": "Екваториална Гвинея",
-      "en": "Equatorial Guinea"
+      "en": "Equatorial Guinea",
+      "nl": "Equatoriaal-Guinea"
     },
     "isoCode": "gq",
     "flagUrl": "assets/flags/gq.svg",
@@ -678,7 +730,8 @@
   {
     "names": {
       "bg": "Еритрея",
-      "en": "Eritrea"
+      "en": "Eritrea",
+      "nl": "Eritrea"
     },
     "isoCode": "er",
     "flagUrl": "assets/flags/er.svg",
@@ -691,7 +744,8 @@
   {
     "names": {
       "bg": "Естония",
-      "en": "Estonia"
+      "en": "Estonia",
+      "nl": "Estland"
     },
     "isoCode": "ee",
     "flagUrl": "assets/flags/ee.svg",
@@ -704,7 +758,8 @@
   {
     "names": {
       "bg": "Есватини",
-      "en": "Eswatini"
+      "en": "Eswatini",
+      "nl": "Eswatini"
     },
     "isoCode": "sz",
     "flagUrl": "assets/flags/sz.svg",
@@ -717,7 +772,8 @@
   {
     "names": {
       "bg": "Етиопия",
-      "en": "Ethiopia"
+      "en": "Ethiopia",
+      "nl": "Ethiopië"
     },
     "isoCode": "et",
     "flagUrl": "assets/flags/et.svg",
@@ -730,7 +786,8 @@
   {
     "names": {
       "bg": "Фиджи",
-      "en": "Fiji"
+      "en": "Fiji",
+      "nl": "Fiji"
     },
     "isoCode": "fj",
     "flagUrl": "assets/flags/fj.svg",
@@ -743,7 +800,8 @@
   {
     "names": {
       "bg": "Финландия",
-      "en": "Finland"
+      "en": "Finland",
+      "nl": "Finland"
     },
     "isoCode": "fi",
     "flagUrl": "assets/flags/fi.svg",
@@ -756,7 +814,8 @@
   {
     "names": {
       "bg": "Франция",
-      "en": "France"
+      "en": "France",
+      "nl": "Frankrijk"
     },
     "isoCode": "fr",
     "flagUrl": "assets/flags/fr.svg",
@@ -769,7 +828,8 @@
   {
     "names": {
       "bg": "Габон",
-      "en": "Gabon"
+      "en": "Gabon",
+      "nl": "Gabon"
     },
     "isoCode": "ga",
     "flagUrl": "assets/flags/ga.svg",
@@ -782,7 +842,8 @@
   {
     "names": {
       "bg": "Гамбия",
-      "en": "Gambia"
+      "en": "Gambia",
+      "nl": "Gambia"
     },
     "isoCode": "gm",
     "flagUrl": "assets/flags/gm.svg",
@@ -795,7 +856,8 @@
   {
     "names": {
       "bg": "Грузия",
-      "en": "Georgia"
+      "en": "Georgia",
+      "nl": "Georgië"
     },
     "isoCode": "ge",
     "flagUrl": "assets/flags/ge.svg",
@@ -808,7 +870,8 @@
   {
     "names": {
       "bg": "Германия",
-      "en": "Germany"
+      "en": "Germany",
+      "nl": "Duitsland"
     },
     "isoCode": "de",
     "flagUrl": "assets/flags/de.svg",
@@ -821,7 +884,8 @@
   {
     "names": {
       "bg": "Гана",
-      "en": "Ghana"
+      "en": "Ghana",
+      "nl": "Ghana"
     },
     "isoCode": "gh",
     "flagUrl": "assets/flags/gh.svg",
@@ -834,7 +898,8 @@
   {
     "names": {
       "bg": "Гърция",
-      "en": "Greece"
+      "en": "Greece",
+      "nl": "Griekenland"
     },
     "isoCode": "gr",
     "flagUrl": "assets/flags/gr.svg",
@@ -847,7 +912,8 @@
   {
     "names": {
       "bg": "Гренада",
-      "en": "Grenada"
+      "en": "Grenada",
+      "nl": "Grenada"
     },
     "isoCode": "gd",
     "flagUrl": "assets/flags/gd.svg",
@@ -860,7 +926,8 @@
   {
     "names": {
       "bg": "Гватемала",
-      "en": "Guatemala"
+      "en": "Guatemala",
+      "nl": "Guatemala"
     },
     "isoCode": "gt",
     "flagUrl": "assets/flags/gt.svg",
@@ -873,7 +940,8 @@
   {
     "names": {
       "bg": "Гвинея",
-      "en": "Guinea"
+      "en": "Guinea",
+      "nl": "Guinea"
     },
     "isoCode": "gn",
     "flagUrl": "assets/flags/gn.svg",
@@ -886,7 +954,8 @@
   {
     "names": {
       "bg": "Гвинея-Бисау",
-      "en": "Guinea-Bissau"
+      "en": "Guinea-Bissau",
+      "nl": "Guinee-Bissau"
     },
     "isoCode": "gw",
     "flagUrl": "assets/flags/gw.svg",
@@ -899,7 +968,8 @@
   {
     "names": {
       "bg": "Гайана",
-      "en": "Guyana"
+      "en": "Guyana",
+      "nl": "Guyana"
     },
     "isoCode": "gy",
     "flagUrl": "assets/flags/gy.svg",
@@ -912,7 +982,8 @@
   {
     "names": {
       "bg": "Хаити",
-      "en": "Haiti"
+      "en": "Haiti",
+      "nl": "Haïti"
     },
     "isoCode": "ht",
     "flagUrl": "assets/flags/ht.svg",
@@ -925,7 +996,8 @@
   {
     "names": {
       "bg": "Хондурас",
-      "en": "Honduras"
+      "en": "Honduras",
+      "nl": "Honduras"
     },
     "isoCode": "hn",
     "flagUrl": "assets/flags/hn.svg",
@@ -938,7 +1010,8 @@
   {
     "names": {
       "bg": "Унгария",
-      "en": "Hungary"
+      "en": "Hungary",
+      "nl": "Hongarije"
     },
     "isoCode": "hu",
     "flagUrl": "assets/flags/hu.svg",
@@ -951,7 +1024,8 @@
   {
     "names": {
       "bg": "Исландия",
-      "en": "Iceland"
+      "en": "Iceland",
+      "nl": "IJsland"
     },
     "isoCode": "is",
     "flagUrl": "assets/flags/is.svg",
@@ -964,7 +1038,8 @@
   {
     "names": {
       "bg": "Индия",
-      "en": "India"
+      "en": "India",
+      "nl": "Indië"
     },
     "isoCode": "in",
     "flagUrl": "assets/flags/in.svg",
@@ -977,7 +1052,8 @@
   {
     "names": {
       "bg": "Индонезия",
-      "en": "Indonesia"
+      "en": "Indonesia",
+      "nl": "Indonesië"
     },
     "isoCode": "id",
     "flagUrl": "assets/flags/id.svg",
@@ -990,7 +1066,8 @@
   {
     "names": {
       "bg": "Иран",
-      "en": "Iran"
+      "en": "Iran",
+      "nl": "Iran"
     },
     "isoCode": "ir",
     "flagUrl": "assets/flags/ir.svg",
@@ -1003,7 +1080,8 @@
   {
     "names": {
       "bg": "Ирак",
-      "en": "Iraq"
+      "en": "Iraq",
+      "nl": "Irak"
     },
     "isoCode": "iq",
     "flagUrl": "assets/flags/iq.svg",
@@ -1016,7 +1094,8 @@
   {
     "names": {
       "bg": "Ирландия",
-      "en": "Ireland"
+      "en": "Ireland",
+      "nl": "Ierland"
     },
     "isoCode": "ie",
     "flagUrl": "assets/flags/ie.svg",
@@ -1029,7 +1108,8 @@
   {
     "names": {
       "bg": "Израел",
-      "en": "Israel"
+      "en": "Israel",
+      "nl": "Israël"
     },
     "isoCode": "il",
     "flagUrl": "assets/flags/il.svg",
@@ -1042,7 +1122,8 @@
   {
     "names": {
       "bg": "Италия",
-      "en": "Italy"
+      "en": "Italy",
+      "nl": "Italië"
     },
     "isoCode": "it",
     "flagUrl": "assets/flags/it.svg",
@@ -1055,7 +1136,8 @@
   {
     "names": {
       "bg": "Ямайка",
-      "en": "Jamaica"
+      "en": "Jamaica",
+      "nl": "Jamaica"
     },
     "isoCode": "jm",
     "flagUrl": "assets/flags/jm.svg",
@@ -1068,7 +1150,8 @@
   {
     "names": {
       "bg": "Япония",
-      "en": "Japan"
+      "en": "Japan",
+      "nl": "Japan"
     },
     "isoCode": "jp",
     "flagUrl": "assets/flags/jp.svg",
@@ -1081,7 +1164,8 @@
   {
     "names": {
       "bg": "Иордания",
-      "en": "Jordan"
+      "en": "Jordan",
+      "nl": "Jordanië"
     },
     "isoCode": "jo",
     "flagUrl": "assets/flags/jo.svg",
@@ -1094,7 +1178,8 @@
   {
     "names": {
       "bg": "Казахстан",
-      "en": "Kazakhstan"
+      "en": "Kazakhstan",
+      "nl": "Kazachstan"
     },
     "isoCode": "kz",
     "flagUrl": "assets/flags/kz.svg",
@@ -1107,7 +1192,8 @@
   {
     "names": {
       "bg": "Кения",
-      "en": "Kenya"
+      "en": "Kenya",
+      "nl": "Kenia"
     },
     "isoCode": "ke",
     "flagUrl": "assets/flags/ke.svg",
@@ -1120,7 +1206,8 @@
   {
     "names": {
       "bg": "Кирибати",
-      "en": "Kiribati"
+      "en": "Kiribati",
+      "nl": "Kiribati"
     },
     "isoCode": "ki",
     "flagUrl": "assets/flags/ki.svg",
@@ -1133,7 +1220,8 @@
   {
     "names": {
       "bg": "Кувейт",
-      "en": "Kuwait"
+      "en": "Kuwait",
+      "nl": "Koeweit"
     },
     "isoCode": "kw",
     "flagUrl": "assets/flags/kw.svg",
@@ -1146,7 +1234,8 @@
   {
     "names": {
       "bg": "Киргизстан",
-      "en": "Kyrgyzstan"
+      "en": "Kyrgyzstan",
+      "nl": "Kirgizië"
     },
     "isoCode": "kg",
     "flagUrl": "assets/flags/kg.svg",
@@ -1159,7 +1248,8 @@
   {
     "names": {
       "bg": "Лаос",
-      "en": "Laos"
+      "en": "Laos",
+      "nl": "Laos"
     },
     "isoCode": "la",
     "flagUrl": "assets/flags/la.svg",
@@ -1172,7 +1262,8 @@
   {
     "names": {
       "bg": "Латвия",
-      "en": "Latvia"
+      "en": "Latvia",
+      "nl": "Letland"
     },
     "isoCode": "lv",
     "flagUrl": "assets/flags/lv.svg",
@@ -1185,7 +1276,8 @@
   {
     "names": {
       "bg": "Ливан",
-      "en": "Lebanon"
+      "en": "Lebanon",
+      "nl": "Libanon"
     },
     "isoCode": "lb",
     "flagUrl": "assets/flags/lb.svg",
@@ -1198,7 +1290,8 @@
   {
     "names": {
       "bg": "Лесото",
-      "en": "Lesotho"
+      "en": "Lesotho",
+      "nl": "Lesotho"
     },
     "isoCode": "ls",
     "flagUrl": "assets/flags/ls.svg",
@@ -1211,7 +1304,8 @@
   {
     "names": {
       "bg": "Либерия",
-      "en": "Liberia"
+      "en": "Liberia",
+      "nl": "Liberia"
     },
     "isoCode": "lr",
     "flagUrl": "assets/flags/lr.svg",
@@ -1224,7 +1318,8 @@
   {
     "names": {
       "bg": "Либия",
-      "en": "Libya"
+      "en": "Libya",
+      "nl": "Libië"
     },
     "isoCode": "ly",
     "flagUrl": "assets/flags/ly.svg",
@@ -1237,7 +1332,8 @@
   {
     "names": {
       "bg": "Лихтенщайн",
-      "en": "Liechtenstein"
+      "en": "Liechtenstein",
+      "nl": "Liechtenstein"
     },
     "isoCode": "li",
     "flagUrl": "assets/flags/li.svg",
@@ -1250,7 +1346,8 @@
   {
     "names": {
       "bg": "Литва",
-      "en": "Lithuania"
+      "en": "Lithuania",
+      "nl": "Litouwen"
     },
     "isoCode": "lt",
     "flagUrl": "assets/flags/lt.svg",
@@ -1263,7 +1360,8 @@
   {
     "names": {
       "bg": "Люксембург",
-      "en": "Luxembourg"
+      "en": "Luxembourg",
+      "nl": "Luxemburg"
     },
     "isoCode": "lu",
     "flagUrl": "assets/flags/lu.svg",
@@ -1276,7 +1374,8 @@
   {
     "names": {
       "bg": "Мадагаскар",
-      "en": "Madagascar"
+      "en": "Madagascar",
+      "nl": "Madagascar"
     },
     "isoCode": "mg",
     "flagUrl": "assets/flags/mg.svg",
@@ -1289,7 +1388,8 @@
   {
     "names": {
       "bg": "Малави",
-      "en": "Malawi"
+      "en": "Malawi",
+      "nl": "Malawi"
     },
     "isoCode": "mw",
     "flagUrl": "assets/flags/mw.svg",
@@ -1302,7 +1402,8 @@
   {
     "names": {
       "bg": "Малайзия",
-      "en": "Malaysia"
+      "en": "Malaysia",
+      "nl": "Maleisië"
     },
     "isoCode": "my",
     "flagUrl": "assets/flags/my.svg",
@@ -1315,7 +1416,8 @@
   {
     "names": {
       "bg": "Малдиви",
-      "en": "Maldives"
+      "en": "Maldives",
+      "nl": "Maldiven"
     },
     "isoCode": "mv",
     "flagUrl": "assets/flags/mv.svg",
@@ -1328,7 +1430,8 @@
   {
     "names": {
       "bg": "Мали",
-      "en": "Mali"
+      "en": "Mali",
+      "nl": "Mali"
     },
     "isoCode": "ml",
     "flagUrl": "assets/flags/ml.svg",
@@ -1341,7 +1444,8 @@
   {
     "names": {
       "bg": "Малта",
-      "en": "Malta"
+      "en": "Malta",
+      "nl": "Malta"
     },
     "isoCode": "mt",
     "flagUrl": "assets/flags/mt.svg",
@@ -1354,7 +1458,8 @@
   {
     "names": {
       "bg": "Мавритания",
-      "en": "Mauritania"
+      "en": "Mauritania",
+      "nl": "Mauritanië"
     },
     "isoCode": "mr",
     "flagUrl": "assets/flags/mr.svg",
@@ -1367,7 +1472,8 @@
   {
     "names": {
       "bg": "Мавриций",
-      "en": "Mauritius"
+      "en": "Mauritius",
+      "nl": "Mauritius"
     },
     "isoCode": "mu",
     "flagUrl": "assets/flags/mu.svg",
@@ -1380,7 +1486,8 @@
   {
     "names": {
       "bg": "Мексико",
-      "en": "Mexico"
+      "en": "Mexico",
+      "nl": "Mexico"
     },
     "isoCode": "mx",
     "flagUrl": "assets/flags/mx.svg",
@@ -1393,7 +1500,8 @@
   {
     "names": {
       "bg": "Молдова",
-      "en": "Moldova"
+      "en": "Moldova",
+      "nl": "Moldavië"
     },
     "isoCode": "md",
     "flagUrl": "assets/flags/md.svg",
@@ -1406,7 +1514,8 @@
   {
     "names": {
       "bg": "Монако",
-      "en": "Monaco"
+      "en": "Monaco",
+      "nl": "Monaco"
     },
     "isoCode": "mc",
     "flagUrl": "assets/flags/mc.svg",
@@ -1419,7 +1528,8 @@
   {
     "names": {
       "bg": "Монголия",
-      "en": "Mongolia"
+      "en": "Mongolia",
+      "nl": "Mongolië"
     },
     "isoCode": "mn",
     "flagUrl": "assets/flags/mn.svg",
@@ -1432,7 +1542,8 @@
   {
     "names": {
       "bg": "Царство Мароко",
-      "en": "Morocco"
+      "en": "Morocco",
+      "nl": "Marokko"
     },
     "isoCode": "ma",
     "flagUrl": "assets/flags/ma.svg",
@@ -1445,7 +1556,8 @@
   {
     "names": {
       "bg": "Мозамбик",
-      "en": "Mozambique"
+      "en": "Mozambique",
+      "nl": "Mozambique"
     },
     "isoCode": "mz",
     "flagUrl": "assets/flags/mz.svg",
@@ -1458,7 +1570,8 @@
   {
     "names": {
       "bg": "Мианмар (Бирма)",
-      "en": "Myanmar (Burma)"
+      "en": "Myanmar (Burma)",
+      "nl": "Myanmar (Birma)"
     },
     "isoCode": "mm",
     "flagUrl": "assets/flags/mm.svg",
@@ -1471,7 +1584,8 @@
   {
     "names": {
       "bg": "Намибия",
-      "en": "Namibia"
+      "en": "Namibia",
+      "nl": "Namibië"
     },
     "isoCode": "na",
     "flagUrl": "assets/flags/na.svg",
@@ -1484,7 +1598,8 @@
   {
     "names": {
       "bg": "Науру",
-      "en": "Nauru"
+      "en": "Nauru",
+      "nl": "Nauru"
     },
     "isoCode": "nr",
     "flagUrl": "assets/flags/nr.svg",
@@ -1497,7 +1612,8 @@
   {
     "names": {
       "bg": "Непал",
-      "en": "Nepal"
+      "en": "Nepal",
+      "nl": "Nepal"
     },
     "isoCode": "np",
     "flagUrl": "assets/flags/np.svg",
@@ -1510,7 +1626,8 @@
   {
     "names": {
       "bg": "Нидерландия",
-      "en": "Netherlands"
+      "en": "Netherlands",
+      "nl": "Nederland"
     },
     "isoCode": "nl",
     "flagUrl": "assets/flags/nl.svg",
@@ -1523,7 +1640,8 @@
   {
     "names": {
       "bg": "Нова Зеландия",
-      "en": "New Zealand"
+      "en": "New Zealand",
+      "nl": "Nieuw-Zeeland"
     },
     "isoCode": "nz",
     "flagUrl": "assets/flags/nz.svg",
@@ -1536,7 +1654,8 @@
   {
     "names": {
       "bg": "Никарагуа",
-      "en": "Nicaragua"
+      "en": "Nicaragua",
+      "nl": "Nicaragua"
     },
     "isoCode": "ni",
     "flagUrl": "assets/flags/ni.svg",
@@ -1549,7 +1668,8 @@
   {
     "names": {
       "bg": "Нигер",
-      "en": "Niger"
+      "en": "Niger",
+      "nl": "Niger"
     },
     "isoCode": "ne",
     "flagUrl": "assets/flags/ne.svg",
@@ -1562,7 +1682,8 @@
   {
     "names": {
       "bg": "Нигерия",
-      "en": "Nigeria"
+      "en": "Nigeria",
+      "nl": "Nigeria"
     },
     "isoCode": "ng",
     "flagUrl": "assets/flags/ng.svg",
@@ -1575,7 +1696,8 @@
   {
     "names": {
       "bg": "Северна Македония",
-      "en": "North Macedonia"
+      "en": "North Macedonia",
+      "nl": "Noord-Macedonië"
     },
     "isoCode": "mk",
     "flagUrl": "assets/flags/mk.svg",
@@ -1588,7 +1710,8 @@
   {
     "names": {
       "bg": "Северна Корея",
-      "en": "North Korea"
+      "en": "North Korea",
+      "nl": "Noord Korea"
     },
     "isoCode": "kp",
     "flagUrl": "assets/flags/kp.svg",
@@ -1601,7 +1724,8 @@
   {
     "names": {
       "bg": "Норвегия",
-      "en": "Norway"
+      "en": "Norway",
+      "nl": "Noorwegen"
     },
     "isoCode": "no",
     "flagUrl": "assets/flags/no.svg",
@@ -1614,7 +1738,8 @@
   {
     "names": {
       "bg": "Оман",
-      "en": "Oman"
+      "en": "Oman",
+      "nl": "Oman"
     },
     "isoCode": "om",
     "flagUrl": "assets/flags/om.svg",
@@ -1627,7 +1752,8 @@
   {
     "names": {
       "bg": "Пакистан",
-      "en": "Pakistan"
+      "en": "Pakistan",
+      "nl": "Pakistan"
     },
     "isoCode": "pk",
     "flagUrl": "assets/flags/pk.svg",
@@ -1640,7 +1766,8 @@
   {
     "names": {
       "bg": "Палау",
-      "en": "Palau"
+      "en": "Palau",
+      "nl": "Palau"
     },
     "isoCode": "pw",
     "flagUrl": "assets/flags/pw.svg",
@@ -1653,7 +1780,8 @@
   {
     "names": {
       "bg": "Панама",
-      "en": "Panama"
+      "en": "Panama",
+      "nl": "Panama"
     },
     "isoCode": "pa",
     "flagUrl": "assets/flags/pa.svg",
@@ -1666,7 +1794,8 @@
   {
     "names": {
       "bg": "Папуа-Нова Гвинея",
-      "en": "Papua New Guinea"
+      "en": "Papua New Guinea",
+      "nl": "Papoea-Nieuw-Guinea"
     },
     "isoCode": "pg",
     "flagUrl": "assets/flags/pg.svg",
@@ -1679,7 +1808,8 @@
   {
     "names": {
       "bg": "Парагвай",
-      "en": "Paraguay"
+      "en": "Paraguay",
+      "nl": "Paraguay"
     },
     "isoCode": "py",
     "flagUrl": "assets/flags/py.svg",
@@ -1692,7 +1822,8 @@
   {
     "names": {
       "bg": "Перу",
-      "en": "Peru"
+      "en": "Peru",
+      "nl": "Peru"
     },
     "isoCode": "pe",
     "flagUrl": "assets/flags/pe.svg",
@@ -1705,7 +1836,8 @@
   {
     "names": {
       "bg": "Филипини",
-      "en": "Philippines"
+      "en": "Philippines",
+      "nl": "Filippijnen"
     },
     "isoCode": "ph",
     "flagUrl": "assets/flags/ph.svg",
@@ -1718,7 +1850,8 @@
   {
     "names": {
       "bg": "Полша",
-      "en": "Poland"
+      "en": "Poland",
+      "nl": "Polen"
     },
     "isoCode": "pl",
     "flagUrl": "assets/flags/pl.svg",
@@ -1731,7 +1864,8 @@
   {
     "names": {
       "bg": "Португалия",
-      "en": "Portugal"
+      "en": "Portugal",
+      "nl": "Portugal"
     },
     "isoCode": "pt",
     "flagUrl": "assets/flags/pt.svg",
@@ -1744,7 +1878,8 @@
   {
     "names": {
       "bg": "Катар",
-      "en": "Qatar"
+      "en": "Qatar",
+      "nl": "Qatar"
     },
     "isoCode": "qa",
     "flagUrl": "assets/flags/qa.svg",
@@ -1757,7 +1892,8 @@
   {
     "names": {
       "bg": "Румъния",
-      "en": "Romania"
+      "en": "Romania",
+      "nl": "Roemenië"
     },
     "isoCode": "ro",
     "flagUrl": "assets/flags/ro.svg",
@@ -1770,7 +1906,8 @@
   {
     "names": {
       "bg": "Русия",
-      "en": "Russia"
+      "en": "Russia",
+      "nl": "Rusland"
     },
     "isoCode": "ru",
     "flagUrl": "assets/flags/ru.svg",
@@ -1783,7 +1920,8 @@
   {
     "names": {
       "bg": "Руанда",
-      "en": "Rwanda"
+      "en": "Rwanda",
+      "nl": "Rwanda"
     },
     "isoCode": "rw",
     "flagUrl": "assets/flags/rw.svg",
@@ -1796,7 +1934,8 @@
   {
     "names": {
       "bg": "Света Лусия",
-      "en": "Saint Lucia"
+      "en": "Saint Lucia",
+      "nl": "Sint Lucia"
     },
     "isoCode": "lc",
     "flagUrl": "assets/flags/lc.svg",
@@ -1809,7 +1948,8 @@
   {
     "names": {
       "bg": "Свети Винсент и Гренадини",
-      "en": "Saint Vincent and the Grenadines"
+      "en": "Saint Vincent and the Grenadines",
+      "nl": "Saint Vincent en de Grenadines"
     },
     "isoCode": "vc",
     "flagUrl": "assets/flags/vc.svg",
@@ -1822,7 +1962,8 @@
   {
     "names": {
       "bg": "Самоа",
-      "en": "Samoa"
+      "en": "Samoa",
+      "nl": "Samoa"
     },
     "isoCode": "ws",
     "flagUrl": "assets/flags/ws.svg",
@@ -1835,7 +1976,8 @@
   {
     "names": {
       "bg": "Сан Марино",
-      "en": "San Marino"
+      "en": "San Marino",
+      "nl": "San Marino"
     },
     "isoCode": "sm",
     "flagUrl": "assets/flags/sm.svg",
@@ -1848,7 +1990,8 @@
   {
     "names": {
       "bg": "Сао Томе и Принсипи",
-      "en": "Sao Tome and Principe"
+      "en": "Sao Tome and Principe",
+      "nl": "Sao Tomé en Principe"
     },
     "isoCode": "st",
     "flagUrl": "assets/flags/st.svg",
@@ -1861,7 +2004,8 @@
   {
     "names": {
       "bg": "Саудитска Арабия",
-      "en": "Saudi Arabia"
+      "en": "Saudi Arabia",
+      "nl": "Saoedi-Arabië"
     },
     "isoCode": "sa",
     "flagUrl": "assets/flags/sa.svg",
@@ -1874,7 +2018,8 @@
   {
     "names": {
       "bg": "Сенегал",
-      "en": "Senegal"
+      "en": "Senegal",
+      "nl": "Senegal"
     },
     "isoCode": "sn",
     "flagUrl": "assets/flags/sn.svg",
@@ -1887,7 +2032,8 @@
   {
     "names": {
       "bg": "Сърбия",
-      "en": "Serbia"
+      "en": "Serbia",
+      "nl": "Servië"
     },
     "isoCode": "rs",
     "flagUrl": "assets/flags/rs.svg",
@@ -1900,7 +2046,8 @@
   {
     "names": {
       "bg": "Сейшели",
-      "en": "Seychelles"
+      "en": "Seychelles",
+      "nl": "Seychellen"
     },
     "isoCode": "sc",
     "flagUrl": "assets/flags/sc.svg",
@@ -1913,7 +2060,8 @@
   {
     "names": {
       "bg": "Сиера Леоне",
-      "en": "Sierra Leone"
+      "en": "Sierra Leone",
+      "nl": "Sierra Leone"
     },
     "isoCode": "sl",
     "flagUrl": "assets/flags/sl.svg",
@@ -1926,7 +2074,8 @@
   {
     "names": {
       "bg": "Сингапур",
-      "en": "Singapore"
+      "en": "Singapore",
+      "nl": "Singapore"
     },
     "isoCode": "sg",
     "flagUrl": "assets/flags/sg.svg",
@@ -1939,7 +2088,8 @@
   {
     "names": {
       "bg": "Словакия",
-      "en": "Slovakia"
+      "en": "Slovakia",
+      "nl": "Slowakije"
     },
     "isoCode": "sk",
     "flagUrl": "assets/flags/sk.svg",
@@ -1952,7 +2102,8 @@
   {
     "names": {
       "bg": "Словения",
-      "en": "Slovenia"
+      "en": "Slovenia",
+      "nl": "Slovenië"
     },
     "isoCode": "si",
     "flagUrl": "assets/flags/si.svg",
@@ -1965,7 +2116,8 @@
   {
     "names": {
       "bg": "Соломоновите острови",
-      "en": "Solomon Islands"
+      "en": "Solomon Islands",
+      "nl": "Solomon eilanden"
     },
     "isoCode": "sb",
     "flagUrl": "assets/flags/sb.svg",
@@ -1978,7 +2130,8 @@
   {
     "names": {
       "bg": "Сомалия",
-      "en": "Somalia"
+      "en": "Somalia",
+      "nl": "Somalië"
     },
     "isoCode": "so",
     "flagUrl": "assets/flags/so.svg",
@@ -1991,7 +2144,8 @@
   {
     "names": {
       "bg": "Южна Африка",
-      "en": "South Africa"
+      "en": "South Africa",
+      "nl": "Zuid-Afrika"
     },
     "isoCode": "za",
     "flagUrl": "assets/flags/za.svg",
@@ -2004,7 +2158,8 @@
   {
     "names": {
       "bg": "Южна Корея",
-      "en": "South Korea"
+      "en": "South Korea",
+      "nl": "Zuid-Korea"
     },
     "isoCode": "kr",
     "flagUrl": "assets/flags/kr.svg",
@@ -2017,7 +2172,8 @@
   {
     "names": {
       "bg": "Южен Судан",
-      "en": "South Sudan"
+      "en": "South Sudan",
+      "nl": "Zuid Soedan"
     },
     "isoCode": "ss",
     "flagUrl": "assets/flags/ss.svg",
@@ -2030,7 +2186,8 @@
   {
     "names": {
       "bg": "Испания",
-      "en": "Spain"
+      "en": "Spain",
+      "nl": "Spanje"
     },
     "isoCode": "es",
     "flagUrl": "assets/flags/es.svg",
@@ -2043,7 +2200,8 @@
   {
     "names": {
       "bg": "Шри Ланка",
-      "en": "Sri Lanka"
+      "en": "Sri Lanka",
+      "nl": "Sri Lanka"
     },
     "isoCode": "lk",
     "flagUrl": "assets/flags/lk.svg",
@@ -2056,7 +2214,8 @@
   {
     "names": {
       "bg": "Судан",
-      "en": "Sudan"
+      "en": "Sudan",
+      "nl": "Soedan"
     },
     "isoCode": "sd",
     "flagUrl": "assets/flags/sd.svg",
@@ -2069,7 +2228,8 @@
   {
     "names": {
       "bg": "Суринам",
-      "en": "Suriname"
+      "en": "Suriname",
+      "nl": "Suriname"
     },
     "isoCode": "sr",
     "flagUrl": "assets/flags/sr.svg",
@@ -2082,7 +2242,8 @@
   {
     "names": {
       "bg": "Швеция",
-      "en": "Sweden"
+      "en": "Sweden",
+      "nl": "Zweden"
     },
     "isoCode": "se",
     "flagUrl": "assets/flags/se.svg",
@@ -2095,7 +2256,8 @@
   {
     "names": {
       "bg": "Швейцария",
-      "en": "Switzerland"
+      "en": "Switzerland",
+      "nl": "Zwitserland"
     },
     "isoCode": "ch",
     "flagUrl": "assets/flags/ch.svg",
@@ -2108,7 +2270,8 @@
   {
     "names": {
       "bg": "Сирия",
-      "en": "Syria"
+      "en": "Syria",
+      "nl": "Syrië"
     },
     "isoCode": "sy",
     "flagUrl": "assets/flags/sy.svg",
@@ -2121,7 +2284,8 @@
   {
     "names": {
       "bg": "Тайван",
-      "en": "Taiwan"
+      "en": "Taiwan",
+      "nl": "Taiwan"
     },
     "isoCode": "tw",
     "flagUrl": "assets/flags/tw.svg",
@@ -2134,7 +2298,8 @@
   {
     "names": {
       "bg": "Таджикистан",
-      "en": "Tajikistan"
+      "en": "Tajikistan",
+      "nl": "Tadzjikistan"
     },
     "isoCode": "tj",
     "flagUrl": "assets/flags/tj.svg",
@@ -2147,7 +2312,8 @@
   {
     "names": {
       "bg": "Танзания",
-      "en": "Tanzania"
+      "en": "Tanzania",
+      "nl": "Tanzania"
     },
     "isoCode": "tz",
     "flagUrl": "assets/flags/tz.svg",
@@ -2160,7 +2326,8 @@
   {
     "names": {
       "bg": "Тайланд",
-      "en": "Thailand"
+      "en": "Thailand",
+      "nl": "Thailand"
     },
     "isoCode": "th",
     "flagUrl": "assets/flags/th.svg",
@@ -2173,7 +2340,8 @@
   {
     "names": {
       "bg": "Източен Тимор",
-      "en": "Timor-Leste"
+      "en": "Timor-Leste",
+      "nl": "Timor-Leste"
     },
     "isoCode": "tl",
     "flagUrl": "assets/flags/tl.svg",
@@ -2186,7 +2354,8 @@
   {
     "names": {
       "bg": "Того",
-      "en": "Togo"
+      "en": "Togo",
+      "nl": "Gaan"
     },
     "isoCode": "tg",
     "flagUrl": "assets/flags/tg.svg",
@@ -2199,7 +2368,8 @@
   {
     "names": {
       "bg": "Тонга",
-      "en": "Tonga"
+      "en": "Tonga",
+      "nl": "Tonga"
     },
     "isoCode": "to",
     "flagUrl": "assets/flags/to.svg",
@@ -2212,7 +2382,8 @@
   {
     "names": {
       "bg": "Тринидад и Тобаго",
-      "en": "Trinidad and Tobago"
+      "en": "Trinidad and Tobago",
+      "nl": "Trinidad en Tobago"
     },
     "isoCode": "tt",
     "flagUrl": "assets/flags/tt.svg",
@@ -2225,7 +2396,8 @@
   {
     "names": {
       "bg": "Тунис",
-      "en": "Tunisia"
+      "en": "Tunisia",
+      "nl": "Tunesië"
     },
     "isoCode": "tn",
     "flagUrl": "assets/flags/tn.svg",
@@ -2238,7 +2410,8 @@
   {
     "names": {
       "bg": "Турция",
-      "en": "Turkey"
+      "en": "Turkey",
+      "nl": "Kalkoen"
     },
     "isoCode": "tr",
     "flagUrl": "assets/flags/tr.svg",
@@ -2251,7 +2424,8 @@
   {
     "names": {
       "bg": "Туркменистан",
-      "en": "Turkmenistan"
+      "en": "Turkmenistan",
+      "nl": "Turkmenistan"
     },
     "isoCode": "tm",
     "flagUrl": "assets/flags/tm.svg",
@@ -2264,7 +2438,8 @@
   {
     "names": {
       "bg": "Уганда",
-      "en": "Uganda"
+      "en": "Uganda",
+      "nl": "Oeganda"
     },
     "isoCode": "ug",
     "flagUrl": "assets/flags/ug.svg",
@@ -2277,7 +2452,8 @@
   {
     "names": {
       "bg": "Украйна",
-      "en": "Ukraine"
+      "en": "Ukraine",
+      "nl": "Oekraïne"
     },
     "isoCode": "ua",
     "flagUrl": "assets/flags/ua.svg",
@@ -2290,7 +2466,8 @@
   {
     "names": {
       "bg": "Обединени Арабски Емирства",
-      "en": "United Arab Emirates"
+      "en": "United Arab Emirates",
+      "nl": "Verenigde Arabische Emiraten"
     },
     "isoCode": "ae",
     "flagUrl": "assets/flags/ae.svg",
@@ -2303,7 +2480,8 @@
   {
     "names": {
       "bg": "Обединеното кралство",
-      "en": "United Kingdom"
+      "en": "United Kingdom",
+      "nl": "Verenigd Koninkrijk"
     },
     "isoCode": "gb",
     "flagUrl": "assets/flags/gb.svg",
@@ -2316,7 +2494,8 @@
   {
     "names": {
       "bg": "Съединени щати",
-      "en": "United States"
+      "en": "United States",
+      "nl": "Verenigde Staten"
     },
     "isoCode": "us",
     "flagUrl": "assets/flags/us.svg",
@@ -2329,7 +2508,8 @@
   {
     "names": {
       "bg": "Уругвай",
-      "en": "Uruguay"
+      "en": "Uruguay",
+      "nl": "Uruguay"
     },
     "isoCode": "uy",
     "flagUrl": "assets/flags/uy.svg",
@@ -2342,7 +2522,8 @@
   {
     "names": {
       "bg": "Узбекистан",
-      "en": "Uzbekistan"
+      "en": "Uzbekistan",
+      "nl": "Oezbekistan"
     },
     "isoCode": "uz",
     "flagUrl": "assets/flags/uz.svg",
@@ -2355,7 +2536,8 @@
   {
     "names": {
       "bg": "Вануату",
-      "en": "Vanuatu"
+      "en": "Vanuatu",
+      "nl": "Vanuatu"
     },
     "isoCode": "vu",
     "flagUrl": "assets/flags/vu.svg",
@@ -2368,7 +2550,8 @@
   {
     "names": {
       "bg": "Венецуела",
-      "en": "Venezuela"
+      "en": "Venezuela",
+      "nl": "Venezuela"
     },
     "isoCode": "ve",
     "flagUrl": "assets/flags/ve.svg",
@@ -2381,7 +2564,8 @@
   {
     "names": {
       "bg": "Виетнам",
-      "en": "Vietnam"
+      "en": "Vietnam",
+      "nl": "Vietnam"
     },
     "isoCode": "vn",
     "flagUrl": "assets/flags/vn.svg",
@@ -2394,7 +2578,8 @@
   {
     "names": {
       "bg": "Йемен",
-      "en": "Yemen"
+      "en": "Yemen",
+      "nl": "Jemen"
     },
     "isoCode": "ye",
     "flagUrl": "assets/flags/ye.svg",
@@ -2407,7 +2592,8 @@
   {
     "names": {
       "bg": "Замбия",
-      "en": "Zambia"
+      "en": "Zambia",
+      "nl": "Zambia"
     },
     "isoCode": "zm",
     "flagUrl": "assets/flags/zm.svg",
@@ -2420,7 +2606,8 @@
   {
     "names": {
       "bg": "Зимбабве",
-      "en": "Zimbabwe"
+      "en": "Zimbabwe",
+      "nl": "Zimbabwe"
     },
     "isoCode": "zw",
     "flagUrl": "assets/flags/zw.svg",
