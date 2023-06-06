@@ -24,7 +24,15 @@ export class SettingsService {
   }
 
   private onLangChange() {
-    this.lang$.next(localStorage.getItem(LANGUAGE_STORAGE_KEY) ?? this.translocoService.getDefaultLang());
+    let systemLang = this.translocoService.getDefaultLang();
+    if (/^bg\b/.test(navigator.language)) {
+      systemLang = 'bg';
+    }
+    if (/^en\b/.test(navigator.language)) {
+      systemLang = 'en';
+    }
+
+    this.lang$.next(localStorage.getItem(LANGUAGE_STORAGE_KEY) ?? systemLang);
     this.lang$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((lang) => {
       this.translocoService.setActiveLang(lang);
       localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
