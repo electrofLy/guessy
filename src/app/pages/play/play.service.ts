@@ -111,12 +111,12 @@ export function deletePreviousSavedGuesses(seed: string) {
   const keys: string[] = [];
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
-    if (key && key.includes(GAME_GUESSES_START_STORAGE_KEY)) {
+    if (key?.includes(GAME_GUESSES_START_STORAGE_KEY)) {
       keys.push(key);
     }
   }
   const gameKeys = keys.filter((key) => key.indexOf(seed) === -1);
-  for (let i = 0; i < gameKeys.length; i++) {
-    localStorage.removeItem(gameKeys[i]);
+  for (const item of gameKeys) {
+    localStorage.removeItem(item);
   }
 }
