@@ -14,6 +14,7 @@ describe('SettingsComponent', () => {
     cy.get(`[data-test="language-selection"]`).click();
     cy.get(`mat-option`).should('contain.text', 'en');
     cy.get(`mat-option`).should('contain.text', 'bg');
+    cy.get(`mat-option`).should('contain.text', 'nl');
     cy.contains(`mat-option`, 'bg').click();
     cy.get(`[data-test="settings-subtitle"]`).should('contain.text', 'настройки');
   });

@@ -1,0 +1,23 @@
+{
+  "guessy": "gokken",
+  "play": "toneelstuk",
+  "flag": "vlag",
+  "shape": "vorm",
+  "info": "info",
+  "infoDetails": "Coole game die je dagelijks kunt gebruiken om je kennis van aardrijkskunde te vergroten.\n\nJe kunt \"Toevoegen aan startscherm\" gebruiken om het toe te voegen aan je applicaties.",
+  "settings": "instellingen",
+  "language": "taal",
+  "theme": "thema",
+  "dark": "donker",
+  "light": "licht",
+  "back": "rug",
+  "guessCountry": "raad het land",
+  "required": "verplicht veld",
+  "end": "einde",
+  "endSuccess": "Je raadt {{0}}.",
+  "endFailed": "Je kon niet raden {{0}}.",
+  "endDetails": "Dit was het einde. Kom je over {{0}} uur terug om opnieuw te raden?",
+  "invalidCountry": "ongeldig land",
+  "checkCode": "controleer de code",
+  "reportIssue": "meld een fout"
+}

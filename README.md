@@ -1,6 +1,7 @@
 # Guessy
 
 ![Build status](https://github.com/electrofLy/guessy/actions/workflows/ci.yml/badge.svg)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=electrofLy_guessy)](https://sonarcloud.io/summary/new_code?id=electrofLy_guessy)
 
 ![Guessy](./src/assets/icons/icon-48x48.png)
 
