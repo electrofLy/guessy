@@ -31,7 +31,7 @@ export class SettingsService {
     if (/^en\b/.test(navigator.language)) {
       systemLang = 'en';
     }
-    if (/^en\b/.test(navigator.language)) {
+    if (/^nl\b/.test(navigator.language)) {
       systemLang = 'nl';
     }
 
