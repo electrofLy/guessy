@@ -5,6 +5,11 @@
       "en": "Afghanistan",
       "nl": "Afghanistan"
     },
+    "capitals": {
+      "en": "Kabul",
+      "bg": "Кабул",
+      "nl": "Kaboel"
+    },
     "isoCode": "af",
     "flagUrl": "assets/flags/af.svg",
     "shapeUrl": "assets/shapes/af.svg",
@@ -18,6 +23,11 @@
       "bg": "Албания",
       "en": "Albania",
       "nl": "Albanië"
+    },
+    "capitals": {
+      "en": "Tirana",
+      "bg": "Тирана",
+      "nl": "Tirana"
     },
     "isoCode": "al",
     "flagUrl": "assets/flags/al.svg",
@@ -33,6 +43,11 @@
       "en": "Algeria",
       "nl": "Algerije"
     },
+    "capitals": {
+      "en": "Algiers",
+      "bg": "Алжир",
+      "nl": "Algiers"
+    },
     "isoCode": "dz",
     "flagUrl": "assets/flags/dz.svg",
     "shapeUrl": "assets/shapes/dz.svg",
@@ -46,6 +61,11 @@
       "bg": "Андора",
       "en": "Andorra",
       "nl": "Andorra"
+    },
+    "capitals": {
+      "en": "Andorra la Vella",
+      "bg": "Андора ла Веля",
+      "nl": "Andorra la Vella"
     },
     "isoCode": "ad",
     "flagUrl": "assets/flags/ad.svg",
@@ -61,6 +81,11 @@
       "en": "Angola",
       "nl": "Angola"
     },
+    "capitals": {
+      "en": "Luanda",
+      "bg": "Луанда",
+      "nl": "Luanda"
+    },
     "isoCode": "ao",
     "flagUrl": "assets/flags/ao.svg",
     "shapeUrl": "assets/shapes/ao.svg",
@@ -74,6 +99,11 @@
       "bg": "Антигуа и Барбуда",
       "en": "Antigua and Barbuda",
       "nl": "Antigua en Barbuda"
+    },
+    "capitals": {
+      "en": "St. John's",
+      "bg": "Свети Йоан",
+      "nl": "St. John's"
     },
     "isoCode": "ag",
     "flagUrl": "assets/flags/ag.svg",
@@ -89,6 +119,11 @@
       "en": "Argentina",
       "nl": "Argentinië"
     },
+    "capitals": {
+      "en": "Buenos Aires",
+      "bg": "Буенос Айрес",
+      "nl": "Buenos Aires"
+    },
     "isoCode": "ar",
     "flagUrl": "assets/flags/ar.svg",
     "shapeUrl": "assets/shapes/ar.svg",
@@ -102,6 +137,11 @@
       "bg": "Армения",
       "en": "Armenia",
       "nl": "Armenië"
+    },
+    "capitals": {
+      "en": "Yerevan",
+      "bg": "Ереван",
+      "nl": "Jerevan"
     },
     "isoCode": "am",
     "flagUrl": "assets/flags/am.svg",
@@ -117,6 +157,11 @@
       "en": "Australia",
       "nl": "Australië"
     },
+    "capitals": {
+      "en": "Canberra",
+      "bg": "Канбера",
+      "nl": "Canberra"
+    },
     "isoCode": "au",
     "flagUrl": "assets/flags/au.svg",
     "shapeUrl": "assets/shapes/au.svg",
@@ -130,6 +175,11 @@
       "bg": "Австрия",
       "en": "Austria",
       "nl": "Oostenrijk"
+    },
+    "capitals": {
+      "en": "Vienna",
+      "bg": "Виена",
+      "nl": "Wenen"
     },
     "isoCode": "at",
     "flagUrl": "assets/flags/at.svg",
@@ -145,6 +195,11 @@
       "en": "Azerbaijan",
       "nl": "Azerbeidzjan"
     },
+    "capitals": {
+      "en": "Baku",
+      "bg": "Баку",
+      "nl": "Baku"
+    },
     "isoCode": "az",
     "flagUrl": "assets/flags/az.svg",
     "shapeUrl": "assets/shapes/az.svg",
@@ -158,6 +213,11 @@
       "bg": "Бахамски острови",
       "en": "Bahamas",
       "nl": "Bahamas"
+    },
+    "capitals": {
+      "en": "Nassau",
+      "bg": "Насау",
+      "nl": "Nassau"
     },
     "isoCode": "bs",
     "flagUrl": "assets/flags/bs.svg",
@@ -173,6 +233,11 @@
       "en": "Bahrain",
       "nl": "Bahrein"
     },
+    "capitals": {
+      "en": "Manama",
+      "bg": "Манама",
+      "nl": "Manamah"
+    },
     "isoCode": "bh",
     "flagUrl": "assets/flags/bh.svg",
     "shapeUrl": "assets/shapes/bh.svg",
@@ -186,6 +251,11 @@
       "bg": "Бангладеш",
       "en": "Bangladesh",
       "nl": "Bangladesh"
+    },
+    "capitals": {
+      "en": "Dhaka",
+      "bg": "Дака",
+      "nl": "Dhaka"
     },
     "isoCode": "bd",
     "flagUrl": "assets/flags/bd.svg",
@@ -201,6 +271,11 @@
       "en": "Barbados",
       "nl": "Barbados"
     },
+    "capitals": {
+      "en": "Bridgetown",
+      "bg": "Бриджтаун",
+      "nl": "Bridgetown"
+    },
     "isoCode": "bb",
     "flagUrl": "assets/flags/bb.svg",
     "shapeUrl": "assets/shapes/bb.svg",
@@ -214,6 +289,11 @@
       "bg": "Беларус",
       "en": "Belarus",
       "nl": "Wit-Rusland"
+    },
+    "capitals": {
+      "en": "Minsk",
+      "bg": "Минск",
+      "nl": "Minsk"
     },
     "isoCode": "by",
     "flagUrl": "assets/flags/by.svg",
@@ -229,6 +309,11 @@
       "en": "Belgium",
       "nl": "België"
     },
+    "capitals": {
+      "en": "Brussels",
+      "bg": "Брюксел",
+      "nl": "Brussel"
+    },
     "isoCode": "be",
     "flagUrl": "assets/flags/be.svg",
     "shapeUrl": "assets/shapes/be.svg",
@@ -242,6 +327,11 @@
       "bg": "Белиз",
       "en": "Belize",
       "nl": "Belize"
+    },
+    "capitals": {
+      "en": "Belmopan",
+      "bg": "Белмопан",
+      "nl": "Belmopan"
     },
     "isoCode": "bz",
     "flagUrl": "assets/flags/bz.svg",
@@ -257,6 +347,11 @@
       "en": "Benin",
       "nl": "Benin"
     },
+    "capitals": {
+      "en": "Porto-Novo",
+      "bg": "Порто-Ново",
+      "nl": "Porto Novo"
+    },
     "isoCode": "bj",
     "flagUrl": "assets/flags/bj.svg",
     "shapeUrl": "assets/shapes/bj.svg",
@@ -270,6 +365,11 @@
       "bg": "Бутан",
       "en": "Bhutan",
       "nl": "Bhutan"
+    },
+    "capitals": {
+      "en": "Thimphu",
+      "bg": "Тхимпху",
+      "nl": "Thimphu"
     },
     "isoCode": "bt",
     "flagUrl": "assets/flags/bt.svg",
@@ -285,6 +385,11 @@
       "en": "Bolivia",
       "nl": "Bolivia"
     },
+    "capitals": {
+      "en": "Sucre (constitutional capital), La Paz (administrative capital)",
+      "bg": "Сукре (конституционна столица), Ла Пас (административна столица)",
+      "nl": "Sucre (constitutionele hoofdstad), La Paz (administratieve hoofdstad)"
+    },
     "isoCode": "bo",
     "flagUrl": "assets/flags/bo.svg",
     "shapeUrl": "assets/shapes/bo.svg",
@@ -298,6 +403,11 @@
       "bg": "Босна и Херцеговина",
       "en": "Bosnia and Herzegovina",
       "nl": "Bosnië-Herzegovina"
+    },
+    "capitals": {
+      "en": "Sarajevo",
+      "bg": "Сараево",
+      "nl": "Sarajevo"
     },
     "isoCode": "ba",
     "flagUrl": "assets/flags/ba.svg",
@@ -313,6 +423,11 @@
       "en": "Botswana",
       "nl": "Botswana"
     },
+    "capitals": {
+      "en": "Gaborone",
+      "bg": "Габороне",
+      "nl": "Gaborone"
+    },
     "isoCode": "bw",
     "flagUrl": "assets/flags/bw.svg",
     "shapeUrl": "assets/shapes/bw.svg",
@@ -325,6 +440,11 @@
     "names": {
       "bg": "Бразилия",
       "en": "Brazil",
+      "nl": "Brazilië"
+    },
+    "capitals": {
+      "en": "Brasília",
+      "bg": "Бразилия",
       "nl": "Brazilië"
     },
     "isoCode": "br",
@@ -341,6 +461,11 @@
       "en": "Brunei",
       "nl": "Brunei"
     },
+    "capitals": {
+      "en": "Bandar Seri Begawan",
+      "bg": "Бандар Сери Бегаван",
+      "nl": "Bandar Seri Begawan"
+    },
     "isoCode": "bn",
     "flagUrl": "assets/flags/bn.svg",
     "shapeUrl": "assets/shapes/bn.svg",
@@ -355,6 +480,11 @@
       "en": "Burkina Faso",
       "nl": "Burkina Faso"
     },
+    "capitals": {
+      "en": "Ouagadougou",
+      "bg": "Уагадугу",
+      "nl": "Ouagadougou"
+    },
     "isoCode": "bf",
     "flagUrl": "assets/flags/bf.svg",
     "shapeUrl": "assets/shapes/bf.svg",
@@ -368,6 +498,11 @@
       "bg": "Бурунди",
       "en": "Burundi",
       "nl": "Burundi"
+    },
+    "capitals": {
+      "en": "Bujumbura",
+      "bg": "Бужумбура",
+      "nl": "Bujumbura"
     },
     "isoCode": "bi",
     "flagUrl": "assets/flags/bi.svg",
@@ -386,6 +521,11 @@
       "en": "Bulgaria",
       "nl": "Bulgarije"
     },
+    "capitals": {
+      "en": "Sofia",
+      "bg": "София",
+      "nl": "Sofia"
+    },
     "coordinates": {
       "lat": 42.7339,
       "lng": 25.4858
@@ -396,6 +536,11 @@
       "bg": "Кабо Верде",
       "en": "Cabo Verde",
       "nl": "Cabo Verde"
+    },
+    "capitals": {
+      "en": "Praia",
+      "bg": "Прая",
+      "nl": "strand"
     },
     "isoCode": "cv",
     "flagUrl": "assets/flags/cv.svg",
@@ -411,6 +556,11 @@
       "en": "Cambodia",
       "nl": "Cambodja"
     },
+    "capitals": {
+      "en": "Phnom Penh",
+      "bg": "Пном Пен",
+      "nl": "Phnom Penh"
+    },
     "isoCode": "kh",
     "flagUrl": "assets/flags/kh.svg",
     "shapeUrl": "assets/shapes/kh.svg",
@@ -424,6 +574,11 @@
       "bg": "Камерун",
       "en": "Cameroon",
       "nl": "Kameroen"
+    },
+    "capitals": {
+      "en": "Yaoundé",
+      "bg": "Яунде",
+      "nl": "Yaoundé"
     },
     "isoCode": "cm",
     "flagUrl": "assets/flags/cm.svg",
@@ -439,6 +594,11 @@
       "en": "Canada",
       "nl": "Canada"
     },
+    "capitals": {
+      "en": "Ottawa",
+      "bg": "Отава",
+      "nl": "Ottawa"
+    },
     "isoCode": "ca",
     "flagUrl": "assets/flags/ca.svg",
     "shapeUrl": "assets/shapes/ca.svg",
@@ -452,6 +612,11 @@
       "bg": "Централноафриканска Република",
       "en": "Central African Republic",
       "nl": "Centraal Afrikaanse Republiek"
+    },
+    "capitals": {
+      "en": "Bangui",
+      "bg": "Банги",
+      "nl": "Bangui"
     },
     "isoCode": "cf",
     "flagUrl": "assets/flags/cf.svg",
@@ -467,6 +632,11 @@
       "en": "Chad",
       "nl": "Tsjaad"
     },
+    "capitals": {
+      "en": "N'Djamena",
+      "bg": "Нджамена",
+      "nl": "N'Djamena"
+    },
     "isoCode": "td",
     "flagUrl": "assets/flags/td.svg",
     "shapeUrl": "assets/shapes/td.svg",
@@ -480,6 +650,11 @@
       "bg": "Чили",
       "en": "Chile",
       "nl": "Chili"
+    },
+    "capitals": {
+      "en": "Santiago",
+      "bg": "Сантяго",
+      "nl": "Santiago"
     },
     "isoCode": "cl",
     "flagUrl": "assets/flags/cl.svg",
@@ -495,6 +670,11 @@
       "en": "China",
       "nl": "China"
     },
+    "capitals": {
+      "en": "Beijing",
+      "bg": "Пекин",
+      "nl": "Peking"
+    },
     "isoCode": "cn",
     "flagUrl": "assets/flags/cn.svg",
     "shapeUrl": "assets/shapes/cn.svg",
@@ -508,6 +688,11 @@
       "bg": "Колумбия",
       "en": "Colombia",
       "nl": "Colombia"
+    },
+    "capitals": {
+      "en": "Bogotá",
+      "bg": "Богота",
+      "nl": "Bogota"
     },
     "isoCode": "co",
     "flagUrl": "assets/flags/co.svg",
@@ -523,6 +708,11 @@
       "en": "Comoros",
       "nl": "Comoren"
     },
+    "capitals": {
+      "en": "Moroni",
+      "bg": "Мороний",
+      "nl": "Moroni"
+    },
     "isoCode": "km",
     "flagUrl": "assets/flags/km.svg",
     "shapeUrl": "assets/shapes/km.svg",
@@ -536,6 +726,11 @@
       "bg": "Конго",
       "en": "Congo",
       "nl": "Congo"
+    },
+    "capitals": {
+      "en": "Brazzaville",
+      "bg": "Бразавил",
+      "nl": "Brazzaville"
     },
     "isoCode": "cg",
     "flagUrl": "assets/flags/cg.svg",
@@ -551,6 +746,11 @@
       "en": "Costa Rica",
       "nl": "Costa Rica"
     },
+    "capitals": {
+      "en": "San José",
+      "bg": "Сан Хосе",
+      "nl": "San Jose"
+    },
     "isoCode": "cr",
     "flagUrl": "assets/flags/cr.svg",
     "shapeUrl": "assets/shapes/cr.svg",
@@ -564,6 +764,11 @@
       "bg": "Хърватия",
       "en": "Croatia",
       "nl": "Kroatië"
+    },
+    "capitals": {
+      "en": "Zagreb",
+      "bg": "Загреб",
+      "nl": "Zagreb"
     },
     "isoCode": "hr",
     "flagUrl": "assets/flags/hr.svg",
@@ -579,6 +784,11 @@
       "en": "Cuba",
       "nl": "Cuba"
     },
+    "capitals": {
+      "en": "Havana",
+      "bg": "Хавана",
+      "nl": "Havanna"
+    },
     "isoCode": "cu",
     "flagUrl": "assets/flags/cu.svg",
     "shapeUrl": "assets/shapes/cu.svg",
@@ -592,6 +802,11 @@
       "bg": "Кипър",
       "en": "Cyprus",
       "nl": "Cyprus"
+    },
+    "capitals": {
+      "en": "Nicosia",
+      "bg": "Никозия",
+      "nl": "Nicosia"
     },
     "isoCode": "cy",
     "flagUrl": "assets/flags/cy.svg",
@@ -607,6 +822,11 @@
       "en": "Czech Republic",
       "nl": "Tsjechische Republiek"
     },
+    "capitals": {
+      "en": "Prague",
+      "bg": "Прага",
+      "nl": "Praag"
+    },
     "isoCode": "cz",
     "flagUrl": "assets/flags/cz.svg",
     "shapeUrl": "assets/shapes/cz.svg",
@@ -620,6 +840,11 @@
       "bg": "Дания",
       "en": "Denmark",
       "nl": "Denemarken"
+    },
+    "capitals": {
+      "en": "Copenhagen",
+      "bg": "Копенхаген",
+      "nl": "Kopenhagen"
     },
     "isoCode": "dk",
     "flagUrl": "assets/flags/dk.svg",
@@ -635,6 +860,11 @@
       "en": "Djibouti",
       "nl": "Djibouti"
     },
+    "capitals": {
+      "en": "Djibouti City",
+      "bg": "Град Джибути",
+      "nl": "Djibouti stad"
+    },
     "isoCode": "dj",
     "flagUrl": "assets/flags/dj.svg",
     "shapeUrl": "assets/shapes/dj.svg",
@@ -648,6 +878,11 @@
       "bg": "Доминика",
       "en": "Dominica",
       "nl": "Dominica"
+    },
+    "capitals": {
+      "en": "Roseau",
+      "bg": "Розо",
+      "nl": "Rozeau"
     },
     "isoCode": "dm",
     "flagUrl": "assets/flags/dm.svg",
@@ -663,6 +898,11 @@
       "en": "Dominican Republic",
       "nl": "Dominicaanse Republiek"
     },
+    "capitals": {
+      "en": "Santo Domingo",
+      "bg": "Санто Доминго",
+      "nl": "Santo Domingo"
+    },
     "isoCode": "do",
     "flagUrl": "assets/flags/do.svg",
     "shapeUrl": "assets/shapes/do.svg",
@@ -676,6 +916,11 @@
       "bg": "Еквадор",
       "en": "Ecuador",
       "nl": "Ecuador"
+    },
+    "capitals": {
+      "en": "Quito",
+      "bg": "Кито",
+      "nl": "Quito"
     },
     "isoCode": "ec",
     "flagUrl": "assets/flags/ec.svg",
@@ -691,6 +936,11 @@
       "en": "Egypt",
       "nl": "Egypte"
     },
+    "capitals": {
+      "en": "Cairo",
+      "bg": "Кайро",
+      "nl": "Cairo"
+    },
     "isoCode": "eg",
     "flagUrl": "assets/flags/eg.svg",
     "shapeUrl": "assets/shapes/eg.svg",
@@ -704,6 +954,11 @@
       "bg": "Салвадор",
       "en": "El Salvador",
       "nl": "El Salvador"
+    },
+    "capitals": {
+      "en": "San Salvador",
+      "bg": "Сан Салвадор",
+      "nl": "San Salvador"
     },
     "isoCode": "sv",
     "flagUrl": "assets/flags/sv.svg",
@@ -719,6 +974,11 @@
       "en": "Equatorial Guinea",
       "nl": "Equatoriaal-Guinea"
     },
+    "capitals": {
+      "en": "Malabo",
+      "bg": "Малабо",
+      "nl": "Malabo"
+    },
     "isoCode": "gq",
     "flagUrl": "assets/flags/gq.svg",
     "shapeUrl": "assets/shapes/gq.svg",
@@ -732,6 +992,11 @@
       "bg": "Еритрея",
       "en": "Eritrea",
       "nl": "Eritrea"
+    },
+    "capitals": {
+      "en": "Asmara",
+      "bg": "Асмара",
+      "nl": "Asmara"
     },
     "isoCode": "er",
     "flagUrl": "assets/flags/er.svg",
@@ -747,6 +1012,11 @@
       "en": "Estonia",
       "nl": "Estland"
     },
+    "capitals": {
+      "en": "Tallinn",
+      "bg": "Талин",
+      "nl": "Tallinn"
+    },
     "isoCode": "ee",
     "flagUrl": "assets/flags/ee.svg",
     "shapeUrl": "assets/shapes/ee.svg",
@@ -760,6 +1030,11 @@
       "bg": "Есватини",
       "en": "Eswatini",
       "nl": "Eswatini"
+    },
+    "capitals": {
+      "en": "Mbabane",
+      "bg": "Мбабане",
+      "nl": "Mbabane"
     },
     "isoCode": "sz",
     "flagUrl": "assets/flags/sz.svg",
@@ -775,6 +1050,11 @@
       "en": "Ethiopia",
       "nl": "Ethiopië"
     },
+    "capitals": {
+      "en": "Addis Ababa",
+      "bg": "Адис Абеба",
+      "nl": "Addis Ababa"
+    },
     "isoCode": "et",
     "flagUrl": "assets/flags/et.svg",
     "shapeUrl": "assets/shapes/et.svg",
@@ -788,6 +1068,11 @@
       "bg": "Фиджи",
       "en": "Fiji",
       "nl": "Fiji"
+    },
+    "capitals": {
+      "en": "Suva",
+      "bg": "Сува",
+      "nl": "Suva"
     },
     "isoCode": "fj",
     "flagUrl": "assets/flags/fj.svg",
@@ -803,6 +1088,11 @@
       "en": "Finland",
       "nl": "Finland"
     },
+    "capitals": {
+      "en": "Helsinki",
+      "bg": "Хелзинки",
+      "nl": "Helsinki"
+    },
     "isoCode": "fi",
     "flagUrl": "assets/flags/fi.svg",
     "shapeUrl": "assets/shapes/fi.svg",
@@ -816,6 +1106,11 @@
       "bg": "Франция",
       "en": "France",
       "nl": "Frankrijk"
+    },
+    "capitals": {
+      "en": "Paris",
+      "bg": "Париж",
+      "nl": "Parijs"
     },
     "isoCode": "fr",
     "flagUrl": "assets/flags/fr.svg",
@@ -831,6 +1126,11 @@
       "en": "Gabon",
       "nl": "Gabon"
     },
+    "capitals": {
+      "en": "Libreville",
+      "bg": "Либревил",
+      "nl": "Libreville"
+    },
     "isoCode": "ga",
     "flagUrl": "assets/flags/ga.svg",
     "shapeUrl": "assets/shapes/ga.svg",
@@ -844,6 +1144,11 @@
       "bg": "Гамбия",
       "en": "Gambia",
       "nl": "Gambia"
+    },
+    "capitals": {
+      "en": "Banjul",
+      "bg": "Банджул",
+      "nl": "Banjul"
     },
     "isoCode": "gm",
     "flagUrl": "assets/flags/gm.svg",
@@ -859,6 +1164,11 @@
       "en": "Georgia",
       "nl": "Georgië"
     },
+    "capitals": {
+      "en": "Tbilisi",
+      "bg": "Тбилиси",
+      "nl": "Tbilisi"
+    },
     "isoCode": "ge",
     "flagUrl": "assets/flags/ge.svg",
     "shapeUrl": "assets/shapes/ge.svg",
@@ -872,6 +1182,11 @@
       "bg": "Германия",
       "en": "Germany",
       "nl": "Duitsland"
+    },
+    "capitals": {
+      "en": "Berlin",
+      "bg": "Берлин",
+      "nl": "Berlijn"
     },
     "isoCode": "de",
     "flagUrl": "assets/flags/de.svg",
@@ -887,6 +1202,11 @@
       "en": "Ghana",
       "nl": "Ghana"
     },
+    "capitals": {
+      "en": "Accra",
+      "bg": "Акра",
+      "nl": "Accra"
+    },
     "isoCode": "gh",
     "flagUrl": "assets/flags/gh.svg",
     "shapeUrl": "assets/shapes/gh.svg",
@@ -900,6 +1220,11 @@
       "bg": "Гърция",
       "en": "Greece",
       "nl": "Griekenland"
+    },
+    "capitals": {
+      "en": "Athens",
+      "bg": "Атина",
+      "nl": "Athene"
     },
     "isoCode": "gr",
     "flagUrl": "assets/flags/gr.svg",
@@ -915,6 +1240,11 @@
       "en": "Grenada",
       "nl": "Grenada"
     },
+    "capitals": {
+      "en": "St. George's",
+      "bg": "Свети Георги",
+      "nl": "Sint-Joris"
+    },
     "isoCode": "gd",
     "flagUrl": "assets/flags/gd.svg",
     "shapeUrl": "assets/shapes/gd.svg",
@@ -928,6 +1258,11 @@
       "bg": "Гватемала",
       "en": "Guatemala",
       "nl": "Guatemala"
+    },
+    "capitals": {
+      "en": "Guatemala City",
+      "bg": "Гватемала Сити",
+      "nl": "Guatemala Stad"
     },
     "isoCode": "gt",
     "flagUrl": "assets/flags/gt.svg",
@@ -943,6 +1278,11 @@
       "en": "Guinea",
       "nl": "Guinea"
     },
+    "capitals": {
+      "en": "Conakry",
+      "bg": "Конакри",
+      "nl": "Conakry"
+    },
     "isoCode": "gn",
     "flagUrl": "assets/flags/gn.svg",
     "shapeUrl": "assets/shapes/gn.svg",
@@ -956,6 +1296,11 @@
       "bg": "Гвинея-Бисау",
       "en": "Guinea-Bissau",
       "nl": "Guinee-Bissau"
+    },
+    "capitals": {
+      "en": "Bissau",
+      "bg": "Бисау",
+      "nl": "Bissau"
     },
     "isoCode": "gw",
     "flagUrl": "assets/flags/gw.svg",
@@ -971,6 +1316,11 @@
       "en": "Guyana",
       "nl": "Guyana"
     },
+    "capitals": {
+      "en": "Georgetown",
+      "bg": "Джорджтаун",
+      "nl": "Georgetown"
+    },
     "isoCode": "gy",
     "flagUrl": "assets/flags/gy.svg",
     "shapeUrl": "assets/shapes/gy.svg",
@@ -984,6 +1334,11 @@
       "bg": "Хаити",
       "en": "Haiti",
       "nl": "Haïti"
+    },
+    "capitals": {
+      "en": "Port-au-Prince",
+      "bg": "Порт-о-Пренс",
+      "nl": "Port-au-Prince"
     },
     "isoCode": "ht",
     "flagUrl": "assets/flags/ht.svg",
@@ -999,6 +1354,11 @@
       "en": "Honduras",
       "nl": "Honduras"
     },
+    "capitals": {
+      "en": "Tegucigalpa",
+      "bg": "Тегусигалпа",
+      "nl": "Tegucigalpa"
+    },
     "isoCode": "hn",
     "flagUrl": "assets/flags/hn.svg",
     "shapeUrl": "assets/shapes/hn.svg",
@@ -1012,6 +1372,11 @@
       "bg": "Унгария",
       "en": "Hungary",
       "nl": "Hongarije"
+    },
+    "capitals": {
+      "en": "Budapest",
+      "bg": "Будапеща",
+      "nl": "Boedapest"
     },
     "isoCode": "hu",
     "flagUrl": "assets/flags/hu.svg",
@@ -1027,6 +1392,11 @@
       "en": "Iceland",
       "nl": "IJsland"
     },
+    "capitals": {
+      "en": "Reykjavik",
+      "bg": "Рейкявик",
+      "nl": "Reykjavík"
+    },
     "isoCode": "is",
     "flagUrl": "assets/flags/is.svg",
     "shapeUrl": "assets/shapes/is.svg",
@@ -1040,6 +1410,11 @@
       "bg": "Индия",
       "en": "India",
       "nl": "Indië"
+    },
+    "capitals": {
+      "en": "New Delhi",
+      "bg": "Ню Делхи",
+      "nl": "New Delhi"
     },
     "isoCode": "in",
     "flagUrl": "assets/flags/in.svg",
@@ -1055,6 +1430,11 @@
       "en": "Indonesia",
       "nl": "Indonesië"
     },
+    "capitals": {
+      "en": "Jakarta",
+      "bg": "Джакарта",
+      "nl": "Jakarta"
+    },
     "isoCode": "id",
     "flagUrl": "assets/flags/id.svg",
     "shapeUrl": "assets/shapes/id.svg",
@@ -1068,6 +1448,11 @@
       "bg": "Иран",
       "en": "Iran",
       "nl": "Iran"
+    },
+    "capitals": {
+      "en": "Tehran",
+      "bg": "Техеран",
+      "nl": "Teheran"
     },
     "isoCode": "ir",
     "flagUrl": "assets/flags/ir.svg",
@@ -1083,6 +1468,11 @@
       "en": "Iraq",
       "nl": "Irak"
     },
+    "capitals": {
+      "en": "Baghdad",
+      "bg": "Багдад",
+      "nl": "Bagdad"
+    },
     "isoCode": "iq",
     "flagUrl": "assets/flags/iq.svg",
     "shapeUrl": "assets/shapes/iq.svg",
@@ -1096,6 +1486,11 @@
       "bg": "Ирландия",
       "en": "Ireland",
       "nl": "Ierland"
+    },
+    "capitals": {
+      "en": "Dublin",
+      "bg": "Дъблин",
+      "nl": "Dublin"
     },
     "isoCode": "ie",
     "flagUrl": "assets/flags/ie.svg",
@@ -1111,6 +1506,11 @@
       "en": "Israel",
       "nl": "Israël"
     },
+    "capitals": {
+      "en": "Jerusalem (claimed), Tel Aviv (internationally recognized)",
+      "bg": "Йерусалим (потвърден), Тел Авив (международно признат)",
+      "nl": "Jeruzalem (beweerde), Tel Aviv (internationaal erkend)"
+    },
     "isoCode": "il",
     "flagUrl": "assets/flags/il.svg",
     "shapeUrl": "assets/shapes/il.svg",
@@ -1124,6 +1524,11 @@
       "bg": "Италия",
       "en": "Italy",
       "nl": "Italië"
+    },
+    "capitals": {
+      "en": "Rome",
+      "bg": "Рим",
+      "nl": "Rome"
     },
     "isoCode": "it",
     "flagUrl": "assets/flags/it.svg",
@@ -1139,6 +1544,11 @@
       "en": "Jamaica",
       "nl": "Jamaica"
     },
+    "capitals": {
+      "en": "Kingston",
+      "bg": "Кингстън",
+      "nl": "Kingston"
+    },
     "isoCode": "jm",
     "flagUrl": "assets/flags/jm.svg",
     "shapeUrl": "assets/shapes/jm.svg",
@@ -1152,6 +1562,11 @@
       "bg": "Япония",
       "en": "Japan",
       "nl": "Japan"
+    },
+    "capitals": {
+      "en": "Tokyo",
+      "bg": "Токио",
+      "nl": "Tokio"
     },
     "isoCode": "jp",
     "flagUrl": "assets/flags/jp.svg",
@@ -1167,6 +1582,11 @@
       "en": "Jordan",
       "nl": "Jordanië"
     },
+    "capitals": {
+      "en": "Amman",
+      "bg": "Аман",
+      "nl": "Amman"
+    },
     "isoCode": "jo",
     "flagUrl": "assets/flags/jo.svg",
     "shapeUrl": "assets/shapes/jo.svg",
@@ -1180,6 +1600,11 @@
       "bg": "Казахстан",
       "en": "Kazakhstan",
       "nl": "Kazachstan"
+    },
+    "capitals": {
+      "en": "Nur-Sultan",
+      "bg": "Нур-Султан",
+      "nl": "Nur-Sultan"
     },
     "isoCode": "kz",
     "flagUrl": "assets/flags/kz.svg",
@@ -1195,6 +1620,11 @@
       "en": "Kenya",
       "nl": "Kenia"
     },
+    "capitals": {
+      "en": "Nairobi",
+      "bg": "Найроби",
+      "nl": "Nairobi"
+    },
     "isoCode": "ke",
     "flagUrl": "assets/flags/ke.svg",
     "shapeUrl": "assets/shapes/ke.svg",
@@ -1208,6 +1638,11 @@
       "bg": "Кирибати",
       "en": "Kiribati",
       "nl": "Kiribati"
+    },
+    "capitals": {
+      "en": "South Tarawa",
+      "bg": "Южна Тарава",
+      "nl": "Zuid-Tarawa"
     },
     "isoCode": "ki",
     "flagUrl": "assets/flags/ki.svg",
@@ -1223,6 +1658,11 @@
       "en": "Kuwait",
       "nl": "Koeweit"
     },
+    "capitals": {
+      "en": "Kuwait City",
+      "bg": "град Кувейт",
+      "nl": "Koeweit Stad"
+    },
     "isoCode": "kw",
     "flagUrl": "assets/flags/kw.svg",
     "shapeUrl": "assets/shapes/kw.svg",
@@ -1236,6 +1676,11 @@
       "bg": "Киргизстан",
       "en": "Kyrgyzstan",
       "nl": "Kirgizië"
+    },
+    "capitals": {
+      "en": "Bishkek",
+      "bg": "Бишкек",
+      "nl": "Bisjkek"
     },
     "isoCode": "kg",
     "flagUrl": "assets/flags/kg.svg",
@@ -1251,6 +1696,11 @@
       "en": "Laos",
       "nl": "Laos"
     },
+    "capitals": {
+      "en": "Vientiane",
+      "bg": "Виентян",
+      "nl": "Vientiane"
+    },
     "isoCode": "la",
     "flagUrl": "assets/flags/la.svg",
     "shapeUrl": "assets/shapes/la.svg",
@@ -1264,6 +1714,11 @@
       "bg": "Латвия",
       "en": "Latvia",
       "nl": "Letland"
+    },
+    "capitals": {
+      "en": "Riga",
+      "bg": "Рига",
+      "nl": "Rīga"
     },
     "isoCode": "lv",
     "flagUrl": "assets/flags/lv.svg",
@@ -1279,6 +1734,11 @@
       "en": "Lebanon",
       "nl": "Libanon"
     },
+    "capitals": {
+      "en": "Beirut",
+      "bg": "Бейрут",
+      "nl": "Beiroet"
+    },
     "isoCode": "lb",
     "flagUrl": "assets/flags/lb.svg",
     "shapeUrl": "assets/shapes/lb.svg",
@@ -1292,6 +1752,11 @@
       "bg": "Лесото",
       "en": "Lesotho",
       "nl": "Lesotho"
+    },
+    "capitals": {
+      "en": "Maseru",
+      "bg": "Масеру",
+      "nl": "Maseru"
     },
     "isoCode": "ls",
     "flagUrl": "assets/flags/ls.svg",
@@ -1307,6 +1772,11 @@
       "en": "Liberia",
       "nl": "Liberia"
     },
+    "capitals": {
+      "en": "Monrovia",
+      "bg": "Монровия",
+      "nl": "Monrovia"
+    },
     "isoCode": "lr",
     "flagUrl": "assets/flags/lr.svg",
     "shapeUrl": "assets/shapes/lr.svg",
@@ -1320,6 +1790,11 @@
       "bg": "Либия",
       "en": "Libya",
       "nl": "Libië"
+    },
+    "capitals": {
+      "en": "Tripoli",
+      "bg": "Триполи",
+      "nl": "Tripoli"
     },
     "isoCode": "ly",
     "flagUrl": "assets/flags/ly.svg",
@@ -1335,6 +1810,11 @@
       "en": "Liechtenstein",
       "nl": "Liechtenstein"
     },
+    "capitals": {
+      "en": "Vaduz",
+      "bg": "Вадуц",
+      "nl": "Vaduz"
+    },
     "isoCode": "li",
     "flagUrl": "assets/flags/li.svg",
     "shapeUrl": "assets/shapes/li.svg",
@@ -1348,6 +1828,11 @@
       "bg": "Литва",
       "en": "Lithuania",
       "nl": "Litouwen"
+    },
+    "capitals": {
+      "en": "Vilnius",
+      "bg": "Вилнюс",
+      "nl": "Vilnius"
     },
     "isoCode": "lt",
     "flagUrl": "assets/flags/lt.svg",
@@ -1363,6 +1848,11 @@
       "en": "Luxembourg",
       "nl": "Luxemburg"
     },
+    "capitals": {
+      "en": "Luxembourg City",
+      "bg": "Град Люксембург",
+      "nl": "Luxemburg stad"
+    },
     "isoCode": "lu",
     "flagUrl": "assets/flags/lu.svg",
     "shapeUrl": "assets/shapes/lu.svg",
@@ -1376,6 +1866,11 @@
       "bg": "Мадагаскар",
       "en": "Madagascar",
       "nl": "Madagascar"
+    },
+    "capitals": {
+      "en": "Antananarivo",
+      "bg": "Антананариво",
+      "nl": "Antananarivo"
     },
     "isoCode": "mg",
     "flagUrl": "assets/flags/mg.svg",
@@ -1391,6 +1886,11 @@
       "en": "Malawi",
       "nl": "Malawi"
     },
+    "capitals": {
+      "en": "Lilongwe",
+      "bg": "Лилонгве",
+      "nl": "Lilongwe"
+    },
     "isoCode": "mw",
     "flagUrl": "assets/flags/mw.svg",
     "shapeUrl": "assets/shapes/mw.svg",
@@ -1404,6 +1904,11 @@
       "bg": "Малайзия",
       "en": "Malaysia",
       "nl": "Maleisië"
+    },
+    "capitals": {
+      "en": "Kuala Lumpur",
+      "bg": "Куала Лумпур",
+      "nl": "Kuala Lumpur"
     },
     "isoCode": "my",
     "flagUrl": "assets/flags/my.svg",
@@ -1419,6 +1924,11 @@
       "en": "Maldives",
       "nl": "Maldiven"
     },
+    "capitals": {
+      "en": "Male",
+      "bg": "Мъжки",
+      "nl": "Mannelijk"
+    },
     "isoCode": "mv",
     "flagUrl": "assets/flags/mv.svg",
     "shapeUrl": "assets/shapes/mv.svg",
@@ -1432,6 +1942,11 @@
       "bg": "Мали",
       "en": "Mali",
       "nl": "Mali"
+    },
+    "capitals": {
+      "en": "Bamako",
+      "bg": "Бамако",
+      "nl": "Bamako"
     },
     "isoCode": "ml",
     "flagUrl": "assets/flags/ml.svg",
@@ -1447,6 +1962,11 @@
       "en": "Malta",
       "nl": "Malta"
     },
+    "capitals": {
+      "en": "Valletta",
+      "bg": "Валета",
+      "nl": "Valletta"
+    },
     "isoCode": "mt",
     "flagUrl": "assets/flags/mt.svg",
     "shapeUrl": "assets/shapes/mt.svg",
@@ -1460,6 +1980,11 @@
       "bg": "Мавритания",
       "en": "Mauritania",
       "nl": "Mauritanië"
+    },
+    "capitals": {
+      "en": "Nouakchott",
+      "bg": "Нуакшот",
+      "nl": "Nouakchott"
     },
     "isoCode": "mr",
     "flagUrl": "assets/flags/mr.svg",
@@ -1475,6 +2000,11 @@
       "en": "Mauritius",
       "nl": "Mauritius"
     },
+    "capitals": {
+      "en": "Port Louis",
+      "bg": "Порт Луис",
+      "nl": "Port Louis"
+    },
     "isoCode": "mu",
     "flagUrl": "assets/flags/mu.svg",
     "shapeUrl": "assets/shapes/mu.svg",
@@ -1488,6 +2018,11 @@
       "bg": "Мексико",
       "en": "Mexico",
       "nl": "Mexico"
+    },
+    "capitals": {
+      "en": "Mexico City",
+      "bg": "Мексико сити",
+      "nl": "Mexico Stad"
     },
     "isoCode": "mx",
     "flagUrl": "assets/flags/mx.svg",
@@ -1503,6 +2038,11 @@
       "en": "Moldova",
       "nl": "Moldavië"
     },
+    "capitals": {
+      "en": "Chisinau",
+      "bg": "Кишинев",
+      "nl": "Chisinau"
+    },
     "isoCode": "md",
     "flagUrl": "assets/flags/md.svg",
     "shapeUrl": "assets/shapes/md.svg",
@@ -1515,6 +2055,11 @@
     "names": {
       "bg": "Монако",
       "en": "Monaco",
+      "nl": "Monaco"
+    },
+    "capitals": {
+      "en": "Monaco",
+      "bg": "Монако",
       "nl": "Monaco"
     },
     "isoCode": "mc",
@@ -1531,6 +2076,11 @@
       "en": "Mongolia",
       "nl": "Mongolië"
     },
+    "capitals": {
+      "en": "Ulaanbaatar",
+      "bg": "Улан Батор",
+      "nl": "Ulaanbaatar"
+    },
     "isoCode": "mn",
     "flagUrl": "assets/flags/mn.svg",
     "shapeUrl": "assets/shapes/mn.svg",
@@ -1544,6 +2094,11 @@
       "bg": "Царство Мароко",
       "en": "Morocco",
       "nl": "Marokko"
+    },
+    "capitals": {
+      "en": "Rabat",
+      "bg": "Рабат",
+      "nl": "Rabat"
     },
     "isoCode": "ma",
     "flagUrl": "assets/flags/ma.svg",
@@ -1559,6 +2114,11 @@
       "en": "Mozambique",
       "nl": "Mozambique"
     },
+    "capitals": {
+      "en": "Maputo",
+      "bg": "Мапуто",
+      "nl": "Maputo"
+    },
     "isoCode": "mz",
     "flagUrl": "assets/flags/mz.svg",
     "shapeUrl": "assets/shapes/mz.svg",
@@ -1572,6 +2132,11 @@
       "bg": "Мианмар (Бирма)",
       "en": "Myanmar (Burma)",
       "nl": "Myanmar (Birma)"
+    },
+    "capitals": {
+      "en": "Naypyidaw",
+      "bg": "Найпидо",
+      "nl": "Naypyidaw"
     },
     "isoCode": "mm",
     "flagUrl": "assets/flags/mm.svg",
@@ -1587,6 +2152,11 @@
       "en": "Namibia",
       "nl": "Namibië"
     },
+    "capitals": {
+      "en": "Windhoek",
+      "bg": "Уиндхук",
+      "nl": "Windhoek"
+    },
     "isoCode": "na",
     "flagUrl": "assets/flags/na.svg",
     "shapeUrl": "assets/shapes/na.svg",
@@ -1600,6 +2170,11 @@
       "bg": "Науру",
       "en": "Nauru",
       "nl": "Nauru"
+    },
+    "capitals": {
+      "en": "Yaren",
+      "bg": "Ярен",
+      "nl": "Yaren"
     },
     "isoCode": "nr",
     "flagUrl": "assets/flags/nr.svg",
@@ -1615,6 +2190,11 @@
       "en": "Nepal",
       "nl": "Nepal"
     },
+    "capitals": {
+      "en": "Kathmandu",
+      "bg": "Катманду",
+      "nl": "kathmandu"
+    },
     "isoCode": "np",
     "flagUrl": "assets/flags/np.svg",
     "shapeUrl": "assets/shapes/np.svg",
@@ -1628,6 +2208,11 @@
       "bg": "Нидерландия",
       "en": "Netherlands",
       "nl": "Nederland"
+    },
+    "capitals": {
+      "en": "Amsterdam (constitutional capital), The Hague (seat of government)",
+      "bg": "Амстердам (конституционна столица), Хага (седалище на правителството)",
+      "nl": "Amsterdam (constitutionele hoofdstad), Den Haag (regeringszetel)"
     },
     "isoCode": "nl",
     "flagUrl": "assets/flags/nl.svg",
@@ -1643,6 +2228,11 @@
       "en": "New Zealand",
       "nl": "Nieuw-Zeeland"
     },
+    "capitals": {
+      "en": "Wellington",
+      "bg": "Уелингтън",
+      "nl": "Wellington"
+    },
     "isoCode": "nz",
     "flagUrl": "assets/flags/nz.svg",
     "shapeUrl": "assets/shapes/nz.svg",
@@ -1656,6 +2246,11 @@
       "bg": "Никарагуа",
       "en": "Nicaragua",
       "nl": "Nicaragua"
+    },
+    "capitals": {
+      "en": "Managua",
+      "bg": "Манагуа",
+      "nl": "Managua"
     },
     "isoCode": "ni",
     "flagUrl": "assets/flags/ni.svg",
@@ -1671,6 +2266,11 @@
       "en": "Niger",
       "nl": "Niger"
     },
+    "capitals": {
+      "en": "Niamey",
+      "bg": "Ниамей",
+      "nl": "Niamey"
+    },
     "isoCode": "ne",
     "flagUrl": "assets/flags/ne.svg",
     "shapeUrl": "assets/shapes/ne.svg",
@@ -1684,6 +2284,11 @@
       "bg": "Нигерия",
       "en": "Nigeria",
       "nl": "Nigeria"
+    },
+    "capitals": {
+      "en": "Abuja",
+      "bg": "Абуджа",
+      "nl": "Abuja"
     },
     "isoCode": "ng",
     "flagUrl": "assets/flags/ng.svg",
@@ -1699,6 +2304,11 @@
       "en": "North Macedonia",
       "nl": "Noord-Macedonië"
     },
+    "capitals": {
+      "en": "Skopje",
+      "bg": "Скопие",
+      "nl": "Skopje"
+    },
     "isoCode": "mk",
     "flagUrl": "assets/flags/mk.svg",
     "shapeUrl": "assets/shapes/mk.svg",
@@ -1712,6 +2322,11 @@
       "bg": "Северна Корея",
       "en": "North Korea",
       "nl": "Noord Korea"
+    },
+    "capitals": {
+      "en": "Pyongyang",
+      "bg": "Пхенян",
+      "nl": "Pyongyang"
     },
     "isoCode": "kp",
     "flagUrl": "assets/flags/kp.svg",
@@ -1727,6 +2342,11 @@
       "en": "Norway",
       "nl": "Noorwegen"
     },
+    "capitals": {
+      "en": "Oslo",
+      "bg": "Осло",
+      "nl": "Oslo"
+    },
     "isoCode": "no",
     "flagUrl": "assets/flags/no.svg",
     "shapeUrl": "assets/shapes/no.svg",
@@ -1740,6 +2360,11 @@
       "bg": "Оман",
       "en": "Oman",
       "nl": "Oman"
+    },
+    "capitals": {
+      "en": "Muscat",
+      "bg": "Мускат",
+      "nl": "Muscateldruif"
     },
     "isoCode": "om",
     "flagUrl": "assets/flags/om.svg",
@@ -1755,6 +2380,11 @@
       "en": "Pakistan",
       "nl": "Pakistan"
     },
+    "capitals": {
+      "en": "Islamabad",
+      "bg": "Исламабад",
+      "nl": "Islamabad"
+    },
     "isoCode": "pk",
     "flagUrl": "assets/flags/pk.svg",
     "shapeUrl": "assets/shapes/pk.svg",
@@ -1768,6 +2398,11 @@
       "bg": "Палау",
       "en": "Palau",
       "nl": "Palau"
+    },
+    "capitals": {
+      "en": "Ngerulmud",
+      "bg": "Нгерулмуд",
+      "nl": "Ngerulmud"
     },
     "isoCode": "pw",
     "flagUrl": "assets/flags/pw.svg",
@@ -1783,6 +2418,11 @@
       "en": "Panama",
       "nl": "Panama"
     },
+    "capitals": {
+      "en": "Panama City",
+      "bg": "град Панама",
+      "nl": "Panama Stad"
+    },
     "isoCode": "pa",
     "flagUrl": "assets/flags/pa.svg",
     "shapeUrl": "assets/shapes/pa.svg",
@@ -1796,6 +2436,11 @@
       "bg": "Папуа-Нова Гвинея",
       "en": "Papua New Guinea",
       "nl": "Papoea-Nieuw-Guinea"
+    },
+    "capitals": {
+      "en": "Port Moresby",
+      "bg": "Порт Морсби",
+      "nl": "Port Moresby"
     },
     "isoCode": "pg",
     "flagUrl": "assets/flags/pg.svg",
@@ -1811,6 +2456,11 @@
       "en": "Paraguay",
       "nl": "Paraguay"
     },
+    "capitals": {
+      "en": "Asunción",
+      "bg": "Асунсион",
+      "nl": "Asunción"
+    },
     "isoCode": "py",
     "flagUrl": "assets/flags/py.svg",
     "shapeUrl": "assets/shapes/py.svg",
@@ -1824,6 +2474,11 @@
       "bg": "Перу",
       "en": "Peru",
       "nl": "Peru"
+    },
+    "capitals": {
+      "en": "Lima",
+      "bg": "Лима",
+      "nl": "Lima"
     },
     "isoCode": "pe",
     "flagUrl": "assets/flags/pe.svg",
@@ -1839,6 +2494,11 @@
       "en": "Philippines",
       "nl": "Filippijnen"
     },
+    "capitals": {
+      "en": "Manila",
+      "bg": "Манила",
+      "nl": "manilla"
+    },
     "isoCode": "ph",
     "flagUrl": "assets/flags/ph.svg",
     "shapeUrl": "assets/shapes/ph.svg",
@@ -1852,6 +2512,11 @@
       "bg": "Полша",
       "en": "Poland",
       "nl": "Polen"
+    },
+    "capitals": {
+      "en": "Warsaw",
+      "bg": "Варшава",
+      "nl": "Warschau"
     },
     "isoCode": "pl",
     "flagUrl": "assets/flags/pl.svg",
@@ -1867,6 +2532,11 @@
       "en": "Portugal",
       "nl": "Portugal"
     },
+    "capitals": {
+      "en": "Lisbon",
+      "bg": "Лисабон",
+      "nl": "Lissabon"
+    },
     "isoCode": "pt",
     "flagUrl": "assets/flags/pt.svg",
     "shapeUrl": "assets/shapes/pt.svg",
@@ -1880,6 +2550,11 @@
       "bg": "Катар",
       "en": "Qatar",
       "nl": "Qatar"
+    },
+    "capitals": {
+      "en": "Doha",
+      "bg": "Доха",
+      "nl": "Doha"
     },
     "isoCode": "qa",
     "flagUrl": "assets/flags/qa.svg",
@@ -1895,6 +2570,11 @@
       "en": "Romania",
       "nl": "Roemenië"
     },
+    "capitals": {
+      "en": "Bucharest",
+      "bg": "Букурещ",
+      "nl": "Boekarest"
+    },
     "isoCode": "ro",
     "flagUrl": "assets/flags/ro.svg",
     "shapeUrl": "assets/shapes/ro.svg",
@@ -1908,6 +2588,11 @@
       "bg": "Русия",
       "en": "Russia",
       "nl": "Rusland"
+    },
+    "capitals": {
+      "en": "Moscow",
+      "bg": "Москва",
+      "nl": "Moskou"
     },
     "isoCode": "ru",
     "flagUrl": "assets/flags/ru.svg",
@@ -1923,6 +2608,11 @@
       "en": "Rwanda",
       "nl": "Rwanda"
     },
+    "capitals": {
+      "en": "Kigali",
+      "bg": "Кигали",
+      "nl": "Kigali"
+    },
     "isoCode": "rw",
     "flagUrl": "assets/flags/rw.svg",
     "shapeUrl": "assets/shapes/rw.svg",
@@ -1936,6 +2626,11 @@
       "bg": "Света Лусия",
       "en": "Saint Lucia",
       "nl": "Sint Lucia"
+    },
+    "capitals": {
+      "en": "Castries",
+      "bg": "Кастри",
+      "nl": "castries"
     },
     "isoCode": "lc",
     "flagUrl": "assets/flags/lc.svg",
@@ -1951,6 +2646,11 @@
       "en": "Saint Vincent and the Grenadines",
       "nl": "Saint Vincent en de Grenadines"
     },
+    "capitals": {
+      "en": "Kingstown",
+      "bg": "Кингстаун",
+      "nl": "Koningsstad"
+    },
     "isoCode": "vc",
     "flagUrl": "assets/flags/vc.svg",
     "shapeUrl": "assets/shapes/vc.svg",
@@ -1965,6 +2665,11 @@
       "en": "Samoa",
       "nl": "Samoa"
     },
+    "capitals": {
+      "en": "Apia",
+      "bg": "Апия",
+      "nl": "Apia"
+    },
     "isoCode": "ws",
     "flagUrl": "assets/flags/ws.svg",
     "shapeUrl": "assets/shapes/ws.svg",
@@ -1977,6 +2682,11 @@
     "names": {
       "bg": "Сан Марино",
       "en": "San Marino",
+      "nl": "San Marino"
+    },
+    "capitals": {
+      "en": "San Marino",
+      "bg": "Сан Марино",
       "nl": "San Marino"
     },
     "isoCode": "sm",
@@ -1993,6 +2703,11 @@
       "en": "Sao Tome and Principe",
       "nl": "Sao Tomé en Principe"
     },
+    "capitals": {
+      "en": "São Tomé",
+      "bg": "Сао Томе",
+      "nl": "Sao Tomé"
+    },
     "isoCode": "st",
     "flagUrl": "assets/flags/st.svg",
     "shapeUrl": "assets/shapes/st.svg",
@@ -2006,6 +2721,11 @@
       "bg": "Саудитска Арабия",
       "en": "Saudi Arabia",
       "nl": "Saoedi-Arabië"
+    },
+    "capitals": {
+      "en": "Riyadh",
+      "bg": "Рияд",
+      "nl": "Riyad"
     },
     "isoCode": "sa",
     "flagUrl": "assets/flags/sa.svg",
@@ -2021,6 +2741,11 @@
       "en": "Senegal",
       "nl": "Senegal"
     },
+    "capitals": {
+      "en": "Dakar",
+      "bg": "Дакар",
+      "nl": "Dakar"
+    },
     "isoCode": "sn",
     "flagUrl": "assets/flags/sn.svg",
     "shapeUrl": "assets/shapes/sn.svg",
@@ -2034,6 +2759,11 @@
       "bg": "Сърбия",
       "en": "Serbia",
       "nl": "Servië"
+    },
+    "capitals": {
+      "en": "Belgrade",
+      "bg": "Белград",
+      "nl": "Belgrado"
     },
     "isoCode": "rs",
     "flagUrl": "assets/flags/rs.svg",
@@ -2049,6 +2779,11 @@
       "en": "Seychelles",
       "nl": "Seychellen"
     },
+    "capitals": {
+      "en": "Victoria",
+      "bg": "Виктория",
+      "nl": "Victoria"
+    },
     "isoCode": "sc",
     "flagUrl": "assets/flags/sc.svg",
     "shapeUrl": "assets/shapes/sc.svg",
@@ -2063,6 +2798,11 @@
       "en": "Sierra Leone",
       "nl": "Sierra Leone"
     },
+    "capitals": {
+      "en": "Freetown",
+      "bg": "Фрийтаун",
+      "nl": "vrijstad"
+    },
     "isoCode": "sl",
     "flagUrl": "assets/flags/sl.svg",
     "shapeUrl": "assets/shapes/sl.svg",
@@ -2075,6 +2815,11 @@
     "names": {
       "bg": "Сингапур",
       "en": "Singapore",
+      "nl": "Singapore"
+    },
+    "capitals": {
+      "en": "Singapore",
+      "bg": "Сингапур",
       "nl": "Singapore"
     },
     "isoCode": "sg",
@@ -2091,6 +2836,11 @@
       "en": "Slovakia",
       "nl": "Slowakije"
     },
+    "capitals": {
+      "en": "Bratislava",
+      "bg": "Братислава",
+      "nl": "Bratislava"
+    },
     "isoCode": "sk",
     "flagUrl": "assets/flags/sk.svg",
     "shapeUrl": "assets/shapes/sk.svg",
@@ -2104,6 +2854,11 @@
       "bg": "Словения",
       "en": "Slovenia",
       "nl": "Slovenië"
+    },
+    "capitals": {
+      "en": "Ljubljana",
+      "bg": "Любляна",
+      "nl": "Ljubljana"
     },
     "isoCode": "si",
     "flagUrl": "assets/flags/si.svg",
@@ -2119,6 +2874,11 @@
       "en": "Solomon Islands",
       "nl": "Solomon eilanden"
     },
+    "capitals": {
+      "en": "Honiara",
+      "bg": "Хониара",
+      "nl": "Honiara"
+    },
     "isoCode": "sb",
     "flagUrl": "assets/flags/sb.svg",
     "shapeUrl": "assets/shapes/sb.svg",
@@ -2132,6 +2892,11 @@
       "bg": "Сомалия",
       "en": "Somalia",
       "nl": "Somalië"
+    },
+    "capitals": {
+      "en": "Mogadishu",
+      "bg": "Могадишу",
+      "nl": "Mogadishu"
     },
     "isoCode": "so",
     "flagUrl": "assets/flags/so.svg",
@@ -2147,6 +2912,11 @@
       "en": "South Africa",
       "nl": "Zuid-Afrika"
     },
+    "capitals": {
+      "en": "Cape Town",
+      "bg": "Кейптаун",
+      "nl": "Kaapstad"
+    },
     "isoCode": "za",
     "flagUrl": "assets/flags/za.svg",
     "shapeUrl": "assets/shapes/za.svg",
@@ -2160,6 +2930,11 @@
       "bg": "Южна Корея",
       "en": "South Korea",
       "nl": "Zuid-Korea"
+    },
+    "capitals": {
+      "en": "Seoul",
+      "bg": "Сеул",
+      "nl": "Seoel"
     },
     "isoCode": "kr",
     "flagUrl": "assets/flags/kr.svg",
@@ -2175,6 +2950,11 @@
       "en": "South Sudan",
       "nl": "Zuid Soedan"
     },
+    "capitals": {
+      "en": "Juba",
+      "bg": "Джуба",
+      "nl": "Djoeba"
+    },
     "isoCode": "ss",
     "flagUrl": "assets/flags/ss.svg",
     "shapeUrl": "assets/shapes/ss.svg",
@@ -2188,6 +2968,11 @@
       "bg": "Испания",
       "en": "Spain",
       "nl": "Spanje"
+    },
+    "capitals": {
+      "en": "Madrid",
+      "bg": "Мадрид",
+      "nl": "Madrid"
     },
     "isoCode": "es",
     "flagUrl": "assets/flags/es.svg",
@@ -2203,7 +2988,11 @@
       "en": "Sri Lanka",
       "nl": "Sri Lanka"
     },
-    "isoCode": "lk",
+    "capitals": {
+      "en": "Sri Jayawardenepura Kotte",
+      "bg": "Шри Джаяварденепура Коте",
+      "nl": "Sri Jayawardenapura Kotte"
+    },
     "flagUrl": "assets/flags/lk.svg",
     "shapeUrl": "assets/shapes/lk.svg",
     "coordinates": {
@@ -2216,6 +3005,11 @@
       "bg": "Судан",
       "en": "Sudan",
       "nl": "Soedan"
+    },
+    "capitals": {
+      "en": "Khartoum",
+      "bg": "Хартум",
+      "nl": "Khartoem"
     },
     "isoCode": "sd",
     "flagUrl": "assets/flags/sd.svg",
@@ -2231,6 +3025,11 @@
       "en": "Suriname",
       "nl": "Suriname"
     },
+    "capitals": {
+      "en": "Paramaribo",
+      "bg": "Парамарибо",
+      "nl": "Paramaribo"
+    },
     "isoCode": "sr",
     "flagUrl": "assets/flags/sr.svg",
     "shapeUrl": "assets/shapes/sr.svg",
@@ -2244,6 +3043,11 @@
       "bg": "Швеция",
       "en": "Sweden",
       "nl": "Zweden"
+    },
+    "capitals": {
+      "en": "Stockholm",
+      "bg": "Стокхолм",
+      "nl": "Stockholm"
     },
     "isoCode": "se",
     "flagUrl": "assets/flags/se.svg",
@@ -2259,6 +3063,11 @@
       "en": "Switzerland",
       "nl": "Zwitserland"
     },
+    "capitals": {
+      "en": "Bern",
+      "bg": "Берн",
+      "nl": "Bern"
+    },
     "isoCode": "ch",
     "flagUrl": "assets/flags/ch.svg",
     "shapeUrl": "assets/shapes/ch.svg",
@@ -2272,6 +3081,11 @@
       "bg": "Сирия",
       "en": "Syria",
       "nl": "Syrië"
+    },
+    "capitals": {
+      "en": "Damascus",
+      "bg": "Дамаск",
+      "nl": "Damascus"
     },
     "isoCode": "sy",
     "flagUrl": "assets/flags/sy.svg",
@@ -2287,6 +3101,11 @@
       "en": "Taiwan",
       "nl": "Taiwan"
     },
+    "capitals": {
+      "en": "Taipei",
+      "bg": "Тайпе",
+      "nl": "Taipei"
+    },
     "isoCode": "tw",
     "flagUrl": "assets/flags/tw.svg",
     "shapeUrl": "assets/shapes/tw.svg",
@@ -2300,6 +3119,11 @@
       "bg": "Таджикистан",
       "en": "Tajikistan",
       "nl": "Tadzjikistan"
+    },
+    "capitals": {
+      "en": "Dushanbe",
+      "bg": "Душанбе",
+      "nl": "Dushanbe"
     },
     "isoCode": "tj",
     "flagUrl": "assets/flags/tj.svg",
@@ -2315,6 +3139,11 @@
       "en": "Tanzania",
       "nl": "Tanzania"
     },
+    "capitals": {
+      "en": "Dodoma",
+      "bg": "Додома",
+      "nl": "Dodoma"
+    },
     "isoCode": "tz",
     "flagUrl": "assets/flags/tz.svg",
     "shapeUrl": "assets/shapes/tz.svg",
@@ -2328,6 +3157,11 @@
       "bg": "Тайланд",
       "en": "Thailand",
       "nl": "Thailand"
+    },
+    "capitals": {
+      "en": "Bangkok",
+      "bg": "Банкок",
+      "nl": "Bangkok"
     },
     "isoCode": "th",
     "flagUrl": "assets/flags/th.svg",
@@ -2343,6 +3177,11 @@
       "en": "Timor-Leste",
       "nl": "Timor-Leste"
     },
+    "capitals": {
+      "en": "Dili",
+      "bg": "Дили",
+      "nl": "Dili"
+    },
     "isoCode": "tl",
     "flagUrl": "assets/flags/tl.svg",
     "shapeUrl": "assets/shapes/tl.svg",
@@ -2356,6 +3195,11 @@
       "bg": "Того",
       "en": "Togo",
       "nl": "Gaan"
+    },
+    "capitals": {
+      "en": "Lomé",
+      "bg": "Ломе",
+      "nl": "Lomé"
     },
     "isoCode": "tg",
     "flagUrl": "assets/flags/tg.svg",
@@ -2371,6 +3215,11 @@
       "en": "Tonga",
       "nl": "Tonga"
     },
+    "capitals": {
+      "en": "Nuku'alofa",
+      "bg": "Нукуалофа",
+      "nl": "Nuku'alofa"
+    },
     "isoCode": "to",
     "flagUrl": "assets/flags/to.svg",
     "shapeUrl": "assets/shapes/to.svg",
@@ -2384,6 +3233,11 @@
       "bg": "Тринидад и Тобаго",
       "en": "Trinidad and Tobago",
       "nl": "Trinidad en Tobago"
+    },
+    "capitals": {
+      "en": "Port of Spain",
+      "bg": "Порт ъф Спейн",
+      "nl": "Haven van Spanje"
     },
     "isoCode": "tt",
     "flagUrl": "assets/flags/tt.svg",
@@ -2399,6 +3253,11 @@
       "en": "Tunisia",
       "nl": "Tunesië"
     },
+    "capitals": {
+      "en": "Tunis",
+      "bg": "Тунис",
+      "nl": "Tunis"
+    },
     "isoCode": "tn",
     "flagUrl": "assets/flags/tn.svg",
     "shapeUrl": "assets/shapes/tn.svg",
@@ -2412,6 +3271,11 @@
       "bg": "Турция",
       "en": "Turkey",
       "nl": "Kalkoen"
+    },
+    "capitals": {
+      "en": "Ankara",
+      "bg": "Анкара",
+      "nl": "Ankara"
     },
     "isoCode": "tr",
     "flagUrl": "assets/flags/tr.svg",
@@ -2427,6 +3291,11 @@
       "en": "Turkmenistan",
       "nl": "Turkmenistan"
     },
+    "capitals": {
+      "en": "Ashgabat",
+      "bg": "Ашхабад",
+      "nl": "Asjchabad"
+    },
     "isoCode": "tm",
     "flagUrl": "assets/flags/tm.svg",
     "shapeUrl": "assets/shapes/tm.svg",
@@ -2440,6 +3309,11 @@
       "bg": "Уганда",
       "en": "Uganda",
       "nl": "Oeganda"
+    },
+    "capitals": {
+      "en": "Kampala",
+      "bg": "Кампала",
+      "nl": "Kampala"
     },
     "isoCode": "ug",
     "flagUrl": "assets/flags/ug.svg",
@@ -2455,6 +3329,11 @@
       "en": "Ukraine",
       "nl": "Oekraïne"
     },
+    "capitals": {
+      "en": "Kyiv",
+      "bg": "Киев",
+      "nl": "Kiev"
+    },
     "isoCode": "ua",
     "flagUrl": "assets/flags/ua.svg",
     "shapeUrl": "assets/shapes/ua.svg",
@@ -2468,6 +3347,11 @@
       "bg": "Обединени Арабски Емирства",
       "en": "United Arab Emirates",
       "nl": "Verenigde Arabische Emiraten"
+    },
+    "capitals": {
+      "en": "Abu Dhabi",
+      "bg": "Абу Даби",
+      "nl": "Abu Dhabi"
     },
     "isoCode": "ae",
     "flagUrl": "assets/flags/ae.svg",
@@ -2483,6 +3367,11 @@
       "en": "United Kingdom",
       "nl": "Verenigd Koninkrijk"
     },
+    "capitals": {
+      "en": "London",
+      "bg": "Лондон",
+      "nl": "Londen"
+    },
     "isoCode": "gb",
     "flagUrl": "assets/flags/gb.svg",
     "shapeUrl": "assets/shapes/gb.svg",
@@ -2496,6 +3385,11 @@
       "bg": "Съединени щати",
       "en": "United States",
       "nl": "Verenigde Staten"
+    },
+    "capitals": {
+      "en": "Washington, D.C.",
+      "bg": "Вашингтон.",
+      "nl": "Washington, DC"
     },
     "isoCode": "us",
     "flagUrl": "assets/flags/us.svg",
@@ -2511,6 +3405,11 @@
       "en": "Uruguay",
       "nl": "Uruguay"
     },
+    "capitals": {
+      "en": "Montevideo",
+      "bg": "Монтевидео",
+      "nl": "Montevideo"
+    },
     "isoCode": "uy",
     "flagUrl": "assets/flags/uy.svg",
     "shapeUrl": "assets/shapes/uy.svg",
@@ -2524,6 +3423,11 @@
       "bg": "Узбекистан",
       "en": "Uzbekistan",
       "nl": "Oezbekistan"
+    },
+    "capitals": {
+      "en": "Tashkent",
+      "bg": "Ташкент",
+      "nl": "Tasjkent"
     },
     "isoCode": "uz",
     "flagUrl": "assets/flags/uz.svg",
@@ -2539,6 +3443,11 @@
       "en": "Vanuatu",
       "nl": "Vanuatu"
     },
+    "capitals": {
+      "en": "Port Vila",
+      "bg": "Порт Вила",
+      "nl": "Port Vila"
+    },
     "isoCode": "vu",
     "flagUrl": "assets/flags/vu.svg",
     "shapeUrl": "assets/shapes/vu.svg",
@@ -2552,6 +3461,11 @@
       "bg": "Венецуела",
       "en": "Venezuela",
       "nl": "Venezuela"
+    },
+    "capitals": {
+      "en": "Caracas",
+      "bg": "Каракас",
+      "nl": "Caracas"
     },
     "isoCode": "ve",
     "flagUrl": "assets/flags/ve.svg",
@@ -2567,6 +3481,11 @@
       "en": "Vietnam",
       "nl": "Vietnam"
     },
+    "capitals": {
+      "en": "Hanoi",
+      "bg": "Ханой",
+      "nl": "Hanoi"
+    },
     "isoCode": "vn",
     "flagUrl": "assets/flags/vn.svg",
     "shapeUrl": "assets/shapes/vn.svg",
@@ -2580,6 +3499,11 @@
       "bg": "Йемен",
       "en": "Yemen",
       "nl": "Jemen"
+    },
+    "capitals": {
+      "en": "Sana'a",
+      "bg": "Сана",
+      "nl": "Sana'a"
     },
     "isoCode": "ye",
     "flagUrl": "assets/flags/ye.svg",
@@ -2595,6 +3519,11 @@
       "en": "Zambia",
       "nl": "Zambia"
     },
+    "capitals": {
+      "en": "Lusaka",
+      "bg": "Лусака",
+      "nl": "Lusaka"
+    },
     "isoCode": "zm",
     "flagUrl": "assets/flags/zm.svg",
     "shapeUrl": "assets/shapes/zm.svg",
@@ -2608,6 +3537,11 @@
       "bg": "Зимбабве",
       "en": "Zimbabwe",
       "nl": "Zimbabwe"
+    },
+    "capitals": {
+      "en": "Harare",
+      "bg": "Хараре",
+      "nl": "Harare"
     },
     "isoCode": "zw",
     "flagUrl": "assets/flags/zw.svg",
