@@ -13,6 +13,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatListModule } from '@angular/material/list';
 import { combineLatest } from 'rxjs';
 import { EndComponent } from './end/end.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @Component({
   selector: 'app-play',
@@ -30,6 +31,18 @@ import { EndComponent } from './end/end.component';
       </ng-template>
     </mat-card-content>
     <mat-card-actions [align]="'end'">
+      <mat-icon
+        class="mr-2"
+        [matBadge]="view.successes"
+        data-test="stat-success"
+        matBadgeSize="small"
+        matBadgeColor="accent"
+        >done</mat-icon
+      >
+      <mat-icon [matBadge]="view.failures" data-test="stat-fail" matBadgeSize="small" matBadgeColor="warn"
+        >error</mat-icon
+      >
+      <div class="flex-grow"></div>
       <button [routerLink]="['/home']" mat-button mat-raised-button>
         {{ 'back' | transloco }}
       </button>
@@ -56,7 +69,8 @@ import { EndComponent } from './end/end.component';
     MatListModule,
     PlayComponent,
     CountryFormComponent,
-    EndComponent
+    EndComponent,
+    MatBadgeModule
   ],
   providers: [PlayService, DatePipe]
 })
@@ -64,6 +78,8 @@ export class PlayComponent {
   playService = inject(PlayService);
   router = inject(Router);
   view$ = combineLatest({
+    successes: this.playService.successes$,
+    failures: this.playService.failures$,
     isEnded: this.playService.isEnded$
   });
 

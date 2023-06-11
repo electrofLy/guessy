@@ -8,8 +8,11 @@ import { Router } from '@angular/router';
 import { CountriesService, Country } from '../../core/services/countries.service';
 
 export const KEY_INTERPOLATION = '{{0}}';
-export const GAME_GUESSES_START_STORAGE_KEY = 'GAME::';
-export const GAME_GUESSES_STORAGE_KEY = GAME_GUESSES_START_STORAGE_KEY + KEY_INTERPOLATION + '::guesses';
+export const GAME_GUESSES_START_STORAGE_KEY = 'GAME';
+export const STAT_GUESSES_START_STORAGE_KEY = 'STAT';
+export const GAME_GUESSES_STORAGE_KEY = `${GAME_GUESSES_START_STORAGE_KEY}::${KEY_INTERPOLATION}::guesses`;
+export const STAT_GUESSES_SUCCESS_STORAGE_KEY = `${STAT_GUESSES_START_STORAGE_KEY}::${KEY_INTERPOLATION}::success`;
+export const STAT_GUESSES_FAILURE_STORAGE_KEY = `${STAT_GUESSES_START_STORAGE_KEY}::${KEY_INTERPOLATION}::failure`;
 
 export type PlayType = 'FLAG' | 'SHAPE';
 
@@ -24,7 +27,6 @@ export class PlayService {
 
   type$ = new ReplaySubject<PlayType>(1);
   guess$ = new Subject<Country>();
-
   seed$ = this.type$.pipe(
     map((type) => this.generateSeed(new Date(), type)),
     shareReplay({ refCount: false, bufferSize: 1 })
@@ -64,14 +66,49 @@ export class PlayService {
     map(([guesses, country]) => guesses.includes(country.name)),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
-  isEnded$ = combineLatest([this.isGuessed$, this.guesses$.pipe(map((guesses) => guesses.length >= 5))]).pipe(
+  isOverAllowedAttempts$ = this.guesses$.pipe(map((guesses) => guesses.length >= 5));
+  isEnded$ = combineLatest([this.isGuessed$, this.isOverAllowedAttempts$]).pipe(
     map(([isGuessed, guesses]) => isGuessed || guesses),
+    shareReplay({ refCount: false, bufferSize: 1 })
+  );
+  failures$ = combineLatest([this.type$, this.isEnded$]).pipe(
+    map(([type]) => getStatisticsCount(STAT_GUESSES_FAILURE_STORAGE_KEY.replace(KEY_INTERPOLATION, type))),
+    shareReplay({ refCount: false, bufferSize: 1 })
+  );
+  successes$ = combineLatest([this.type$, this.isEnded$]).pipe(
+    map(([type]) => getStatisticsCount(STAT_GUESSES_SUCCESS_STORAGE_KEY.replace(KEY_INTERPOLATION, type))),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
 
   constructor() {
     this.onGuessChange();
+    this.updateStatistics();
+
     deletePreviousSavedGuesses(this.transformDate(new Date()));
+  }
+
+  private updateStatistics() {
+    combineLatest([this.isGuessed$, this.type$])
+      .pipe(takeUntilDestroyed(inject(DestroyRef)))
+      .subscribe(([isGuessed, type]) => {
+        saveStatistics(
+          isGuessed,
+          type,
+          STAT_GUESSES_SUCCESS_STORAGE_KEY.replace(KEY_INTERPOLATION, type),
+          this.transformDate(new Date())
+        );
+      });
+
+    combineLatest([this.isOverAllowedAttempts$, this.type$])
+      .pipe(takeUntilDestroyed(inject(DestroyRef)))
+      .subscribe(([isFinished, type]) => {
+        saveStatistics(
+          isFinished,
+          type,
+          STAT_GUESSES_FAILURE_STORAGE_KEY.replace(KEY_INTERPOLATION, type),
+          this.transformDate(new Date())
+        );
+      });
   }
 
   private generateSeed(date: Date, type: PlayType) {
@@ -119,4 +156,16 @@ export function deletePreviousSavedGuesses(seed: string) {
   for (const item of gameKeys) {
     localStorage.removeItem(item);
   }
+}
+
+export function saveStatistics(shouldSave: boolean, type: PlayType, key: string, today: string) {
+  if (shouldSave) {
+    const savedIsGuessed: string[] = JSON.parse(localStorage.getItem(key) ?? '[]');
+    savedIsGuessed.push(today);
+    localStorage.setItem(key, JSON.stringify([...new Set(savedIsGuessed)]));
+  }
+}
+
+export function getStatisticsCount(key: string) {
+  return JSON.parse(localStorage.getItem(key) ?? '[]').length;
 }
