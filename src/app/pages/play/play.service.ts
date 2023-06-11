@@ -91,7 +91,7 @@ export class PlayService {
     combineLatest([this.isGuessed$, this.type$])
       .pipe(takeUntilDestroyed(inject(DestroyRef)))
       .subscribe(([isGuessed, type]) => {
-        getStatisticsFromStorage(
+        saveStatistics(
           isGuessed,
           type,
           STAT_GUESSES_SUCCESS_STORAGE_KEY.replace(KEY_INTERPOLATION, type),
@@ -102,7 +102,7 @@ export class PlayService {
     combineLatest([this.isOverAllowedAttempts$, this.type$])
       .pipe(takeUntilDestroyed(inject(DestroyRef)))
       .subscribe(([isFinished, type]) => {
-        getStatisticsFromStorage(
+        saveStatistics(
           isFinished,
           type,
           STAT_GUESSES_FAILURE_STORAGE_KEY.replace(KEY_INTERPOLATION, type),
@@ -158,8 +158,8 @@ export function deletePreviousSavedGuesses(seed: string) {
   }
 }
 
-export function getStatisticsFromStorage(shouldGet: boolean, type: PlayType, key: string, today: string) {
-  if (shouldGet) {
+export function saveStatistics(shouldSave: boolean, type: PlayType, key: string, today: string) {
+  if (shouldSave) {
     const savedIsGuessed: string[] = JSON.parse(localStorage.getItem(key) ?? '[]');
     savedIsGuessed.push(today);
     localStorage.setItem(key, JSON.stringify([...new Set(savedIsGuessed)]));

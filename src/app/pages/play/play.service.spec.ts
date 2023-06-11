@@ -2,8 +2,10 @@ import {
   deletePreviousSavedGuesses,
   GAME_GUESSES_STORAGE_KEY,
   getSavedGuesses,
+  getStatisticsCount,
   KEY_INTERPOLATION,
-  PlayService
+  PlayService,
+  saveStatistics
 } from './play.service';
 import { CountriesService, Country } from '../../core/services/countries.service';
 import { TestBed } from '@angular/core/testing';
@@ -53,6 +55,23 @@ describe('PlayService', () => {
     it('should be able to get zero saved guesses', () => {
       const savedGuesses = getSavedGuesses('someKey', [{ isoCode: 'boo', name: 'bobo' } as Country]);
       expect(savedGuesses.length).toEqual(0);
+    });
+    it('should be able to save statistics', () => {
+      saveStatistics(true, 'SHAPE', 'someKey', 'today1');
+      saveStatistics(true, 'SHAPE', 'someKey', 'today1');
+      saveStatistics(true, 'SHAPE', 'someKey', 'today2');
+      saveStatistics(false, 'SHAPE', 'someKey', 'today3');
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      expect(JSON.parse(localStorage.getItem(`someKey`)!).length).toEqual(2);
+    });
+    it('should be able to get statistics', () => {
+      expect(getStatisticsCount(`someKey`)).toEqual(0);
+      saveStatistics(true, 'SHAPE', 'someKey', 'today1');
+      saveStatistics(true, 'SHAPE', 'someKey', 'today1');
+      saveStatistics(true, 'SHAPE', 'someKey', 'today2');
+      saveStatistics(false, 'SHAPE', 'someKey', 'today3');
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      expect(getStatisticsCount(`someKey`)).toEqual(2);
     });
   });
 
