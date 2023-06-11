@@ -31,8 +31,17 @@ import { MatBadgeModule } from '@angular/material/badge';
       </ng-template>
     </mat-card-content>
     <mat-card-actions [align]="'end'">
-      <mat-icon class="mr-2" [matBadge]="view.successes" matBadgeSize="small" matBadgeColor="accent">done</mat-icon>
-      <mat-icon [matBadge]="view.failures" matBadgeSize="small" matBadgeColor="warn">error</mat-icon>
+      <mat-icon
+        class="mr-2"
+        [matBadge]="view.successes"
+        data-test="stat-success"
+        matBadgeSize="small"
+        matBadgeColor="accent"
+        >done</mat-icon
+      >
+      <mat-icon [matBadge]="view.failures" data-test="stat-fail" matBadgeSize="small" matBadgeColor="warn"
+        >error</mat-icon
+      >
       <div class="flex-grow"></div>
       <button [routerLink]="['/home']" mat-button mat-raised-button>
         {{ 'back' | transloco }}

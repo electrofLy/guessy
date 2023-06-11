@@ -140,4 +140,67 @@ describe('PlayComponent', () => {
     cy.mount(PlayComponent, generateConfig('FLAG'));
     cy.get(`[data-test="guess-list-item"]`).should('contain.text', 'Bulgaria');
   });
+
+  it('should be able to save success statistics', () => {
+    cy.mount(PlayComponent, generateConfig('FLAG'));
+    cy.get(`[data-test="country-input"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Dominica');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="success-guess"]`).should('exist');
+
+    cy.clock().invoke('setSystemTime', 100000000000000);
+    cy.mount(PlayComponent, generateConfig('FLAG'));
+
+    cy.get(`[data-test="country-input"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Greece');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+
+    cy.get(`[data-test="stat-success"] .mat-badge-content`).should('have.text', '2');
+    cy.get(`[data-test="stat-fail"] .mat-badge-content`).should('have.text', '0');
+  });
+
+  it('should be able to save fail statistics', () => {
+    cy.mount(PlayComponent, generateConfig('FLAG'));
+    cy.get(`[data-test="country-input"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Greece');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Greece');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Greece');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Greece');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Greece');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+
+    cy.clock().invoke('setSystemTime', 100000000000000);
+    cy.mount(PlayComponent, generateConfig('FLAG'));
+
+    cy.get(`[data-test="country-input"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Dominica');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Dominica');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Dominica');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Dominica');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+    cy.get(`[data-test="country-input"] input`).type('Dominica');
+    cy.get(`[data-test="country-input"] input`).blur();
+    cy.get(`[data-test="submit-guess"]`).click();
+
+    cy.get(`[data-test="stat-fail"] .mat-badge-content`).should('have.text', '2');
+    cy.get(`[data-test="stat-success"] .mat-badge-content`).should('have.text', '0');
+  });
 });
