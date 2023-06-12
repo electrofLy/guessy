@@ -7,7 +7,6 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { bootstrapApplication, BrowserModule } from '@angular/platform-browser';
 import { getAllLanguageLoads$, TranslocoRootModule } from './app/transloco-root.module';
 import { combineLatest, take } from 'rxjs';
-import { SettingsService } from './app/core/services/settings.service';
 import { TranslocoService } from '@ngneat/transloco';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { provideRouter, Routes, withComponentInputBinding, withRouterConfig } from '@angular/router';
@@ -50,11 +49,8 @@ const routes: Routes = [
   { path: '**', redirectTo: 'home' }
 ];
 
-export function initializeApp(translocoService: TranslocoService, settingsService: SettingsService) {
-  return () =>
-    combineLatest([...getAllLanguageLoads$(translocoService), settingsService.lang$, settingsService.theme$]).pipe(
-      take(1)
-    );
+export function initializeApp(translocoService: TranslocoService) {
+  return () => combineLatest([...getAllLanguageLoads$(translocoService)]).pipe(take(1));
 }
 
 bootstrapApplication(AppComponent, {
@@ -73,7 +69,7 @@ bootstrapApplication(AppComponent, {
       provide: APP_INITIALIZER,
       multi: true,
       useFactory: initializeApp,
-      deps: [TranslocoService, SettingsService]
+      deps: [TranslocoService]
     },
     provideAnimations(),
     provideHttpClient(withInterceptorsFromDi()),
