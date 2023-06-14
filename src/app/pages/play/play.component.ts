@@ -11,19 +11,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatListModule } from '@angular/material/list';
-import { combineLatest } from 'rxjs';
 import { EndComponent } from './end/end.component';
 import { MatBadgeModule } from '@angular/material/badge';
 
 @Component({
   selector: 'app-play',
-  template: ` <mat-card class="max-w-xs" *ngIf="view$ | async as view">
+  template: ` <mat-card class="max-w-xs">
     <mat-card-header class="justify-center">
       <mat-card-title class="text-center">{{ 'guessy' | transloco }}</mat-card-title>
       <mat-card-subtitle class="text-center">{{ 'play' | transloco }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content class="!flex flex-col justify-center text-justify">
-      <ng-container *ngIf="view.isEnded === false; else end">
+      <ng-container *ngIf="playService.isEndedSignal() === false; else end">
         <app-country-form />
       </ng-container>
       <ng-template #end>
@@ -37,11 +36,15 @@ import { MatBadgeModule } from '@angular/material/badge';
         data-test="stat-success"
         matBadgeSize="small"
         matBadgeColor="accent"
-        >done</mat-icon
-      >
-      <mat-icon [matBadge]="view.failures" data-test="stat-fail" matBadgeSize="small" matBadgeColor="warn"
-        >error</mat-icon
-      >
+        >done
+      </mat-icon>
+      <mat-icon
+        [matBadge]="playService.failuresSignal()"
+        data-test="stat-fail"
+        matBadgeSize="small"
+        matBadgeColor="warn"
+        >error
+      </mat-icon>
       <div class="flex-grow"></div>
       <button [routerLink]="['/home']" mat-button mat-raised-button>
         {{ 'back' | transloco }}
@@ -77,11 +80,6 @@ import { MatBadgeModule } from '@angular/material/badge';
 export class PlayComponent {
   playService = inject(PlayService);
   router = inject(Router);
-  view$ = combineLatest({
-    successes: this.playService.successes$,
-    failures: this.playService.failures$,
-    isEnded: this.playService.isEnded$
-  });
 
   @Input() set type(val: PlayType) {
     this.playService.type$.next(val);

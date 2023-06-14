@@ -54,7 +54,7 @@ export class EndComponent {
   settingsService = inject(SettingsService);
 
   isGuessedSignal = toSignal(this.playService.isGuessed$, { initialValue: false });
-  countrySignal = toSignal(this.playService.country$);
+  countrySignal = this.playService.countrySignal;
   typeSignal = toSignal(this.playService.type$, { initialValue: 'FLAG' });
   today = new Date();
   countdownSignal = toSignal(

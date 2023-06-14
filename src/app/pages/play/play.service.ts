@@ -55,18 +55,26 @@ export class PlayService {
     }),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
-  country$ = combineLatest([toObservable(this.countriesService.countriesSignal), this.randomNumber$]).pipe(
-    filter((val) => val[0].length > 0),
-    map((val) => val[0][val[1]]),
-    shareReplay({ refCount: false, bufferSize: 1 })
+
+  countrySignal = toSignal(
+    combineLatest([toObservable(this.countriesService.countriesSignal), this.randomNumber$]).pipe(
+      filter((val) => val[0].length > 0),
+      map((val) => val[0][val[1]]),
+      shareReplay({ refCount: false, bufferSize: 1 })
+    )
   );
+
   isGuessed$ = combineLatest([
     this.guesses$.pipe(map((guesses) => guesses.map((guess) => guess.name))),
-    this.country$
+    toObservable(this.countrySignal)
   ]).pipe(
+    filter((val): val is [string[], Country] => {
+      return Boolean(val[0]) && Boolean(val[1]);
+    }),
     map(([guesses, country]) => guesses.includes(country.name)),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
+
   isOverAllowedAttempts$ = this.guesses$.pipe(map((guesses) => guesses.length >= 5));
   isEnded$ = combineLatest([this.isGuessed$, this.isOverAllowedAttempts$]).pipe(
     map(([isGuessed, guesses]) => isGuessed || guesses),
@@ -82,6 +90,8 @@ export class PlayService {
   );
 
   successesSignal = toSignal(this.successes$);
+  failuresSignal = toSignal(this.failures$);
+  isEndedSignal = toSignal(this.isEnded$, { initialValue: false });
 
   constructor() {
     this.onGuessChange();

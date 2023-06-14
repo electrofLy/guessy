@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { combineLatest, map, take } from 'rxjs';
+import { combineLatest, filter, map, take } from 'rxjs';
 import { TranslocoModule } from '@ngneat/transloco';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -192,7 +192,13 @@ export class CountryFormComponent {
     return filterCountries(this.countriesService.countriesSignal(), this.countryValueSignal());
   });
 
-  private guessesWithDistance$ = combineLatest([this.playService.guesses$, this.playService.country$]).pipe(
+  private guessesWithDistance$ = combineLatest([
+    this.playService.guesses$,
+    toObservable(this.playService.countrySignal)
+  ]).pipe(
+    filter((val): val is [Country[], Country] => {
+      return Boolean(val[0]) && Boolean(val[1]);
+    }),
     map(([guesses, country]) => {
       return createGuesses(guesses, country);
     })
@@ -200,7 +206,7 @@ export class CountryFormComponent {
 
   guessesWithDistanceSignal = toSignal(this.guessesWithDistance$);
 
-  countrySignal = toSignal(this.playService.country$);
+  countrySignal = this.playService.countrySignal;
   typeSignal = toSignal(this.playService.type$);
 
   @ViewChild(MatAutocompleteTrigger) autocompleteTrigger!: MatAutocompleteTrigger;
