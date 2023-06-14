@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import seedrandom from 'seedrandom';
 import { DatePipe } from '@angular/common';
 import { combineLatest, filter, map, ReplaySubject, scan, shareReplay, startWith, Subject, switchMap } from 'rxjs';
-import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { CountriesService, Country } from '../../core/services/countries.service';
 
@@ -57,10 +57,7 @@ export class PlayService {
   );
   country$ = combineLatest([toObservable(this.countriesService.countriesSignal), this.randomNumber$]).pipe(
     filter((val) => val[0].length > 0),
-    map((val) => {
-      console.log(val);
-      return val[0][val[1]];
-    }),
+    map((val) => val[0][val[1]]),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
   isGuessed$ = combineLatest([
@@ -83,6 +80,8 @@ export class PlayService {
     map(([type]) => getStatisticsCount(STAT_GUESSES_SUCCESS_STORAGE_KEY.replace(KEY_INTERPOLATION, type))),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
+
+  successesSignal = toSignal(this.successes$);
 
   constructor() {
     this.onGuessChange();
@@ -170,6 +169,6 @@ export function saveStatistics(shouldSave: boolean, type: PlayType, key: string,
   }
 }
 
-export function getStatisticsCount(key: string) {
+export function getStatisticsCount(key: string): number {
   return JSON.parse(localStorage.getItem(key) ?? '[]').length;
 }

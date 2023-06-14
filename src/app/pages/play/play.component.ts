@@ -33,7 +33,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     <mat-card-actions [align]="'end'">
       <mat-icon
         class="mr-2"
-        [matBadge]="view.successes"
+        [matBadge]="playService.successesSignal()"
         data-test="stat-success"
         matBadgeSize="small"
         matBadgeColor="accent"
