@@ -2,8 +2,8 @@ import { DestroyRef, inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import seedrandom from 'seedrandom';
 import { DatePipe } from '@angular/common';
-import { combineLatest, map, ReplaySubject, scan, shareReplay, startWith, Subject, switchMap } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { combineLatest, filter, map, ReplaySubject, scan, shareReplay, startWith, Subject, switchMap } from 'rxjs';
+import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { CountriesService, Country } from '../../core/services/countries.service';
 
@@ -31,7 +31,7 @@ export class PlayService {
     map((type) => this.generateSeed(new Date(), type)),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
-  guesses$ = combineLatest([this.countriesService.countries$, this.seed$]).pipe(
+  guesses$ = combineLatest([toObservable(this.countriesService.countriesSignal), this.seed$]).pipe(
     switchMap(([countries, seed]) => {
       return this.guess$.pipe(
         scan<Country, Country[]>(
@@ -49,14 +49,18 @@ export class PlayService {
     map((seed) => seedrandom(seed)),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
-  randomNumber$ = combineLatest([this.countriesService.countries$, this.randomSeedNumber$]).pipe(
+  randomNumber$ = combineLatest([toObservable(this.countriesService.countriesSignal), this.randomSeedNumber$]).pipe(
     map(([country, randomSeedNumber]) => {
       return Math.floor(randomSeedNumber() * country.length);
     }),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
-  country$ = combineLatest([this.countriesService.countries$, this.randomNumber$]).pipe(
-    map((val) => val[0][val[1]]),
+  country$ = combineLatest([toObservable(this.countriesService.countriesSignal), this.randomNumber$]).pipe(
+    filter((val) => val[0].length > 0),
+    map((val) => {
+      console.log(val);
+      return val[0][val[1]];
+    }),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
   isGuessed$ = combineLatest([

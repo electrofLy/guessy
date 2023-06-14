@@ -15,6 +15,7 @@ import { convertDistance, getCompassDirection, getDistance } from 'geolib';
 import { CountriesService, Country } from '../../../core/services/countries.service';
 import { PlayService } from '../play.service';
 import { SettingsService } from '../../../core/services/settings.service';
+import { toObservable } from '@angular/core/rxjs-interop';
 
 const DIRECTION_MAT_ICONS = {
   S: 'south',
@@ -174,7 +175,7 @@ export class CountryFormComponent {
       validators: [Validators.required],
       asyncValidators: [
         (control) =>
-          this.countriesService.countryNames$.pipe(
+          toObservable(this.countriesService.countryNamesSignal).pipe(
             map((val) => countryExists(control.value, val)),
             take(1)
           )
@@ -182,9 +183,10 @@ export class CountryFormComponent {
     })
   });
   filteredCountries$ = combineLatest([
-    this.countriesService.countries$,
+    toObservable(this.countriesService.countriesSignal),
     this.form.controls.country.valueChanges.pipe(startWith(''))
   ]).pipe(map((val) => filterCountries(val[0], val[1])));
+
   guessesWithDistance$ = combineLatest([this.playService.guesses$, this.playService.country$]).pipe(
     map(([guesses, country]) => {
       return createGuesses(guesses, country);

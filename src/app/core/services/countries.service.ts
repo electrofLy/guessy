@@ -1,7 +1,8 @@
-import { inject, Injectable } from '@angular/core';
-import { distinctUntilChanged, map, shareReplay, switchMap } from 'rxjs';
+import { computed, inject, Injectable } from '@angular/core';
+import { map, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { TranslocoService } from '@ngneat/transloco';
+import { SettingsService } from './settings.service';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 
 export interface CountryJson {
   isoCode: string;
@@ -29,23 +30,21 @@ export function extractCountryName(countries: CountryJson[], lang: string) {
 @Injectable({ providedIn: 'root' })
 export class CountriesService {
   http = inject(HttpClient);
-  activeLang$ = inject(TranslocoService).langChanges$.pipe(distinctUntilChanged());
+  settingsService = inject(SettingsService);
 
-  countries$ = this.activeLang$.pipe(
+  private countries$ = toObservable(this.settingsService.langSignal).pipe(
     switchMap((lang) => {
       return this.http.get<CountryJson[]>('/assets/countries.json').pipe(
         map((countries) => {
           return extractCountryName(countries, lang);
         })
       );
-    }),
-    shareReplay({
-      refCount: false,
-      bufferSize: 1
     })
   );
-  countryNames$ = this.countries$.pipe(
-    map((val) => val.map((country) => country.name)),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
+
+  countriesSignal = toSignal(this.countries$, { initialValue: [] });
+
+  countryNamesSignal = computed(() => {
+    return this.countriesSignal().map((country) => country.name);
+  });
 }
