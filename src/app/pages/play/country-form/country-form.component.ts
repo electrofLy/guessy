@@ -89,9 +89,9 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
     >
       <img
         *ngIf="countrySignal() as country"
-        [ngClass]="{ invert: settingsService.themeSignal() === 'dark' && typeSignal() === 'SHAPE' }"
-        [ngSrc]="typeSignal() === 'SHAPE' ? country.shapeUrl : country.flagUrl"
-        [height]="typeSignal() === 'SHAPE' ? 200 : 150"
+        [ngClass]="{ invert: settingsService.themeSignal() === 'dark' && playService.typeSignal() === 'SHAPE' }"
+        [ngSrc]="playService.typeSignal() === 'SHAPE' ? country.shapeUrl : country.flagUrl"
+        [height]="playService.typeSignal() === 'SHAPE' ? 200 : 150"
         priority="true"
         width="200"
         alt="country-flag-am"
@@ -207,7 +207,6 @@ export class CountryFormComponent {
   guessesWithDistanceSignal = toSignal(this.guessesWithDistance$);
 
   countrySignal = this.playService.countrySignal;
-  typeSignal = toSignal(this.playService.type$);
 
   @ViewChild(MatAutocompleteTrigger) autocompleteTrigger!: MatAutocompleteTrigger;
 
@@ -217,10 +216,10 @@ export class CountryFormComponent {
 
   onSubmit(event: Event, country: Country | string, countries: Country[]) {
     if (typeof country !== 'string') {
-      this.playService.guess$.next(country);
+      this.playService.guessSignal.set(country);
     } else {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      this.playService.guess$.next(countries.find((val) => val.name.toLowerCase() === country.toLowerCase())!);
+      this.playService.guessSignal.set(countries.find((val) => val.name.toLowerCase() === country.toLowerCase())!);
     }
     this.form.controls.country.setValue('');
     setTimeout(() => {

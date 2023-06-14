@@ -82,6 +82,6 @@ export class PlayComponent {
   router = inject(Router);
 
   @Input() set type(val: PlayType) {
-    this.playService.type$.next(val);
+    this.playService.typeSignal.set(val);
   }
 }

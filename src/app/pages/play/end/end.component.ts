@@ -13,16 +13,16 @@ import { toSignal } from '@angular/core/rxjs-interop';
   template: ` <ng-container>
     <img
       class="self-center mb-4"
-      *ngIf="countrySignal() as country"
-      [ngClass]="{ invert: settingsService.themeSignal() === 'dark' && typeSignal() === 'SHAPE' }"
-      [ngSrc]="typeSignal() === 'SHAPE' ? country.shapeUrl : country.flagUrl"
-      [height]="typeSignal() === 'SHAPE' ? 200 : 150"
+      *ngIf="playService.countrySignal() as country"
+      [ngClass]="{ invert: settingsService.themeSignal() === 'dark' && playService.typeSignal() === 'SHAPE' }"
+      [ngSrc]="playService.typeSignal() === 'SHAPE' ? country.shapeUrl : country.flagUrl"
+      [height]="playService.typeSignal() === 'SHAPE' ? 200 : 150"
       priority="true"
       width="200"
       alt="country-flag-am"
     />
-    <p class="text-justify" *ngIf="countrySignal() as country">
-      <ng-container *ngIf="isGuessedSignal() === true; else failed">
+    <p class="text-justify" *ngIf="playService.countrySignal() as country">
+      <ng-container *ngIf="playService.isGuessedSignal() === true; else failed">
         <span data-test="success-guess">{{ 'endSuccess' | transloco : [country.name] }}</span>
       </ng-container>
       <ng-template #failed>
@@ -53,9 +53,6 @@ export class EndComponent {
   playService = inject(PlayService);
   settingsService = inject(SettingsService);
 
-  isGuessedSignal = toSignal(this.playService.isGuessed$, { initialValue: false });
-  countrySignal = this.playService.countrySignal;
-  typeSignal = toSignal(this.playService.type$, { initialValue: 'FLAG' });
   today = new Date();
   countdownSignal = toSignal(
     interval(1000).pipe(

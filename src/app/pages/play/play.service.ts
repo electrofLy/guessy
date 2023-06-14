@@ -1,8 +1,8 @@
-import { DestroyRef, inject, Injectable } from '@angular/core';
+import { computed, DestroyRef, effect, inject, Injectable, signal, WritableSignal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import seedrandom from 'seedrandom';
 import { DatePipe } from '@angular/common';
-import { combineLatest, filter, map, ReplaySubject, scan, shareReplay, startWith, Subject, switchMap } from 'rxjs';
+import { combineLatest, filter, map, scan, shareReplay, startWith, switchMap } from 'rxjs';
 import { takeUntilDestroyed, toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { CountriesService, Country } from '../../core/services/countries.service';
@@ -25,15 +25,24 @@ export class PlayService {
   router = inject(Router);
   countriesService = inject(CountriesService);
 
-  type$ = new ReplaySubject<PlayType>(1);
-  guess$ = new Subject<Country>();
-  seed$ = this.type$.pipe(
-    map((type) => this.generateSeed(new Date(), type)),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
-  guesses$ = combineLatest([toObservable(this.countriesService.countriesSignal), this.seed$]).pipe(
+  typeSignal: WritableSignal<PlayType> = signal('FLAG');
+
+  // guess$ = new Subject<Country>();
+
+  guessSignal: WritableSignal<Country | null> = signal(null);
+
+  guess$ = toObservable(this.guessSignal);
+
+  seedSignal = computed(() => {
+    return this.generateSeed(new Date(), this.typeSignal());
+  });
+
+  guesses$ = combineLatest([toObservable(this.countriesService.countriesSignal), toObservable(this.seedSignal)]).pipe(
     switchMap(([countries, seed]) => {
       return this.guess$.pipe(
+        filter((value): value is Country => {
+          return value !== null;
+        }),
         scan<Country, Country[]>(
           (acc, value) => {
             return [...acc, value];
@@ -45,19 +54,17 @@ export class PlayService {
       );
     })
   );
-  randomSeedNumber$ = this.seed$.pipe(
-    map((seed) => seedrandom(seed)),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
-  randomNumber$ = combineLatest([toObservable(this.countriesService.countriesSignal), this.randomSeedNumber$]).pipe(
-    map(([country, randomSeedNumber]) => {
-      return Math.floor(randomSeedNumber() * country.length);
-    }),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
+
+  randomSeedNumberSignal = computed(() => {
+    return seedrandom(this.seedSignal());
+  });
+
+  randomNumberSignal = computed(() => {
+    return Math.floor(this.randomSeedNumberSignal()() * this.countriesService.countriesSignal.length);
+  });
 
   countrySignal = toSignal(
-    combineLatest([toObservable(this.countriesService.countriesSignal), this.randomNumber$]).pipe(
+    combineLatest([toObservable(this.countriesService.countriesSignal), toObservable(this.randomNumberSignal)]).pipe(
       filter((val) => val[0].length > 0),
       map((val) => val[0][val[1]]),
       shareReplay({ refCount: false, bufferSize: 1 })
@@ -80,17 +87,19 @@ export class PlayService {
     map(([isGuessed, guesses]) => isGuessed || guesses),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
-  failures$ = combineLatest([this.type$, this.isEnded$]).pipe(
+  failures$ = combineLatest([toObservable(this.typeSignal), this.isEnded$]).pipe(
     map(([type]) => getStatisticsCount(STAT_GUESSES_FAILURE_STORAGE_KEY.replace(KEY_INTERPOLATION, type))),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
-  successes$ = combineLatest([this.type$, this.isEnded$]).pipe(
+  successes$ = combineLatest([toObservable(this.typeSignal), this.isEnded$]).pipe(
     map(([type]) => getStatisticsCount(STAT_GUESSES_SUCCESS_STORAGE_KEY.replace(KEY_INTERPOLATION, type))),
     shareReplay({ refCount: false, bufferSize: 1 })
   );
 
-  successesSignal = toSignal(this.successes$);
-  failuresSignal = toSignal(this.failures$);
+  guessesSignal = toSignal(this.guesses$, { initialValue: [] as Country[] });
+  isGuessedSignal = toSignal(this.isGuessed$, { initialValue: false });
+  successesSignal = toSignal(this.successes$, { initialValue: 0 });
+  failuresSignal = toSignal(this.failures$, { initialValue: 0 });
   isEndedSignal = toSignal(this.isEnded$, { initialValue: false });
 
   constructor() {
@@ -101,7 +110,18 @@ export class PlayService {
   }
 
   private updateStatistics() {
-    combineLatest([this.isGuessed$, this.type$])
+    effect(() => {
+      saveStatistics(
+        this.isGuessedSignal(),
+        this.typeSignal(),
+        STAT_GUESSES_SUCCESS_STORAGE_KEY.replace(KEY_INTERPOLATION, this.typeSignal()),
+        this.transformDate(new Date())
+      );
+    });
+
+    this.guessesSignal;
+
+    combineLatest([this.isGuessed$, toObservable(this.typeSignal)])
       .pipe(takeUntilDestroyed(inject(DestroyRef)))
       .subscribe(([isGuessed, type]) => {
         saveStatistics(
@@ -112,7 +132,7 @@ export class PlayService {
         );
       });
 
-    combineLatest([this.isOverAllowedAttempts$, this.type$])
+    combineLatest([this.isOverAllowedAttempts$, toObservable(this.typeSignal)])
       .pipe(takeUntilDestroyed(inject(DestroyRef)))
       .subscribe(([isFinished, type]) => {
         saveStatistics(
@@ -138,11 +158,12 @@ export class PlayService {
   }
 
   private onGuessChange() {
-    combineLatest([this.guesses$, this.seed$])
-      .pipe(takeUntilDestroyed(inject(DestroyRef)))
-      .subscribe(([guesses, seed]) => {
-        localStorage.setItem(this.getKey(seed), JSON.stringify(guesses.map((guess) => guess.isoCode)));
-      });
+    effect(() => {
+      localStorage.setItem(
+        this.getKey(this.seedSignal()),
+        JSON.stringify(this.guessesSignal().map((guess) => guess.isoCode))
+      );
+    });
   }
 }
 
