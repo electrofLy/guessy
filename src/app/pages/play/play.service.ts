@@ -1,9 +1,9 @@
-import { computed, DestroyRef, effect, inject, Injectable, signal, WritableSignal } from '@angular/core';
+import { computed, effect, inject, Injectable, signal, untracked, WritableSignal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import seedrandom from 'seedrandom';
 import { DatePipe } from '@angular/common';
 import { combineLatest, filter, map, scan, shareReplay, startWith, switchMap } from 'rxjs';
-import { takeUntilDestroyed, toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { CountriesService, Country } from '../../core/services/countries.service';
 
@@ -26,8 +26,6 @@ export class PlayService {
   countriesService = inject(CountriesService);
 
   typeSignal: WritableSignal<PlayType> = signal('FLAG');
-
-  // guess$ = new Subject<Country>();
 
   guessSignal: WritableSignal<Country | null> = signal(null);
 
@@ -82,25 +80,32 @@ export class PlayService {
     shareReplay({ refCount: false, bufferSize: 1 })
   );
 
-  isOverAllowedAttempts$ = this.guesses$.pipe(map((guesses) => guesses.length >= 5));
-  isEnded$ = combineLatest([this.isGuessed$, this.isOverAllowedAttempts$]).pipe(
-    map(([isGuessed, guesses]) => isGuessed || guesses),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
-  failures$ = combineLatest([toObservable(this.typeSignal), this.isEnded$]).pipe(
-    map(([type]) => getStatisticsCount(STAT_GUESSES_FAILURE_STORAGE_KEY.replace(KEY_INTERPOLATION, type))),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
-  successes$ = combineLatest([toObservable(this.typeSignal), this.isEnded$]).pipe(
-    map(([type]) => getStatisticsCount(STAT_GUESSES_SUCCESS_STORAGE_KEY.replace(KEY_INTERPOLATION, type))),
-    shareReplay({ refCount: false, bufferSize: 1 })
-  );
+  isOverAllowedAttemptsSignal = computed(() => {
+    return this.guessesSignal().length >= 5;
+  });
+
+  isEndedSignal = computed(() => {
+    return this.isGuessedSignal() || this.isOverAllowedAttemptsSignal();
+  });
+
+  successesSignal = computed(() => {
+    if (this.isEndedSignal()) {
+      return getStatisticsCount(STAT_GUESSES_SUCCESS_STORAGE_KEY.replace(KEY_INTERPOLATION, this.typeSignal()));
+    } else {
+      return 0;
+    }
+  });
+
+  failuresSignal = computed(() => {
+    if (this.isEndedSignal()) {
+      return getStatisticsCount(STAT_GUESSES_FAILURE_STORAGE_KEY.replace(KEY_INTERPOLATION, this.typeSignal()));
+    } else {
+      return 0;
+    }
+  });
 
   guessesSignal = toSignal(this.guesses$, { initialValue: [] as Country[] });
   isGuessedSignal = toSignal(this.isGuessed$, { initialValue: false });
-  successesSignal = toSignal(this.successes$, { initialValue: 0 });
-  failuresSignal = toSignal(this.failures$, { initialValue: 0 });
-  isEndedSignal = toSignal(this.isEnded$, { initialValue: false });
 
   constructor() {
     this.onGuessChange();
@@ -111,37 +116,30 @@ export class PlayService {
 
   private updateStatistics() {
     effect(() => {
-      saveStatistics(
-        this.isGuessedSignal(),
-        this.typeSignal(),
-        STAT_GUESSES_SUCCESS_STORAGE_KEY.replace(KEY_INTERPOLATION, this.typeSignal()),
-        this.transformDate(new Date())
-      );
+      if (this.isGuessedSignal()) {
+        untracked(() => {
+          saveStatistics(
+            this.isGuessedSignal(),
+            this.typeSignal(),
+            STAT_GUESSES_SUCCESS_STORAGE_KEY.replace(KEY_INTERPOLATION, this.typeSignal()),
+            this.transformDate(new Date())
+          );
+        });
+      }
     });
 
-    this.guessesSignal;
-
-    combineLatest([this.isGuessed$, toObservable(this.typeSignal)])
-      .pipe(takeUntilDestroyed(inject(DestroyRef)))
-      .subscribe(([isGuessed, type]) => {
-        saveStatistics(
-          isGuessed,
-          type,
-          STAT_GUESSES_SUCCESS_STORAGE_KEY.replace(KEY_INTERPOLATION, type),
-          this.transformDate(new Date())
-        );
-      });
-
-    combineLatest([this.isOverAllowedAttempts$, toObservable(this.typeSignal)])
-      .pipe(takeUntilDestroyed(inject(DestroyRef)))
-      .subscribe(([isFinished, type]) => {
-        saveStatistics(
-          isFinished,
-          type,
-          STAT_GUESSES_FAILURE_STORAGE_KEY.replace(KEY_INTERPOLATION, type),
-          this.transformDate(new Date())
-        );
-      });
+    effect(() => {
+      if (this.isOverAllowedAttemptsSignal()) {
+        untracked(() => {
+          saveStatistics(
+            this.isOverAllowedAttemptsSignal(),
+            this.typeSignal(),
+            STAT_GUESSES_FAILURE_STORAGE_KEY.replace(KEY_INTERPOLATION, this.typeSignal()),
+            this.transformDate(new Date())
+          );
+        });
+      }
+    });
   }
 
   private generateSeed(date: Date, type: PlayType) {
