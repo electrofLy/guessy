@@ -82,15 +82,15 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "guessy:build:production"
+              "buildTarget": "guessy:build:production"
             },
             "development": {
-              "browserTarget": "guessy:build:development"
+              "buildTarget": "guessy:build:development"
             },
             "remote": {
-              "browserTarget": "guessy:build:development",
               "host": "0.0.0.0",
-              "disableHostCheck": true
+              "disableHostCheck": true,
+              "buildTarget": "guessy:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -98,11 +98,11 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "guessy:build"
+            "buildTarget": "guessy:build"
           }
         },
         "test": {
-          "builder": "@angular-builders/jest:run",
+          "builder": "@angular-devkit/build-angular:jest",
           "options": {
             "tsConfig": "tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
