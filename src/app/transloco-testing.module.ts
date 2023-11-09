@@ -1,6 +1,5 @@
 import { provideTransloco, Translation, TranslocoLoader } from '@ngneat/transloco';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import bg from '../assets/i18n/bg.json';
 import en from '../assets/i18n/en.json';
 import nl from '../assets/i18n/nl.json';

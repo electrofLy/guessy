@@ -22,14 +22,14 @@ import { SettingsService } from '../../../core/services/settings.service';
     />
     <p class="text-justify">
       <ng-container *ngIf="view.isGuessed === true; else failed">
-        <span data-test="success-guess">{{ 'endSuccess' | transloco : [view.country.name] }}</span>
+        <span data-test="success-guess">{{ 'endSuccess' | transloco: [view.country.name] }}</span>
       </ng-container>
       <ng-template #failed>
-        <span data-test="fail-guess">{{ 'endFailed' | transloco : [view.country.name] }}</span>
+        <span data-test="fail-guess">{{ 'endFailed' | transloco: [view.country.name] }}</span>
       </ng-template>
     </p>
     <p class="text-justify">
-      {{ 'endDetails' | transloco : [view.countdown] }}
+      {{ 'endDetails' | transloco: [view.countdown] }}
     </p>
   </ng-container>`,
   styles: [],
