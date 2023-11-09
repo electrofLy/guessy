@@ -80,8 +80,9 @@ describe('PlayService', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule, createTranslocoTestingModule()],
+        imports: [HttpClientTestingModule],
         providers: [
+          createTranslocoTestingModule(),
           PlayService,
           DatePipe,
           {

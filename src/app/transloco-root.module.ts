@@ -40,7 +40,6 @@ export class TranslocoHttpLoader implements TranslocoLoader {
           { id: 'nl', label: 'nederlands' }
         ],
         defaultLang: 'en',
-        // Remove this option if your application doesn't support changing language in runtime.
         reRenderOnLangChange: true,
         prodMode: environment.production
       },

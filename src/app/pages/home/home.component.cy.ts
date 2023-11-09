@@ -1,6 +1,7 @@
 import { HomeComponent } from './home.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Component } from '@angular/core';
+import { createTranslocoTestingModule } from '../../transloco-testing.module';
 
 @Component({
   template: `dummy`
@@ -11,6 +12,7 @@ describe('HomeComponentComponent', () => {
   beforeEach(() => {
     cy.mount(HomeComponent, {
       declarations: [DummyComponent],
+      providers: [createTranslocoTestingModule()],
       imports: [
         HomeComponent,
         RouterTestingModule.withRoutes([
