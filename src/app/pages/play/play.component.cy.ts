@@ -9,13 +9,8 @@ import { PlayType } from './play.service';
 
 function generateConfig(type: PlayType): MountConfig<PlayComponent> {
   return {
-    imports: [
-      PlayComponent,
-      HttpClientModule,
-      RouterTestingModule,
-      createTranslocoTestingModule(),
-      NoopAnimationsModule
-    ],
+    imports: [PlayComponent, HttpClientModule, RouterTestingModule, NoopAnimationsModule],
+    providers: [createTranslocoTestingModule()],
     componentProperties: {
       type
     }

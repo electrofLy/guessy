@@ -6,7 +6,8 @@ import { createTranslocoTestingModule } from '../../transloco-testing.module';
 describe('SettingsComponent', () => {
   beforeEach(() => {
     cy.mount(SettingsComponent, {
-      imports: [SettingsComponent, RouterTestingModule, createTranslocoTestingModule(), NoopAnimationsModule]
+      imports: [SettingsComponent, RouterTestingModule, NoopAnimationsModule],
+      providers: [createTranslocoTestingModule()]
     });
   });
   it('should be able to change language', () => {

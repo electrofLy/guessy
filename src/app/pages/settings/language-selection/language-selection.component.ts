@@ -29,5 +29,8 @@ export class LanguageSelectionComponent {
   }));
   lang$ = this.settingsService.lang$;
 
-  constructor(private translocoService: TranslocoService, private settingsService: SettingsService) {}
+  constructor(
+    private translocoService: TranslocoService,
+    private settingsService: SettingsService
+  ) {}
 }

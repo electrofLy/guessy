@@ -5,6 +5,7 @@
     "types": ["jest"],
     "module": "commonjs",
     "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
     "allowJs": true
   },
   "files": ["src/polyfills.ts"],
