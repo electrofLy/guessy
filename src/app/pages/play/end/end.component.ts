@@ -9,10 +9,9 @@ import { SettingsService } from '../../../core/services/settings.service';
 
 @Component({
   selector: 'app-end',
-  template: ` <ng-container *ngIf="view$ | async as view">
+  template: ` @if (view$ | async;as view) { @for (country of [view.country];track country) {
     <img
       class="self-center mb-4"
-      *ngFor="let country of [view.country]"
       [ngClass]="{ invert: view.theme === 'dark' && view.type === 'SHAPE' }"
       [ngSrc]="view.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
       [height]="view.type === 'SHAPE' ? 200 : 150"
@@ -20,18 +19,23 @@ import { SettingsService } from '../../../core/services/settings.service';
       width="200"
       alt="country-flag-am"
     />
+    }
     <p class="text-justify">
-      <ng-container *ngIf="view.isGuessed === true; else failed">
-        <span data-test="success-guess">{{ 'endSuccess' | transloco: [view.country.name] }}</span>
-      </ng-container>
-      <ng-template #failed>
-        <span data-test="fail-guess">{{ 'endFailed' | transloco: [view.country.name] }}</span>
-      </ng-template>
+      @if (view.isGuessed === true) {
+
+      <span data-test="success-guess">{{ 'endSuccess' | transloco: [view.country.name] }}</span>
+
+      } @else {
+
+      <span data-test="fail-guess">{{ 'endFailed' | transloco: [view.country.name] }}</span>
+
+      }
     </p>
     <p class="text-justify">
       {{ 'endDetails' | transloco: [view.countdown] }}
     </p>
-  </ng-container>`,
+
+    }`,
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -44,8 +48,7 @@ import { SettingsService } from '../../../core/services/settings.service';
     CommonModule,
     MatButtonModule,
     TranslocoModule,
-    NgOptimizedImage,
-    EndComponent
+    NgOptimizedImage
   ]
 })
 export class EndComponent {

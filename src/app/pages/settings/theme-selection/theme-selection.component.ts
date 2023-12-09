@@ -17,7 +17,9 @@ export interface ThemeDefinition {
     <mat-form-field data-test="theme-selection">
       <mat-label>{{ 'theme' | transloco }}</mat-label>
       <mat-select [value]="theme$ | async" (valueChange)="theme$.next($event)">
-        <mat-option *ngFor="let theme of themeOptions" [value]="theme.id">{{ theme.label | transloco }}</mat-option>
+        @for (theme of themeOptions; track theme) {
+        <mat-option [value]="theme.id">{{ theme.label | transloco }}</mat-option>
+        }
       </mat-select>
     </mat-form-field>
   `,
