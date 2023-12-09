@@ -78,17 +78,17 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
 @Component({
   selector: 'app-country-form',
   template: `
+    @if (view$ | async;as view) {
     <form
       class="flex flex-col justify-center items-center gap-2"
-      *ngIf="view$ | async as view"
       [formGroup]="form"
       autocomplete="off"
       autocorrect="off"
       autocapitalize="off"
       spellcheck="false"
     >
+      @for (country of [view.country];track country) {
       <img
-        *ngFor="let country of [view.country]"
         [ngClass]="{ invert: view.theme === 'dark' && view.type === 'SHAPE' }"
         [ngSrc]="view.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
         [height]="view.type === 'SHAPE' ? 200 : 150"
@@ -96,15 +96,18 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
         width="200"
         alt="country-flag-am"
       />
+      }
 
       <mat-list class="w-full">
-        <mat-list-item *ngFor="let guess of view.guesses; let i = index" data-test="guess-list-item">
+        @for (guess of view.guesses;track guess;let i = $index) {
+        <mat-list-item data-test="guess-list-item">
           <mat-icon class="!self-center !mt-0" matListItemIcon>{{ guess.icon }}</mat-icon>
           <h3 matListItemTitle>{{ guess.name }}</h3>
           <p matListItemLine>
             <span>{{ guess.distance }} KM</span>
           </p>
         </mat-list-item>
+        }
       </mat-list>
       <mat-form-field data-test="country-input">
         <mat-label>{{ 'guessCountry' | transloco }}</mat-label>
@@ -124,7 +127,9 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
           formControlName="country"
         />
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-          <mat-option *ngFor="let country of view.countries" [value]="country"> {{ country.name }}</mat-option>
+          @for (country of view.countries;track country) {
+          <mat-option [value]="country"> {{ country.name }}</mat-option>
+          }
         </mat-autocomplete>
         <button
           [disabled]="!form.valid"
@@ -136,12 +141,14 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
         >
           <mat-icon>send</mat-icon>
         </button>
-        <mat-error *ngIf="form.controls.country.errors?.['required']">{{ 'required' | transloco }}</mat-error>
-        <mat-error *ngIf="form.controls.country.errors?.['invalidCountry']">{{
-          'invalidCountry' | transloco
-        }}</mat-error>
+        @if (form.controls.country.errors?.['required']) {
+        <mat-error>{{ 'required' | transloco }}</mat-error>
+        } @if (form.controls.country.errors?.['invalidCountry']) {
+        <mat-error>{{ 'invalidCountry' | transloco }} </mat-error>
+        }
       </mat-form-field>
     </form>
+    }
   `,
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,

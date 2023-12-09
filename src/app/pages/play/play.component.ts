@@ -17,37 +17,45 @@ import { MatBadgeModule } from '@angular/material/badge';
 
 @Component({
   selector: 'app-play',
-  template: ` <mat-card class="max-w-xs" *ngIf="view$ | async as view">
-    <mat-card-header class="justify-center">
-      <mat-card-title class="text-center">{{ 'guessy' | transloco }}</mat-card-title>
-      <mat-card-subtitle class="text-center">{{ 'play' | transloco }}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content class="!flex flex-col justify-center text-justify">
-      <ng-container *ngIf="view.isEnded === false; else end">
+  template: ` @if (view$ | async;as view) {
+    <mat-card class="max-w-xs">
+      <mat-card-header class="justify-center">
+        <mat-card-title class="text-center">{{ 'guessy' | transloco }}</mat-card-title>
+        <mat-card-subtitle class="text-center">{{ 'play' | transloco }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="!flex flex-col justify-center text-justify">
+        @if (view.isEnded === false) {
+
         <app-country-form />
-      </ng-container>
-      <ng-template #end>
+
+        } @else {
+
         <app-end class="!flex flex-col justify-center" />
-      </ng-template>
-    </mat-card-content>
-    <mat-card-actions [align]="'end'">
-      <mat-icon
-        class="mr-2"
-        [matBadge]="view.successes"
-        data-test="stat-success"
-        matBadgeSize="small"
-        matBadgeColor="accent"
-        >done</mat-icon
-      >
-      <mat-icon [matBadge]="view.failures" data-test="stat-fail" matBadgeSize="small" matBadgeColor="warn"
-        >error</mat-icon
-      >
-      <div class="flex-grow"></div>
-      <button [routerLink]="['/home']" mat-button mat-raised-button>
-        {{ 'back' | transloco }}
-      </button>
-    </mat-card-actions>
-  </mat-card>`,
+
+        }
+        <ng-template #end>
+          <app-end class="!flex flex-col justify-center" />
+        </ng-template>
+      </mat-card-content>
+      <mat-card-actions [align]="'end'">
+        <mat-icon
+          class="mr-2"
+          [matBadge]="view.successes"
+          data-test="stat-success"
+          matBadgeSize="small"
+          matBadgeColor="accent"
+          >done
+        </mat-icon>
+        <mat-icon [matBadge]="view.failures" data-test="stat-fail" matBadgeSize="small" matBadgeColor="warn"
+          >error
+        </mat-icon>
+        <div class="flex-grow"></div>
+        <button [routerLink]="['/home']" mat-button mat-raised-button>
+          {{ 'back' | transloco }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    }`,
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
@@ -67,7 +75,6 @@ import { MatBadgeModule } from '@angular/material/badge';
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatListModule,
-    PlayComponent,
     CountryFormComponent,
     EndComponent,
     MatBadgeModule
