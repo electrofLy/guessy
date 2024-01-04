@@ -45,3 +45,6 @@ Thumbs.db
 # Cypress
 cypress/videos
 cypress/screenshots
+
+# NX
+.nx
