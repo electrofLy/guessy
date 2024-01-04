@@ -12,7 +12,7 @@ import { SettingsService } from '../../../core/services/settings.service';
   template: ` @if (view$ | async;as view) { @for (country of [view.country];track country) {
     <img
       class="self-center mb-4"
-      [ngClass]="{ invert: view.theme === 'dark' && view.type === 'SHAPE' }"
+      [ngClass]="{ invert: settingsService.theme() === 'dark' && view.type === 'SHAPE' }"
       [ngSrc]="view.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
       [height]="view.type === 'SHAPE' ? 200 : 150"
       priority="true"
@@ -98,7 +98,6 @@ export class EndComponent {
     isGuessed: this.isGuessed$,
     country: this.country$,
     countdown: this.countdown$,
-    type: this.playService.type$,
-    theme: this.settingsService.theme$
+    type: this.playService.type$
   });
 }

@@ -42,7 +42,6 @@ import { MatSelectModule } from '@angular/material/select';
     TranslocoModule,
     MatFormFieldModule,
     MatSelectModule,
-    SettingsComponent,
     LanguageSelectionComponent,
     ThemeSelectionComponent,
     MatCardModule,

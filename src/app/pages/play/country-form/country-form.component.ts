@@ -78,7 +78,7 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
 @Component({
   selector: 'app-country-form',
   template: `
-    @if (view$ | async;as view) {
+    @if (view$ | async; as view) {
     <form
       class="flex flex-col justify-center items-center gap-2"
       [formGroup]="form"
@@ -87,9 +87,9 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
       autocapitalize="off"
       spellcheck="false"
     >
-      @for (country of [view.country];track country) {
+      @for (country of [view.country]; track country) {
       <img
-        [ngClass]="{ invert: view.theme === 'dark' && view.type === 'SHAPE' }"
+        [ngClass]="{ invert: settingsService.theme() === 'dark' && view.type === 'SHAPE' }"
         [ngSrc]="view.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
         [height]="view.type === 'SHAPE' ? 200 : 150"
         priority="true"
@@ -99,7 +99,7 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
       }
 
       <mat-list class="w-full">
-        @for (guess of view.guesses;track guess;let i = $index) {
+        @for (guess of view.guesses; track guess; let i = $index) {
         <mat-list-item data-test="guess-list-item">
           <mat-icon class="!self-center !mt-0" matListItemIcon>{{ guess.icon }}</mat-icon>
           <h3 matListItemTitle>{{ guess.name }}</h3>
@@ -127,7 +127,7 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
           formControlName="country"
         />
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-          @for (country of view.countries;track country) {
+          @for (country of view.countries; track country) {
           <mat-option [value]="country"> {{ country.name }}</mat-option>
           }
         </mat-autocomplete>
@@ -144,7 +144,7 @@ export function createGuesses(guesses: Country[], country: Country): Guess[] {
         @if (form.controls.country.errors?.['required']) {
         <mat-error>{{ 'required' | transloco }}</mat-error>
         } @if (form.controls.country.errors?.['invalidCountry']) {
-        <mat-error>{{ 'invalidCountry' | transloco }} </mat-error>
+        <mat-error>{{ 'invalidCountry' | transloco }}</mat-error>
         }
       </mat-form-field>
     </form>
@@ -174,7 +174,7 @@ export class CountryFormComponent {
   router = inject(Router);
   playService = inject(PlayService);
   countriesService = inject(CountriesService);
-  settings = inject(SettingsService);
+  settingsService = inject(SettingsService);
   form = new FormGroup({
     country: new FormControl<Country | string>('', {
       nonNullable: true,
@@ -201,8 +201,7 @@ export class CountryFormComponent {
     country: this.playService.country$,
     countries: this.filteredCountries$,
     guesses: this.guessesWithDistance$,
-    type: this.playService.type$,
-    theme: this.settings.theme$
+    type: this.playService.type$
   });
 
   @ViewChild(MatAutocompleteTrigger) autocompleteTrigger!: MatAutocompleteTrigger;
