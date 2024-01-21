@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, enableProdMode, importProvidersFrom, isDevMode } from '@angular/core';
+import { APP_INITIALIZER, enableProdMode, importProvidersFrom, inject, isDevMode } from '@angular/core';
 
 import { environment } from './environments/environment';
 import { AppComponent } from './app/app.component';
@@ -13,6 +13,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { provideRouter, Routes, withComponentInputBinding, withRouterConfig } from '@angular/router';
 import { provideServiceWorker } from '@angular/service-worker';
 import { MAT_CARD_CONFIG } from '@angular/material/card';
+import { CountriesService } from './app/core/services/countries.service';
+import { PLAY_TYPE } from './app/pages/play/play.service';
 
 if (environment.production) {
   enableProdMode();
@@ -27,6 +29,15 @@ const routes: Routes = [
   {
     path: 'flag',
     loadComponent: () => import('./app/pages/play/play.component').then((m) => m.PlayComponent),
+    resolve: {
+      countries: () => inject(CountriesService).countries$
+    },
+    providers: [
+      {
+        provide: PLAY_TYPE,
+        useValue: 'FLAG'
+      }
+    ],
     data: {
       type: 'FLAG'
     }
@@ -34,6 +45,15 @@ const routes: Routes = [
   {
     path: 'shape',
     loadComponent: () => import('./app/pages/play/play.component').then((m) => m.PlayComponent),
+    resolve: {
+      countries: () => inject(CountriesService).countries$
+    },
+    providers: [
+      {
+        provide: PLAY_TYPE,
+        useValue: 'SHAPE'
+      }
+    ],
     data: {
       type: 'SHAPE'
     }

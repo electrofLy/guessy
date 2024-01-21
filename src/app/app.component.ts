@@ -20,7 +20,7 @@ export class AppComponent {
   constructor() {
     if (!environment.production) {
       console.warn('Local storage cleared on reset. Disable to test local storage.');
-      localStorage.clear();
+      // localStorage.clear();
     }
   }
 }

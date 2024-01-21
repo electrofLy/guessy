@@ -19,5 +19,7 @@
   "endDetails": "This was the end. Come back after {{0}} hours to guess again?",
   "invalidCountry": "invalid country",
   "checkCode": "check the code",
-  "reportIssue": "report a bug"
+  "reportIssue": "report a bug",
+  "successes": "successes",
+  "failures": "failures"
 }

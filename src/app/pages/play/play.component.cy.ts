@@ -5,15 +5,36 @@ import { HttpClientModule } from '@angular/common/http';
 import countries from '../../../assets/countries.json';
 import { createTranslocoTestingModule } from '../../transloco-testing.module';
 import { MountConfig } from 'cypress/angular';
-import { PlayType } from './play.service';
+import { PLAY_TYPE, PlayType } from './play.service';
+import { CountriesService, extractCountryName } from '../../core/services/countries.service';
+import { of } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 function generateConfig(type: PlayType): MountConfig<PlayComponent> {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  const translatedCountries = extractCountryName(countries, 'en');
+
   return {
     imports: [PlayComponent, HttpClientModule, RouterTestingModule, NoopAnimationsModule],
-    providers: [createTranslocoTestingModule()],
-    componentProperties: {
-      type
-    }
+    providers: [
+      createTranslocoTestingModule(),
+      { provide: PLAY_TYPE, useValue: type },
+      {
+        provide: CountriesService,
+        useValue: {
+          countryNames$: of([...translatedCountries.map((country) => country.name)])
+        } as Partial<CountriesService>
+      },
+      {
+        provide: ActivatedRoute,
+        useValue: {
+          data: of({
+            countries: [...translatedCountries]
+          })
+        }
+      }
+    ]
   };
 }
 

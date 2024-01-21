@@ -10,7 +10,7 @@
   "theme": "thema",
   "dark": "donker",
   "light": "licht",
-  "back": "rug",
+  "back": "terug",
   "guessCountry": "raad het land",
   "required": "verplicht veld",
   "end": "einde",
@@ -19,5 +19,7 @@
   "endDetails": "Dit was het einde. Kom je over {{0}} uur terug om opnieuw te raden?",
   "invalidCountry": "ongeldig land",
   "checkCode": "controleer de code",
-  "reportIssue": "meld een fout"
+  "reportIssue": "meld een fout",
+  "successes": "successen",
+  "failures": "mislukkingen"
 }
