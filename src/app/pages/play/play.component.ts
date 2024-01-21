@@ -31,8 +31,8 @@ import { MatBadgeModule } from '@angular/material/badge';
       </mat-card-content>
       <mat-card-actions [align]="'end'">
         <div class="flex flex-col">
-          <span class="success"> ✅ - {{ playService.successes() }} </span>
-          <span class="warn"> ❌ - {{ playService.failures() }} </span>
+          <span data-test="stat-success"> ✅ - {{ playService.successes() }} </span>
+          <span data-test="stat-fail"> ❌ - {{ playService.failures() }} </span>
         </div>
         <div class="flex-grow"></div>
         <button [routerLink]="['/home']" mat-button mat-raised-button>

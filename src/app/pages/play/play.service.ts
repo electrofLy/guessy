@@ -54,10 +54,14 @@ export class PlayService {
   });
 
   failures = computed(() => {
+    // used for tracking
+    this.isEnded();
     return getStatisticsCount(STAT_GUESSES_FAILURE_STORAGE_KEY.replace(KEY_INTERPOLATION, this.type));
   });
 
   successes = computed(() => {
+    // used for tracking
+    this.isEnded();
     return getStatisticsCount(STAT_GUESSES_SUCCESS_STORAGE_KEY.replace(KEY_INTERPOLATION, this.type));
   });
 
