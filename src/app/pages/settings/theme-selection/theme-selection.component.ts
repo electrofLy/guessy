@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SettingsService } from '../../../core/services/settings.service';
 import { TranslocoModule } from '@ngneat/transloco';
 import { MatOptionModule } from '@angular/material/core';
@@ -16,7 +16,7 @@ export interface ThemeDefinition {
   template: `
     <mat-form-field data-test="theme-selection">
       <mat-label>{{ 'theme' | transloco }}</mat-label>
-      <mat-select [value]="theme$ | async" (valueChange)="theme$.next($event)">
+      <mat-select [value]="settingsService.theme()" (valueChange)="settingsService.theme.set($event)">
         @for (theme of themeOptions; track theme) {
         <mat-option [value]="theme.id">{{ theme.label | transloco }}</mat-option>
         }
@@ -29,11 +29,10 @@ export interface ThemeDefinition {
   imports: [MatFormFieldModule, MatSelectModule, NgFor, MatOptionModule, AsyncPipe, TranslocoModule]
 })
 export class ThemeSelectionComponent {
-  theme$ = this.settingsService.theme$;
+  settingsService: SettingsService = inject(SettingsService);
+
   themeOptions: ThemeDefinition[] = [
     { id: 'light', label: 'light' },
     { id: 'dark', label: 'dark' }
   ];
-
-  constructor(private settingsService: SettingsService) {}
 }

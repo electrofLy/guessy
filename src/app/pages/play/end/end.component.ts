@@ -9,26 +9,22 @@ import { SettingsService } from '../../../core/services/settings.service';
 
 @Component({
   selector: 'app-end',
-  template: ` @if (view$ | async;as view) { @for (country of [view.country];track country) {
+  template: ` @if (view$ | async; as view) { @for (country of [playService.country()]; track country) {
     <img
       class="self-center mb-4"
-      [ngClass]="{ invert: view.theme === 'dark' && view.type === 'SHAPE' }"
-      [ngSrc]="view.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
-      [height]="view.type === 'SHAPE' ? 200 : 150"
+      [ngClass]="{ invert: settingsService.theme() === 'dark' && playService.type === 'SHAPE' }"
+      [ngSrc]="playService.type === 'SHAPE' ? country.shapeUrl : country.flagUrl"
+      [height]="playService.type === 'SHAPE' ? 200 : 150"
       priority="true"
       width="200"
       alt="country-flag-am"
     />
     }
     <p class="text-justify">
-      @if (view.isGuessed === true) {
-
-      <span data-test="success-guess">{{ 'endSuccess' | transloco: [view.country.name] }}</span>
-
+      @if (playService.isGuessed()) {
+      <span data-test="success-guess">{{ 'endSuccess' | transloco: [playService.country().name] }}</span>
       } @else {
-
-      <span data-test="fail-guess">{{ 'endFailed' | transloco: [view.country.name] }}</span>
-
+      <span data-test="fail-guess">{{ 'endFailed' | transloco: [playService.country().name] }}</span>
       }
     </p>
     <p class="text-justify">
@@ -54,8 +50,6 @@ import { SettingsService } from '../../../core/services/settings.service';
 export class EndComponent {
   playService = inject(PlayService);
   settingsService = inject(SettingsService);
-  isGuessed$ = this.playService.isGuessed$;
-  country$ = this.playService.country$;
   today = new Date();
   countdown$ = interval(1000).pipe(
     startWith(0),
@@ -95,10 +89,6 @@ export class EndComponent {
   );
 
   view$ = combineLatest({
-    isGuessed: this.isGuessed$,
-    country: this.country$,
-    countdown: this.countdown$,
-    type: this.playService.type$,
-    theme: this.settingsService.theme$
+    countdown: this.countdown$
   });
 }

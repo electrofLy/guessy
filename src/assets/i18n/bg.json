@@ -19,5 +19,7 @@
   "endDetails": "Това е края. Ела след {{0}} часа пак да познаеш?",
   "invalidCountry": "невалидна държава",
   "checkCode": "виж кода",
-  "reportIssue": "докладвай бъг"
+  "reportIssue": "докладвай бъг",
+  "successes": "успехи",
+  "failures": "неуспехи"
 }
